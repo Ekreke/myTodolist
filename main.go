@@ -1,17 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"os"
-
-	"github.com/joho/godotenv"
+	"github.com/ekreke/myTodolist/conf"
+	"github.com/ekreke/myTodolist/server"
 )
 
 func main() {
-	err := godotenv.Load("./user.env")
-	if err != nil {
-		panic(err)
-	}
-	fmt.Println("name:", os.Getenv("name"))
-	fmt.Println("age:", os.Getenv("age"))
+	conf.Init()
+	r := server.NewRouter()
+	r.Run(":3000")
 }

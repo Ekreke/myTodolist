@@ -1,4 +1,4 @@
-package main
+package conf
 
 import (
 	"fmt"
@@ -14,7 +14,7 @@ import (
 // conf
 var DB *gorm.DB
 
-func main() {
+func Init() {
 	drivername, args := getMysqlConf()
 	db := myqlInit(drivername, args)
 	defer db.Close()
@@ -24,6 +24,7 @@ func main() {
 	u := &model.Users{}
 	db.First(u)
 	fmt.Println(u.Username)
+
 }
 
 func myqlInit(drivername string, args string) *gorm.DB {
