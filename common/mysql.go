@@ -25,6 +25,7 @@ func InitMysql() *gorm.DB {
 		database,
 		charset)
 	db, err := gorm.Open(driverName, args)
+	fmt.Printf("drivername:%v,args:%v", driverName, args)
 	if err != nil {
 		panic("failed to connect database,err:+" + err.Error())
 	}
