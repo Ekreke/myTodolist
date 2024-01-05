@@ -1,19 +1,17 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "这里写描述信息",
-        "title": "这里写标题",
-        "termsOfService": "http://swagger.io/terms/",
+        "description": "myTodoList's api docs",
+        "title": "myTodolist",
         "contact": {
-            "name": "这里写联系人名字",
-            "email": "这里写联系人邮箱"
+            "name": "ekreke"
         },
         "version": "1.0"
     },
     "paths": {
         "/user/login": {
-            "get": {
-                "description": "这里写描述 get users",
+            "post": {
+                "description": "user login",
                 "consumes": [
                     "application/json"
                 ],
@@ -21,9 +19,9 @@
                     "application/json"
                 ],
                 "tags": [
-                    "ops 标签 比如同类功能使用同一个标签"
+                    "User"
                 ],
-                "summary": "摘要 比如获取用户列表",
+                "summary": "userlogin",
                 "parameters": [
                     {
                         "type": "integer",

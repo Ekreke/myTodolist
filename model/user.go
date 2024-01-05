@@ -13,3 +13,7 @@ type Users struct {
 	Bio         string `json:"bio" sql:"bio"`
 	Avatar      string `json:"avatar" sql:"avatar"`
 }
+
+func (user *Users) CheckPassword(password string) bool {
+	return password == user.Password
+}

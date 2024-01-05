@@ -1,17 +1,15 @@
 info:
   contact:
-    email: 这里写联系人邮箱
-    name: 这里写联系人名字
-  description: 这里写描述信息
-  termsOfService: http://swagger.io/terms/
-  title: 这里写标题
+    name: ekreke
+  description: myTodoList's api docs
+  title: myTodolist
   version: "1.0"
 paths:
   /user/login:
-    get:
+    post:
       consumes:
       - application/json
-      description: 这里写描述 get users
+      description: user login
       parameters:
       - description: Id
         in: query
@@ -21,7 +19,7 @@ paths:
       produces:
       - application/json
       responses: {}
-      summary: 摘要 比如获取用户列表
+      summary: userlogin
       tags:
-      - ops 标签 比如同类功能使用同一个标签
+      - User
 swagger: "2.0"

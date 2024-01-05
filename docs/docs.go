@@ -10,10 +10,8 @@ const docTemplate = `{
     "info": {
         "description": "{{escape .Description}}",
         "title": "{{.Title}}",
-        "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "这里写联系人名字",
-            "email": "这里写联系人邮箱"
+            "name": "ekreke"
         },
         "version": "{{.Version}}"
     },
@@ -21,8 +19,8 @@ const docTemplate = `{
     "basePath": "{{.BasePath}}",
     "paths": {
         "/user/login": {
-            "get": {
-                "description": "这里写描述 get users",
+            "post": {
+                "description": "user login",
                 "consumes": [
                     "application/json"
                 ],
@@ -30,9 +28,9 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "ops 标签 比如同类功能使用同一个标签"
+                    "User"
                 ],
-                "summary": "摘要 比如获取用户列表",
+                "summary": "userlogin",
                 "parameters": [
                     {
                         "type": "integer",
@@ -54,8 +52,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "这里写标题",
-	Description:      "这里写描述信息",
+	Title:            "myTodolist",
+	Description:      "myTodoList's api docs",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }

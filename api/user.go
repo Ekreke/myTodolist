@@ -1,8 +1,6 @@
 package api
 
 import (
-	"fmt"
-
 	"github.com/ekreke/myTodolist/pkg/logging"
 	"github.com/ekreke/myTodolist/service"
 	"github.com/gin-gonic/gin"
@@ -28,10 +26,10 @@ func UserLogin(c *gin.Context) {
 	if err != nil {
 		logging.Info(err)
 	}
-	// res := service.Login(user)
-	c.JSON(200, gin.H{
-		"code": 200,
-		"msg":  "success",
-	})
-	fmt.Println("gin init")
+	username := c.PostForm("username")
+	password := c.PostForm("password")
+
+	if flag := service.Login(username, password); flag == true {
+		c.JSON(200, res)
+	}
 }
