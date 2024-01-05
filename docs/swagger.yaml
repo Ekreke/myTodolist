@@ -1,0 +1,16 @@
+basePath: /freeapi/v1
+host: videotools.cn
+info:
+  contact:
+    email: 584807419@qq.com
+    name: 联系人
+    url: http://www.swagger.io/support
+  description: 描述
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: 标题
+  version: 1.0 版本
+paths: {}
+swagger: "2.0"
