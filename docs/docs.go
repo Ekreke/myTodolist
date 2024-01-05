@@ -12,29 +12,50 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "联系人",
-            "url": "http://www.swagger.io/support",
-            "email": "584807419@qq.com"
-        },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+            "name": "这里写联系人名字",
+            "email": "这里写联系人邮箱"
         },
         "version": "{{.Version}}"
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {}
+    "paths": {
+        "/user/login": {
+            "get": {
+                "description": "这里写描述 get users",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ops 标签 比如同类功能使用同一个标签"
+                ],
+                "summary": "摘要 比如获取用户列表",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Id",
+                        "name": "Id",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
 }`
 
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
-	Version:          "1.0 版本",
-	Host:             "videotools.cn",
-	BasePath:         "/freeapi/v1",
+	Version:          "1.0",
+	Host:             "",
+	BasePath:         "",
 	Schemes:          []string{},
-	Title:            "标题",
-	Description:      "描述",
+	Title:            "这里写标题",
+	Description:      "这里写描述信息",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 }

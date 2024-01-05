@@ -5,14 +5,11 @@ import (
 	"github.com/ekreke/myTodolist/server"
 )
 
-// @title 这里写标题
+// @title myTodolist
 // @version 1.0
-// @description 这里写描述信息
-// @termsOfService  http://swagger.io/terms/
-
-// @contact.name 这里写联系人名字
-// @contact.email 这里写联系人邮箱
-
+// @description myTodoList's api docs
+// @contact.name ekreke
+// should execute swag init everytimes when update annotation
 func main() {
 	conf.DBInit()
 	r := server.NewRouter()
