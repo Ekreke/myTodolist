@@ -1,6 +1,9 @@
 package server
 
 import (
+	"fmt"
+
+	"github.com/ekreke/myTodolist/api"
 	"github.com/ekreke/myTodolist/pkg/util/sdk"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"
@@ -19,7 +22,8 @@ func NewRouter() *gin.Engine {
 	// router group
 	v1 := r.Group("/api/v1")
 	{
-		v1.POST("user/login")
+		fmt.Println("init")
+		v1.GET("user/login", api.UserLogin)
 	}
 	return r
 }

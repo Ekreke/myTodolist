@@ -5,7 +5,6 @@ import (
 	"log"
 	"os"
 
-	"github.com/ekreke/myTodolist/model"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 	"github.com/subosito/gotenv"
@@ -14,17 +13,10 @@ import (
 // conf
 var DB *gorm.DB
 
-func Init() {
+func DBInit() {
 	drivername, args := getMysqlConf()
 	db := myqlInit(drivername, args)
-	defer db.Close()
-	if db != nil {
-		fmt.Println("connect mysql success")
-	}
-	u := &model.Users{}
-	db.First(u)
-	fmt.Println(u.Username)
-
+	DB = db
 }
 
 func myqlInit(drivername string, args string) *gorm.DB {
@@ -38,7 +30,7 @@ func myqlInit(drivername string, args string) *gorm.DB {
 }
 
 func getMysqlConf() (string, string) {
-	err := gotenv.Load("./confs/mysql.env")
+	err := gotenv.Load("conf/confs/mysql.env")
 	if err != nil {
 		log.Fatal("load env failed, err:", err)
 	}

@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	conf.Init()
+	conf.DBInit()
 	r := server.NewRouter()
 	r.Run(":3000")
 }
