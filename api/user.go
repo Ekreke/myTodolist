@@ -26,10 +26,11 @@ func UserLogin(c *gin.Context) {
 	if err != nil {
 		logging.Info(err)
 	}
-	username := c.PostForm("username")
+	username := c.PostForm("user_name")
 	password := c.PostForm("password")
-
-	if flag := service.Login(username, password); flag == true {
-		c.JSON(200, res)
-	}
+	resp := service.Login(username, password)
+	logging.Info(resp)
+	logging.Info(username)
+	logging.Info(password)
+	c.JSON(200, resp)
 }

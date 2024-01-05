@@ -1,2 +1,6 @@
-INFO[user.go:21] 2024/01/05 17:47:47 [Key: 'UserLoginService.UserName' Error:Field validation for 'UserName' failed on the 'required' tag
-Key: 'UserLoginService.Password' Error:Field validation for 'Password' failed on the 'required' tag]
+INFO[user.go:32] 2024/01/05 23:10:03 [{0 login success  }]
+INFO[user.go:33] 2024/01/05 23:10:03 []
+INFO[user.go:34] 2024/01/05 23:10:03 []
+INFO[user.go:32] 2024/01/05 23:12:22 [{0 login failed  }]
+INFO[user.go:33] 2024/01/05 23:12:22 [ekreke]
+INFO[user.go:34] 2024/01/05 23:12:22 [11111111]
