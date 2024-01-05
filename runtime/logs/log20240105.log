@@ -1,0 +1,2 @@
+INFO[user.go:21] 2024/01/05 17:47:47 [Key: 'UserLoginService.UserName' Error:Field validation for 'UserName' failed on the 'required' tag
+Key: 'UserLoginService.Password' Error:Field validation for 'Password' failed on the 'required' tag]
