@@ -49,6 +49,7 @@ require (
 )
 
 require (
+	github.com/gin-contrib/cors v1.5.0
 	github.com/go-sql-driver/mysql v1.7.1
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/subosito/gotenv v1.6.0

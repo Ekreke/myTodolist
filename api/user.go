@@ -35,3 +35,43 @@ func UserRegister(c *gin.Context) {
 	resp := service.Register()
 	c.JSON(200, resp)
 }
+
+// TODO:checkMyDay
+func CheckMyDay(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"status": 200,
+		"data":   "ok",
+	})
+}
+
+// TODO: getProjects
+func GetProjectsIds(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"status": 200,
+		"data":   "ok",
+	})
+}
+
+// TODO: setAccountAvatar
+func SetAccountAvatar(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"status": 200,
+		"data":   "ok",
+	})
+}
+
+// TODO: getApartmentIds
+func GetApartmentIds(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"status": 200,
+		"data":   "ok",
+	})
+}
+
+// TODO: SetUserInfo
+func SetUserInfo(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"status": 200,
+		"data":   "ok",
+	})
+}
