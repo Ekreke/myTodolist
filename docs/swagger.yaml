@@ -1,3 +1,24 @@
+basePath: /api/v1
+definitions:
+  model.Users:
+    properties:
+      apartment_id:
+        type: integer
+      avatar:
+        type: string
+      bio:
+        type: string
+      id:
+        type: integer
+      link:
+        type: string
+      password:
+        type: string
+      projects_id:
+        type: string
+      username:
+        type: string
+    type: object
 info:
   contact:
     name: ekreke
@@ -9,17 +30,18 @@ paths:
     post:
       consumes:
       - application/json
-      description: user login
+      description: 创建镜像迁移任务
       parameters:
-      - description: Id
-        in: query
-        name: Id
+      - description: 请示参数data
+        in: body
+        name: data
         required: true
-        type: integer
+        schema:
+          $ref: '#/definitions/model.Users'
       produces:
       - application/json
       responses: {}
-      summary: userlogin
+      summary: 创建镜像迁移任务
       tags:
       - User
 swagger: "2.0"

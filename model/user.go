@@ -1,9 +1,6 @@
 package model
 
-import "github.com/jinzhu/gorm"
-
 type Users struct {
-	gorm.Model
 	Id          int    `json:"id" sql:"id"`
 	Username    string `json:"username" sql:"username"`
 	Password    string `json:"password" sql:"password"`

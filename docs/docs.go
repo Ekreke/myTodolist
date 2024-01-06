@@ -20,7 +20,7 @@ const docTemplate = `{
     "paths": {
         "/user/login": {
             "post": {
-                "description": "user login",
+                "description": "创建镜像迁移任务",
                 "consumes": [
                     "application/json"
                 ],
@@ -30,17 +30,50 @@ const docTemplate = `{
                 "tags": [
                     "User"
                 ],
-                "summary": "userlogin",
+                "summary": "创建镜像迁移任务",
                 "parameters": [
                     {
-                        "type": "integer",
-                        "description": "Id",
-                        "name": "Id",
-                        "in": "query",
-                        "required": true
+                        "description": "请示参数data",
+                        "name": "data",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/model.Users"
+                        }
                     }
                 ],
                 "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "model.Users": {
+            "type": "object",
+            "properties": {
+                "apartment_id": {
+                    "type": "integer"
+                },
+                "avatar": {
+                    "type": "string"
+                },
+                "bio": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "projects_id": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string"
+                }
             }
         }
     }
@@ -50,7 +83,7 @@ const docTemplate = `{
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
 	Host:             "",
-	BasePath:         "",
+	BasePath:         "/api/v1",
 	Schemes:          []string{},
 	Title:            "myTodolist",
 	Description:      "myTodoList's api docs",

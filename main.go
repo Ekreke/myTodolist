@@ -9,6 +9,7 @@ import (
 // @title myTodolist
 // @version 1.0
 // @description myTodoList's api docs
+// @BasePath /api/v1
 // @contact.name ekreke
 // should execute swag init everytimes when update annotation
 func main() {

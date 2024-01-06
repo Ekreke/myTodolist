@@ -6,19 +6,12 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// import "github.com/gin-gonic/gin"
-
-//	func UserLogin(c *gin.Context) {
-//		session := session.Default()
-//	}
-//
-// @Summary userlogin
-// @Schemes
-// @Description user login
+// @Summary
+// @Description
 // @Tags User
-// @Param Id query int true "Id"     参数 ：@Param 参数名 位置（query 或者 path或者 body） 类型 是否必需 注释
-// @Accept json
-// @Produce json
+// @Accept  json
+// @Produce  json
+// @Param data body model.Users true
 // @Router /user/login [post]
 func UserLogin(c *gin.Context) {
 	var service service.UserLoginService
@@ -26,11 +19,19 @@ func UserLogin(c *gin.Context) {
 	if err != nil {
 		logging.Info(err)
 	}
-	username := c.PostForm("user_name")
+	username := c.PostForm("username")
 	password := c.PostForm("password")
 	resp := service.Login(username, password)
-	logging.Info(resp)
-	logging.Info(username)
-	logging.Info(password)
+	c.JSON(200, resp)
+}
+
+// user regiseter
+func UserRegister(c *gin.Context) {
+	var service service.UserRegisterService
+	err := c.ShouldBind(&service)
+	if err != nil {
+		logging.Info(err)
+	}
+	resp := service.Register()
 	c.JSON(200, resp)
 }
