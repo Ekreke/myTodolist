@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/ekreke/myTodolist/api"
+	_ "github.com/ekreke/myTodolist/docs"
 	"github.com/ekreke/myTodolist/pkg/util/sdk"
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-contrib/sessions/cookie"

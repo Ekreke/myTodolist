@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/ekreke/myTodolist/conf"
+	_ "github.com/ekreke/myTodolist/docs"
 	"github.com/ekreke/myTodolist/server"
 )
 
