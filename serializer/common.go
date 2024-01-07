@@ -13,6 +13,7 @@ type DataList struct {
 	Total uint        `json:"total"`
 }
 
+// token serilazer
 type TokenData struct {
 	User  interface{} `json:"user"`
 	Token string      `json:"token"`

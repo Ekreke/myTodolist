@@ -5,6 +5,7 @@ import (
 	"github.com/ekreke/myTodolist/model"
 	"github.com/ekreke/myTodolist/pkg/e"
 	"github.com/ekreke/myTodolist/pkg/logging"
+	"github.com/ekreke/myTodolist/pkg/util"
 	"github.com/ekreke/myTodolist/serializer"
 	"github.com/jinzhu/gorm"
 )
@@ -21,6 +22,7 @@ func (service *UserLoginService) Login(username, password string) serializer.Res
 	u := &model.Users{}
 	code := e.SUCCESS
 	err := db.Debug().Where("username = ?", username).First(&u).Error
+
 	// check if the record of username exists
 	if gorm.IsRecordNotFoundError(err) {
 		logging.Info(err)
@@ -32,21 +34,34 @@ func (service *UserLoginService) Login(username, password string) serializer.Res
 		}
 	}
 
-	// check if the password is correct
-	if f := checkPassword(*u, password); f {
+	// check password
+	if checkPassword(*u, password) == false {
 		return serializer.Response{
-			Data:   "login success !",
-			Status: code,
+			Data:   "password error",
+			Status: e.ERROR_PASSWORD,
 			Msg:    e.GetMsg(code),
 		}
-	} else {
-		code = e.ERROR_PASSWORD
+	}
+
+	// try to get token
+	token, err := util.GenerateUserToken(u.Username, u.Password)
+	if err != nil {
+		logging.Info(err)
+		code = e.ERROR_AUTH_TOKEN
 		return serializer.Response{
-			Data:   "password not correct",
 			Status: code,
 			Msg:    e.GetMsg(code),
 		}
 	}
+
+	usr := *u
+	//get token success
+	return serializer.Response{
+		Data:   serializer.TokenData{User: serializer.BuildUser(usr), Token: token},
+		Status: code,
+		Msg:    e.GetMsg(code),
+	}
+
 }
 
 func checkPassword(u model.Users, password string) bool {

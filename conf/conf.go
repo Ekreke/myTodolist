@@ -50,3 +50,11 @@ func getMysqlConf() (string, string) {
 		charset)
 	return drivername, args
 }
+
+func LoadJwtSecrect() (secrect string) {
+	err := gotenv.Load("conf/confs/jwt.env")
+	if err != nil {
+		log.Fatal("load env failed, err:", err)
+	}
+	return os.Getenv("JWT_SECRET")
+}

@@ -2,6 +2,7 @@ package api
 
 import (
 	"github.com/ekreke/myTodolist/pkg/logging"
+	"github.com/ekreke/myTodolist/serializer"
 	"github.com/ekreke/myTodolist/service"
 	"github.com/gin-gonic/gin"
 )
@@ -74,4 +75,12 @@ func SetUserInfo(c *gin.Context) {
 		"status": 200,
 		"data":   "ok",
 	})
+}
+
+func CheckToken(c *gin.Context) {
+	c.JSON(200, serializer.Response{
+		Status: 200,
+		Msg:    "ok",
+	})
+
 }

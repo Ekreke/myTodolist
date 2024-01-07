@@ -41,6 +41,13 @@ func NewRouter() *gin.Engine {
 
 		// TODO: set userinfo
 		v1.POST("user/SetUserInfo", api.SetUserInfo)
+
+		authed := v1.Group("/")
+		authed.Use(middleware.USER_JWT())
+		{
+			//TODO: check token
+			authed.GET("/ping", api.CheckToken)
+		}
 	}
 
 	return r
