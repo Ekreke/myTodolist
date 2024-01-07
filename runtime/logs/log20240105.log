@@ -1,6 +1,0 @@
-INFO[user.go:32] 2024/01/05 23:10:03 [{0 login success  }]
-INFO[user.go:33] 2024/01/05 23:10:03 []
-INFO[user.go:34] 2024/01/05 23:10:03 []
-INFO[user.go:32] 2024/01/05 23:12:22 [{0 login failed  }]
-INFO[user.go:33] 2024/01/05 23:12:22 [ekreke]
-INFO[user.go:34] 2024/01/05 23:12:22 [11111111]

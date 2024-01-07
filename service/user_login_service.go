@@ -12,6 +12,7 @@ import (
 
 // user login service
 
+// form -> front end json -> backend
 type UserLoginService struct {
 	UserName string `form:"username" json:"username"`
 	Password string `form:"password" json:"password"`

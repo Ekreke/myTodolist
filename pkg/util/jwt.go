@@ -29,9 +29,7 @@ func GenerateUserToken(username, password string) (string, error) {
 			Issuer:    "cmall",
 		},
 	}
-
 	tokenClaims := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	token, err := tokenClaims.SignedString(jwtSecret)
-
 	return token, err
 }

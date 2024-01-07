@@ -4,6 +4,7 @@ import (
 	"time"
 
 	"github.com/ekreke/myTodolist/pkg/e"
+	"github.com/ekreke/myTodolist/pkg/logging"
 	"github.com/ekreke/myTodolist/utils"
 	"github.com/gin-gonic/gin"
 )
@@ -12,14 +13,14 @@ func USER_JWT() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		var code int
 		var data interface{}
-
 		code = 200
 		token := c.GetHeader("Authorization")
 		if token == "" {
 			code = 404
 		} else {
-			claims, err := utils.ParseToken(token)
+			claims, err := utils.ParseUserToken(token)
 			if err != nil {
+				logging.Debug(err)
 				code = e.ERROR_AUTH_CHECK_TOKEN_FAIL
 			} else if time.Now().Unix() > claims.ExpiresAt {
 				code = e.ERROR_AUTH_CHECK_TOKEN_TIMEOUT

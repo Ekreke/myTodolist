@@ -27,10 +27,8 @@ func NewRouter() *gin.Engine {
 		// r.Use(sessions.Sessions("myssion", store))
 		r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerfiles.Handler))
 
-		// user login FIXME: use jwt
 		v1.POST("user/login", api.UserLogin)
 
-		// user register FIXME: use jwt
 		v1.POST("user/register", api.UserRegister)
 
 		// TODO: get user's projects
@@ -40,13 +38,13 @@ func NewRouter() *gin.Engine {
 		v1.GET("user/GetApartmentIds", api.GetApartmentIds)
 
 		// TODO: set userinfo
-		v1.POST("user/SetUserInfo", api.SetUserInfo)
-
 		authed := v1.Group("/")
 		authed.Use(middleware.USER_JWT())
 		{
 			//TODO: check token
 			authed.GET("/ping", api.CheckToken)
+			// change user info
+			authed.POST("user/SetUserInfo", api.SetUserInfo)
 		}
 	}
 

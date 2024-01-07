@@ -37,6 +37,23 @@ func UserRegister(c *gin.Context) {
 	c.JSON(200, resp)
 }
 
+// SetUserInfo  test : input token in post body
+func SetUserInfo(c *gin.Context) {
+	var service service.UserEditUserInfoService
+	err := c.ShouldBind(&service)
+	if err != nil {
+		logging.Info(err)
+	}
+	logging.Debug(service)
+	password := c.PostForm("password")
+	link := c.PostForm("link")
+	bio := c.PostForm("bio")
+	avatar := c.PostForm("avatar")
+	token := c.Request.Header.Get("Authorization")
+	resp := service.EditUserInfo(password, link, bio, avatar, token)
+	c.JSON(200, resp)
+}
+
 // TODO:checkMyDay
 func CheckMyDay(c *gin.Context) {
 	c.JSON(200, gin.H{
@@ -69,18 +86,9 @@ func GetApartmentIds(c *gin.Context) {
 	})
 }
 
-// TODO: SetUserInfo
-func SetUserInfo(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"status": 200,
-		"data":   "ok",
-	})
-}
-
 func CheckToken(c *gin.Context) {
 	c.JSON(200, serializer.Response{
 		Status: 200,
 		Msg:    "ok",
 	})
-
 }

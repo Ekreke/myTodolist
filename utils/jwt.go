@@ -35,7 +35,7 @@ func GenerateUserToken(username string) (string, error) {
 }
 
 // parse token to get username and password
-func ParseToken(token string) (*UserClaims, error) {
+func ParseUserToken(token string) (*UserClaims, error) {
 	tokenClaims, err := jwt.ParseWithClaims(token, &UserClaims{}, func(token *jwt.Token) (interface{}, error) {
 		return jwtSecrect, nil
 	})
