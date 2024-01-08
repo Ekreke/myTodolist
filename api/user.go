@@ -4,6 +4,7 @@ import (
 	"github.com/ekreke/myTodolist/pkg/logging"
 	"github.com/ekreke/myTodolist/serializer"
 	"github.com/ekreke/myTodolist/service"
+	"github.com/ekreke/myTodolist/utils"
 	"github.com/gin-gonic/gin"
 )
 
@@ -44,7 +45,6 @@ func SetUserInfo(c *gin.Context) {
 	if err != nil {
 		logging.Info(err)
 	}
-	logging.Debug(service)
 	password := c.PostForm("password")
 	link := c.PostForm("link")
 	bio := c.PostForm("bio")
@@ -55,31 +55,35 @@ func SetUserInfo(c *gin.Context) {
 }
 
 // TODO:checkMyDay
-func CheckMyDay(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"status": 200,
-		"data":   "ok",
-	})
+func UserCheckMyDay(c *gin.Context) {
+	var service service.UserCheckMyDayService
+	err := c.ShouldBind(&service)
+	if err != nil {
+		logging.Info(err)
+	}
+	// get token
+	token := c.Request.Header.Get("Authorization")
+	// get proejct cur token
+	proCurToken := c.PostForm("proCurToken")
+	// return response
+	resp := service.UserCheckMyDay(token, proCurToken)
+	c.JSON(200, resp)
 }
 
 // TODO: getProjects
-func GetProjectsIds(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"status": 200,
-		"data":   "ok",
-	})
-}
+// func UserGetProjectsIds(c *gin.Context) {
+// 	var service service.UserGetProjectsIds
+// 	err := c.ShouldBind(&service)
+// 	if err != nil {
+// 		logging.Info(err)
+// 	}
+// 	token := c.Request.Header.Get("Authorization")
+// 	resp := service.GetProjectsIds(token)
+// 	c.JSON(200, resp)
+// }
 
 // TODO: setAccountAvatar
 func SetAccountAvatar(c *gin.Context) {
-	c.JSON(200, gin.H{
-		"status": 200,
-		"data":   "ok",
-	})
-}
-
-// TODO: getApartmentIds
-func GetApartmentIds(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"status": 200,
 		"data":   "ok",
@@ -90,5 +94,16 @@ func CheckToken(c *gin.Context) {
 	c.JSON(200, serializer.Response{
 		Status: 200,
 		Msg:    "ok",
+	})
+}
+
+func GetPageToken(c *gin.Context) {
+	var page utils.Page
+	page.NextID = "0"
+	page.PageSize = 10
+	proCurtoken := utils.Encode(&page)
+	c.JSON(200, serializer.Response{
+		Status: 200,
+		Data:   proCurtoken,
 	})
 }

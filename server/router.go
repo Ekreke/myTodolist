@@ -31,20 +31,17 @@ func NewRouter() *gin.Engine {
 
 		v1.POST("user/register", api.UserRegister)
 
-		// TODO: get user's projects
-		v1.GET("user/GetProjectsIds", api.GetProjectsIds)
-
-		// TODO: get user's apartments
-		v1.GET("user/GetApartmentIds", api.GetApartmentIds)
-
-		// TODO: set userinfo
 		authed := v1.Group("/")
 		authed.Use(middleware.USER_JWT())
 		{
-			//TODO: check token
 			authed.GET("/ping", api.CheckToken)
+			authed.POST("/getPageToken", api.GetPageToken)
 			// change user info
 			authed.POST("user/SetUserInfo", api.SetUserInfo)
+			// TODO: user check myday
+			authed.GET("user/CheckMyday", api.UserCheckMyDay)
+			// TODO: user get projects
+			// authed.GET("user/GetProjects", api.UserGetProjectsIds)
 		}
 	}
 

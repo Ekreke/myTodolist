@@ -1,6 +1,6 @@
 package model
 
-type MyDay struct {
+type My_Days struct {
 	ID     int
 	UserID int
 	ItemID int

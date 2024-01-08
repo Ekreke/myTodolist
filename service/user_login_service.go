@@ -68,3 +68,13 @@ func (service *UserLoginService) Login(username, password string) serializer.Res
 func checkPassword(u model.Users, password string) bool {
 	return u.Password == password
 }
+
+func GetUserIdByUsername(username string) int {
+	db := conf.DB
+	var user_id int
+	err := db.Debug().Where("username = ?", username).Select("id").Model(&user_id).Error
+	if err != nil {
+		logging.Info("getuseridbyusername err:", err)
+	}
+	return user_id
+}
