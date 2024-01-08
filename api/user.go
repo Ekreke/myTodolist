@@ -70,20 +70,34 @@ func UserCheckMyDay(c *gin.Context) {
 	c.JSON(200, resp)
 }
 
-// TODO: getProjects
-// func UserGetProjectsIds(c *gin.Context) {
-// 	var service service.UserGetProjectsIds
-// 	err := c.ShouldBind(&service)
-// 	if err != nil {
-// 		logging.Info(err)
-// 	}
-// 	token := c.Request.Header.Get("Authorization")
-// 	resp := service.GetProjectsIds(token)
-// 	c.JSON(200, resp)
-// }
+// TODO: getProjects 没有分页
+func UserGetProjects(c *gin.Context) {
+	var service service.UserGetProjects
+	err := c.ShouldBind(&service)
+	if err != nil {
+		logging.Info(err)
+	}
+	token := c.Request.Header.Get("Authorization")
+	resp := service.GetProjectsIds(token)
+	c.JSON(200, resp)
+}
 
 // TODO: setAccountAvatar
 func SetAccountAvatar(c *gin.Context) {
+	c.JSON(200, gin.H{
+		"status": 200,
+		"data":   "ok",
+	})
+}
+
+func UserGetImportantItems(c *gin.Context) {
+	var service service.UserGetImportantItems
+	err := c.ShouldBind(&service)
+	if err != nil {
+		logging.Info(err)
+	}
+	token := c.Request.Header.Get("Authorization")
+	resp := service.GetImportantItems(token)
 	c.JSON(200, gin.H{
 		"status": 200,
 		"data":   "ok",
