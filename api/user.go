@@ -54,7 +54,7 @@ func SetUserInfo(c *gin.Context) {
 	c.JSON(200, resp)
 }
 
-// TODO:checkMyDay
+// checkMyDay
 func UserCheckMyDay(c *gin.Context) {
 	var service service.UserCheckMyDayService
 	err := c.ShouldBind(&service)
@@ -64,7 +64,7 @@ func UserCheckMyDay(c *gin.Context) {
 	// get token
 	token := c.Request.Header.Get("Authorization")
 	// get proejct cur token
-	proCurToken := c.PostForm("proCurToken")
+	proCurToken := c.Query("proCurToken")
 	// return response
 	resp := service.UserCheckMyDay(token, proCurToken)
 	c.JSON(200, resp)

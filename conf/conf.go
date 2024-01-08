@@ -19,6 +19,7 @@ func DBInit() {
 	DB = db
 }
 
+// TODO: 数据库连接池？
 func myqlInit(drivername string, args string) *gorm.DB {
 	db, err := gorm.Open(drivername, args)
 	if err != nil {

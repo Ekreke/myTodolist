@@ -42,6 +42,7 @@ func NewRouter() *gin.Engine {
 			authed.GET("user/CheckMyday", api.UserCheckMyDay)
 			// TODO: user get projects
 			// authed.GET("user/GetProjects", api.UserGetProjectsIds)
+			authed.GET("item/getItem", api.GetItem)
 		}
 	}
 

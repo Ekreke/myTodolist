@@ -4,7 +4,9 @@ import (
 	"time"
 
 	"github.com/ekreke/myTodolist/conf"
+	"github.com/ekreke/myTodolist/pkg/e"
 	"github.com/ekreke/myTodolist/pkg/logging"
+	"github.com/ekreke/myTodolist/serializer"
 	"github.com/golang-jwt/jwt/v4"
 )
 
@@ -45,4 +47,37 @@ func ParseUserToken(token string) (*UserClaims, error) {
 		}
 	}
 	return nil, err
+}
+
+func JWT_Validate(code int, username, token string) serializer.Response {
+	if token == "" {
+		code = e.ERROR_AUTH_CHECK_TOKEN_FAIL
+		return serializer.Response{
+			Status: code,
+			Msg:    e.GetMsg(code),
+		}
+	} else {
+		// get claims
+		claims, err := ParseUserToken(token)
+		if err != nil {
+			logging.Info(err)
+			code = e.ERROR_AUTH_TOKEN
+			return serializer.Response{
+				Status: code,
+				Msg:    e.GetMsg(code),
+			}
+		} else if time.Now().Unix() > claims.ExpiresAt {
+			code = e.ERROR_AUTH_CHECK_TOKEN_TIMEOUT
+			return serializer.Response{
+				Status: code,
+				Msg:    e.GetMsg(code),
+			}
+		} else {
+			username = claims.Username
+		}
+	}
+	return serializer.Response{
+		Status: code,
+		Msg:    e.GetMsg(code),
+	}
 }

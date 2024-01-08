@@ -1,6 +1,10 @@
 package model
 
-import "time"
+import (
+	"time"
+
+	"github.com/jinzhu/gorm"
+)
 
 type Item struct {
 	ID            int
@@ -9,4 +13,10 @@ type Item struct {
 	FromProjectID int
 	Deadline      time.Time
 	IsImportant   bool
+}
+
+func GetItemByItemId(db *gorm.DB, id int) Item {
+	var item Item
+	db.Where("id =?", id).Find(item)
+	return item
 }

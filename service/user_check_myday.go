@@ -1,6 +1,7 @@
 package service
 
 import (
+	"strconv"
 	"time"
 
 	"github.com/ekreke/myTodolist/conf"
@@ -58,6 +59,7 @@ func (serivce UserCheckMyDayService) UserCheckMyDay(token, proCurToken string) s
 			Msg:    e.GetMsg(code),
 		}
 	}
+
 	// get the page info
 	page = utils.Decode(proCurToken)
 	logging.Debug(page)
@@ -70,7 +72,7 @@ func (serivce UserCheckMyDayService) UserCheckMyDay(token, proCurToken string) s
 		logging.Info("getuseridbyusername err:", err)
 	}
 
-	// dao get items
+	// dao get itemids
 	// select item_id from my_day where user_id = ? order by id ASC
 	db.Debug().
 		Select("item_id").
@@ -79,8 +81,36 @@ func (serivce UserCheckMyDayService) UserCheckMyDay(token, proCurToken string) s
 		Where("id > ?", page.NextID).
 		Find(&my_days)
 
+	// get item infos
+	var items []model.Item
+	for i := 0; i < len(my_days); i++ {
+		tmp := my_days[i].ItemID
+
+		var item model.Item
+		err := db.Debug().Where("id =?", tmp).First(&item).Error
+		items = append(items, item)
+		if err != nil {
+			logging.Fatal(err)
+			code = e.ERROR_DB
+			return serializer.Response{
+				Status: code,
+				Msg:    e.GetMsg(code),
+			}
+		}
+	}
+	// change page's info
+	//TODO: time expire
+	lastRecord := items[len(items)-1]
+	page.NextID = strconv.Itoa(lastRecord.ID)
+	//FIXME: page size
+	logging.Info(page)
+	proCurToken = utils.Encode(&page)
+	resp := &serializer.My_Days{
+		Items:       items,
+		ProCurToken: proCurToken,
+	}
 	return serializer.Response{
-		Data:   my_days,
+		Data:   resp,
 		Status: code,
 		Msg:    e.GetMsg(code),
 	}
