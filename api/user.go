@@ -1,6 +1,7 @@
 package api
 
 import (
+	"github.com/ekreke/myTodolist/pkg/e"
 	"github.com/ekreke/myTodolist/pkg/logging"
 	"github.com/ekreke/myTodolist/serializer"
 	"github.com/ekreke/myTodolist/service"
@@ -50,7 +51,15 @@ func SetUserInfo(c *gin.Context) {
 	bio := c.PostForm("bio")
 	avatar := c.PostForm("avatar")
 	token := c.Request.Header.Get("Authorization")
-	resp := service.EditUserInfo(password, link, bio, avatar, token)
+	code, username := utils.JWT_Validate(token)
+	resp := serializer.Response{}
+	if code != e.SUCCESS {
+		resp = serializer.Response{
+			Status: code,
+			Msg:    e.GetMsg(code),
+		}
+	}
+	resp = service.EditUserInfo(password, link, bio, avatar, username)
 	c.JSON(200, resp)
 }
 
@@ -65,22 +74,30 @@ func UserCheckMyDay(c *gin.Context) {
 	token := c.Request.Header.Get("Authorization")
 	// get proejct cur token
 	proCurToken := c.Query("proCurToken")
+	code, username := utils.JWT_Validate(token)
+	resp := serializer.Response{}
+	if code != e.SUCCESS {
+		resp = serializer.Response{
+			Status: code,
+			Msg:    e.GetMsg(code),
+		}
+	}
 	// return response
-	resp := service.UserCheckMyDay(token, proCurToken)
+	resp = service.UserCheckMyDay(username, proCurToken)
 	c.JSON(200, resp)
 }
 
 // TODO: getProjects 没有分页
-func UserGetProjects(c *gin.Context) {
-	var service service.UserGetProjects
-	err := c.ShouldBind(&service)
-	if err != nil {
-		logging.Info(err)
-	}
-	token := c.Request.Header.Get("Authorization")
-	resp := service.GetProjectsIds(token)
-	c.JSON(200, resp)
-}
+// func UserGetProjects(c *gin.Context) {
+// 	var service service.UserGetProjects
+// 	err := c.ShouldBind(&service)
+// 	if err != nil {
+// 		logging.Info(err)
+// 	}
+// 	token := c.Request.Header.Get("Authorization")
+// 	resp := service.GetProjectsIds(token)
+// 	c.JSON(200, resp)
+// }
 
 // TODO: setAccountAvatar
 func SetAccountAvatar(c *gin.Context) {
@@ -90,24 +107,24 @@ func SetAccountAvatar(c *gin.Context) {
 	})
 }
 
-func UserGetImportantItems(c *gin.Context) {
-	var service service.UserGetImportantItems
-	err := c.ShouldBind(&service)
-	if err != nil {
-		logging.Info(err)
-	}
-	token := c.Request.Header.Get("Authorization")
-	resp := service.GetImportantItems(token)
-	c.JSON(200, gin.H{
-		"status": 200,
-		"data":   "ok",
-	})
-}
+// func UserGetImportantItems(c *gin.Context) {
+// 	var service service.UserGetImportantItems
+// 	err := c.ShouldBind(&service)
+// 	if err != nil {
+// 		logging.Info(err)
+// 	}
+// 	token := c.Request.Header.Get("Authorization")
+// 	resp := service.GetImportantItems(token)
+// 	c.JSON(200, gin.H{
+// 		"status": 200,
+// 		"data":   "ok",
+// 	})
+// }
 
 func CheckToken(c *gin.Context) {
 	c.JSON(200, serializer.Response{
 		Status: 200,
-		Msg:    "ok",
+		Msg:    "111",
 	})
 }
 
