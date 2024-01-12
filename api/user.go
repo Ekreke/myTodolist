@@ -24,6 +24,7 @@ func UserLogin(c *gin.Context) {
 	}
 	username := c.PostForm("username")
 	password := c.PostForm("password")
+	logging.Info(c)
 	resp := service.Login(username, password)
 	c.JSON(200, resp)
 }
