@@ -1,0 +1,272 @@
+swagger: "2.0"
+info:
+  title: myTodolist api
+  version: 1.0.11
+servers:
+  - url: https://petstore3.swagger.io/api/v3
+tags:
+  - name: user
+    description: Operations about user
+paths:
+  /user/register:
+    post:
+      tags:
+        - user
+      summary: register user
+      description: This can only be done by the logged in user.
+      operationId: createUser
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        default:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /user/login:
+    get:
+      tags:
+        - user
+      summary: Logs user into the system
+      description: ''
+      operationId: loginUser
+      parameters:
+        - name: username
+          in: query
+          description: The user name for login
+          required: false
+          schema:
+            type: string
+        - name: password
+          in: query
+          description: The password for login in clear text
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: successful operation
+          headers:
+            X-Rate-Limit:
+              description: calls per hour allowed by the user
+              schema:
+                type: integer
+                format: int32
+            X-Expires-After:
+              description: date in UTC when token expires
+              schema:
+                type: string
+                format: date-time
+          content:
+            application/xml:
+              schema:
+                type: string
+            application/json:
+              schema:
+                type: string
+        '400':
+          description: Invalid username/password supplied
+  /user/info:
+  /user/setuserinfo:
+  /user/changepwd:
+  /user/privateitem:
+  /user/projectitem:
+  /user/myday:
+  /user/important:
+components:
+  schemas:
+    Collection:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int32  
+        name:
+          type: string
+          maxLength: 10
+        icon:
+          type: integer
+      
+      xml:
+        name: collection
+
+    CollectionItem:
+      type: object  
+      properties:
+        collection_id:
+          type: integer
+        item_id:
+          type: integer
+      
+      xml:
+        name: collection_item
+
+    Item:
+      type: object
+      properties:  
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+          maxLength: 20
+        description:
+          type: string
+          maxLength: 100
+        project_id:
+          type: integer  
+        deadline:
+          type: string
+          format: date-time
+        important:
+          type: boolean
+        done:
+          type: boolean  
+        myDay:
+          type: boolean
+        created_time:
+          type: string
+          format: date-time
+        node:
+          type: boolean
+        checkPoint:
+          type: boolean
+        collection_id:
+          type: integer  
+
+      xml:
+        name: item
+    
+    MyDay:
+      type: object
+      properties:
+        id:
+          type: integer
+        user_id:
+          type: integer
+        item_id:
+          type: integer
+
+      xml: 
+        name: my_day
+
+    Project:
+      type: object
+      properties:
+        id: 
+          type: integer  
+          format: int64
+        name:
+          type: string 
+          maxLength: 20
+        description:
+          type: string  
+          maxLength: 50
+        created_time:
+          type: string
+          format: date-time
+        end_time:
+          type: string  
+          format: date-time
+        password:
+          type: string  
+          maxLength: 15
+        admin_id:
+          type: integer
+
+      xml:
+        name: project
+    
+    ProjectNode:
+      type: object
+      properties:
+        project_id:
+          type: integer
+        item_id:
+          type: integer
+
+      xml:
+        name: project_node
+
+    ProjectUser:
+      type: object
+      properties:
+        project_id:
+          type: integer
+        user_id:
+          type: integer
+
+      xml:
+        name: project_user
+
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        username: 
+          type: string
+          maxLength: 20
+        password:
+          type: string
+          maxLength: 20
+        link:
+          type: string
+          maxLength: 20
+        bio:
+          type: string  
+          maxLength: 100
+        avatar:
+          type: string
+          maxLength: 200
+        created_at:
+          type: string
+          format: date-time
+        updated_at:
+          type: string  
+          format: date-time
+        deleted_at:
+          type: string
+          format: date-time
+        root:
+          type: boolean
+
+      xml:
+        name: user
+  requestBodies:
+    # Pet:
+    #   description: Pet object that needs to be added to the store
+    #   content:
+    #     application/json:
+    #       schema:
+    #         $ref: '#/components/schemas/Pet'
+    #     application/xml:
+    #       schema:
+    #         $ref: '#/components/schemas/Pet'
+    # UserArray:
+    #   description: List of user object
+    #   content:
+    #     application/json:
+    #       schema:
+    #         type: array
+    #         items:
+    #           $ref: '#/components/schemas/User'
+  securitySchemes:
+    # petstore_auth:
+    #   type: oauth2
+    #   flows:
+    #     implicit:
+    #       authorizationUrl: https://petstore3.swagger.io/oauth/authorize
+    #       scopes:
+    #         write:pets: modify pets in your account
+    #         read:pets: read your pets
+    # api_key:
+    #   type: apiKey
+    #   name: api_key
+    #   in: header
