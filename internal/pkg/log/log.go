@@ -1,9 +1,11 @@
 package log
 
 import (
+	"context"
 	"sync"
 	"time"
 
+	"github.com/ekreke/myTodolist/internal/pkg/known"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 )
@@ -159,24 +161,24 @@ func (l *zapLogger) Fatalw(msg string, keysAndValues ...interface{}) {
 }
 
 // TODO: requestID
-// // C 解析传入的 context，尝试提取关注的键值，并添加到 zap.Logger 结构化日志中.
-// func C(ctx context.Context) *zapLogger {
-// 	return std.C(ctx)
-// }
+// 每次一个请求建立都会深度复制(from golbal logger instance)一个zaplogger实例,然后填入requestID
+func C(ctx context.Context) *zapLogger {
+	return std.C(ctx)
+}
 
-// func (l *zapLogger) C(ctx context.Context) *zapLogger {
-// 	lc := l.clone()
+func (l *zapLogger) C(ctx context.Context) *zapLogger {
+	lc := l.clone()
 
-// 	if requestID := ctx.Value(known.XRequestIDKey); requestID != nil {
-// 		lc.z = lc.z.With(zap.Any(known.XRequestIDKey, requestID))
-// 	}
+	if requestID := ctx.Value(known.XRequestIDKey); requestID != nil {
+		lc.z = lc.z.With(zap.Any(known.XRequestIDKey, requestID))
+	}
 
-// 	if userID := ctx.Value(known.XUsernameKey); userID != nil {
-// 		lc.z = lc.z.With(zap.Any(known.XUsernameKey, userID))
-// 	}
+	if userID := ctx.Value(known.XUsernameKey); userID != nil {
+		lc.z = lc.z.With(zap.Any(known.XUsernameKey, userID))
+	}
 
-// 	return lc
-// }
+	return lc
+}
 
 // clone 深度拷贝 zapLogger.
 func (l *zapLogger) clone() *zapLogger {

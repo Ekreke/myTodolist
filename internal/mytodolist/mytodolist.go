@@ -4,6 +4,8 @@ import (
 	"fmt"
 
 	"github.com/ekreke/myTodolist/internal/pkg/log"
+	mw "github.com/ekreke/myTodolist/internal/pkg/middleware"
+	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -54,7 +56,9 @@ func NewMyTodolistCommand() *cobra.Command {
 }
 
 func run() error {
-	fmt.Println("application running!")
+	g := gin.New()
+	mws := []gin.HandlerFunc{gin.Recovery(), mw.NoCache, mw.Cors, mw.Secure, mw.RequestID()}
+	g.Use(mws...)
 	// settings, _ := json.Marshal(viper.AllSettings())
 	// log.Infow("settings", "settings", string(settings))
 	log.Infow(viper.GetString("db.username"))
