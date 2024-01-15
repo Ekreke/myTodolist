@@ -1,1 +1,11 @@
 2024-01-15 14:47:53.941	info	mytodolist/mytodolist.go:64	root
+2024-01-15 18:19:54.133	info	mytodolist/mytodolist.go:63	root
+2024-01-15 18:20:30.752	info	mytodolist/mytodolist.go:62	root
+2024-01-15 18:21:39.177	info	mytodolist/mytodolist.go:62	root
+2024-01-15 18:22:41.079	info	mytodolist/mytodolist.go:62	root
+2024-01-15 18:23:30.195	info	mytodolist/mytodolist.go:64	healthz	{"statusError": "json: unsupported type: gin.HandlerFunc"}
+2024-01-15 18:26:14.231	info	mytodolist/mytodolist.go:63	root
+2024-01-15 18:26:20.490	info	mytodolist/mytodolist.go:65	Healthz function called	{"X-Request-ID": "a367cc24-13cc-4bcd-8a7a-f9fc205a0f71"}
+2024-01-15 18:26:30.411	info	mytodolist/mytodolist.go:65	Healthz function called	{"X-Request-ID": "e5e21aeb-d424-4fb3-b9c8-2d87718cdd05"}
+2024-01-15 18:26:36.518	info	mytodolist/mytodolist.go:65	Healthz function called	{"X-Request-ID": "5f1a9c6d-9b06-4ec8-98b3-a7b0cdb4ebda"}
+2024-01-15 18:26:41.620	info	mytodolist/mytodolist.go:65	Healthz function called	{"X-Request-ID": "afe5555d-49a8-4b6d-a6b4-cf1be8934fb2"}

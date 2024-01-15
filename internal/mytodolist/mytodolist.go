@@ -2,6 +2,7 @@ package mytodolist
 
 import (
 	"fmt"
+	"net/http"
 
 	"github.com/ekreke/myTodolist/internal/pkg/log"
 	mw "github.com/ekreke/myTodolist/internal/pkg/middleware"
@@ -59,9 +60,13 @@ func run() error {
 	g := gin.New()
 	mws := []gin.HandlerFunc{gin.Recovery(), mw.NoCache, mw.Cors, mw.Secure, mw.RequestID()}
 	g.Use(mws...)
-	// settings, _ := json.Marshal(viper.AllSettings())
-	// log.Infow("settings", "settings", string(settings))
 	log.Infow(viper.GetString("db.username"))
-	// 打印 db -> username 配置项的值
+	g.GET("/healthz", func(c *gin.Context) {
+		log.C(c).Infow("Healthz function called")
+		c.JSON(http.StatusOK, gin.H{"status": "ok"})
+	})
+	g.Run(":3000")
+	// httpsrv := &http.Server{Addr: ":3000", Handler: g}
+	// httpsrv.ListenAndServe()
 	return nil
 }
