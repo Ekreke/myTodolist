@@ -3,7 +3,7 @@ package main
 import (
 	"os"
 
-	mytodolist "github.com/ekreke/myTodolist/internal"
+	"github.com/ekreke/myTodolist/internal/mytodolist"
 )
 
 func main() {
