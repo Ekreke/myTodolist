@@ -1,9 +1,9 @@
 package mytodolist
 
 import (
-	"encoding/json"
 	"fmt"
 
+	"github.com/ekreke/myTodolist/internal/pkg/log"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -23,6 +23,7 @@ func NewMyTodolistCommand() *cobra.Command {
 		SilenceUsage: true,
 
 		RunE: func(cmd *cobra.Command, args []string) error {
+			log.Init(logOptions())
 			return run()
 		},
 		// 这里设置命令运行时，不需要指定命令行参数
@@ -54,9 +55,9 @@ func NewMyTodolistCommand() *cobra.Command {
 
 func run() error {
 	fmt.Println("application running!")
-	settings, _ := json.Marshal(viper.AllSettings())
-	fmt.Println(string(settings))
+	// settings, _ := json.Marshal(viper.AllSettings())
+	// log.Infow("settings", "settings", string(settings))
+	log.Infow(viper.GetString("db.username"))
 	// 打印 db -> username 配置项的值
-	fmt.Println(viper.GetString("db.username"))
 	return nil
 }
