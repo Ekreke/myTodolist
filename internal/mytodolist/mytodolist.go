@@ -60,9 +60,9 @@ func run() error {
 	g.Use(mws...)
 	log.Infow(viper.GetString("db.username"))
 	g.GET("/healthz", func(c *gin.Context) {
-		s := lazy()
+		// s := lazy()
 		log.C(c).Infow("Healthz function called")
-		c.JSON(http.StatusOK, gin.H{"status": s})
+		c.JSON(http.StatusOK, gin.H{"status": "ok"})
 	})
 
 	httpsrv := startInsecureServer(g)
@@ -98,6 +98,7 @@ func startInsecureServer(g *gin.Engine) *http.Server {
 
 // TODO:startSecureServer
 
+// test graceful stop
 func lazy() string {
 	time.Sleep(10 * time.Second)
 	return "lazy"

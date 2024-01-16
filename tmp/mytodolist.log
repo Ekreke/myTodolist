@@ -1,14 +1,7 @@
-2024-01-16 15:14:49.416	info	mytodolist/mytodolist.go:73	Shutting down server...
-2024-01-16 15:14:49.418	info	mytodolist/mytodolist.go:81	Server exiting
-2024-01-16 15:14:55.624	info	mytodolist/mytodolist.go:61	root
-2024-01-16 15:14:55.645	info	mytodolist/mytodolist.go:90	start to listening the incoming requests on http address	{"addr": ""}
-2024-01-16 15:15:01.012	info	mytodolist/mytodolist.go:65	Healthz function called	{"X-Request-ID": "e34b0f52-b6c4-49e3-8990-7f9309f0559f"}
-2024-01-16 15:15:04.359	info	mytodolist/mytodolist.go:65	Healthz function called	{"X-Request-ID": "b98a32cb-7f0a-4a3e-ac81-2385e4e13a7d"}
-2024-01-16 15:15:05.147	info	mytodolist/mytodolist.go:65	Healthz function called	{"X-Request-ID": "3a4bc411-7e73-4c09-95f7-a7f2624ad5ef"}
-2024-01-16 15:16:07.986	info	mytodolist/mytodolist.go:73	Shutting down server...
-2024-01-16 15:16:07.986	info	mytodolist/mytodolist.go:81	Server exiting
-2024-01-16 15:16:12.030	info	mytodolist/mytodolist.go:61	root
-2024-01-16 15:16:12.053	info	mytodolist/mytodolist.go:90	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-16 15:16:25.239	info	mytodolist/mytodolist.go:73	Shutting down server...
-2024-01-16 15:16:30.799	info	mytodolist/mytodolist.go:64	Healthz function called	{"X-Request-ID": "a807cc6f-6247-4459-bacf-f0056315ae4a"}
-2024-01-16 15:16:31.290	info	mytodolist/mytodolist.go:81	Server exiting
+2024-01-16 15:22:57.847	info	mytodolist/mytodolist.go:61	root
+2024-01-16 15:22:57.869	info	mytodolist/mytodolist.go:90	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-16 15:23:02.264	info	mytodolist/mytodolist.go:64	Healthz function called	{"X-Request-ID": "a533a28b-4054-4291-b70f-13e9e07fabeb"}
+2024-01-16 15:23:03.900	info	mytodolist/mytodolist.go:64	Healthz function called	{"X-Request-ID": "417f1027-cee4-4b78-b765-24c007a55e2f"}
+2024-01-16 15:23:05.159	info	mytodolist/mytodolist.go:64	Healthz function called	{"X-Request-ID": "5f5734b3-fde6-4031-b341-c8e1ece713b8"}
+2024-01-16 15:25:58.867	info	mytodolist/mytodolist.go:73	Shutting down server...
+2024-01-16 15:25:58.868	info	mytodolist/mytodolist.go:81	Server exiting
