@@ -1,8 +1,14 @@
 package mytodolist
 
 import (
+	"context"
+	"errors"
 	"fmt"
 	"net/http"
+	"os"
+	"os/signal"
+	"syscall"
+	"time"
 
 	"github.com/ekreke/myTodolist/internal/pkg/log"
 	mw "github.com/ekreke/myTodolist/internal/pkg/middleware"
@@ -16,12 +22,9 @@ var cfgFile string
 // newmytodolist 创建一个 *cobra.Command 对象之后 ， 可以使用Command对象的execute方法来启动一个应用程序
 func NewMyTodolistCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		// 指定命令的名字，该名字会出现在帮助信息中
-		Use: "mytodolist",
-		// 指定命令的简短描述信息，该描述信息会出现在帮助信息中
+		Use:   "mytodolist",
 		Short: "mytodolist is a todo list application",
-		// 指令的详细描述
-		Long: "mytodolist is a todo list application , used to create a todolist server",
+		Long:  "mytodolist is a todo list application , used to create a todolist server",
 
 		SilenceUsage: true,
 
@@ -42,17 +45,12 @@ func NewMyTodolistCommand() *cobra.Command {
 	}
 	// 以下设置，使得 initConfig 函数在每个命令运行时都会被调用以读取配置
 	cobra.OnInitialize(initConfig)
-
-	// 在这里您将定义标志和配置设置。
-
 	// Cobra 支持持久性标志(PersistentFlag)，该标志可用于它所分配的命令以及该命令下的每个子命令
 	cmd.PersistentFlags().StringVarP(&cfgFile, "config", "c", "", "The path to the mytodolist configuration file. Empty string for no configuration file.")
-
 	// Cobra 也支持本地标志，本地标志只能在其所绑定的命令上使用
 	cmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 	// 添加 --version 标志
 	// verflag.AddFlags(cmd.PersistentFlags())
-
 	return cmd
 }
 
@@ -62,11 +60,45 @@ func run() error {
 	g.Use(mws...)
 	log.Infow(viper.GetString("db.username"))
 	g.GET("/healthz", func(c *gin.Context) {
+		s := lazy()
 		log.C(c).Infow("Healthz function called")
-		c.JSON(http.StatusOK, gin.H{"status": "ok"})
+		c.JSON(http.StatusOK, gin.H{"status": s})
 	})
-	g.Run(":3000")
-	// httpsrv := &http.Server{Addr: ":3000", Handler: g}
-	// httpsrv.ListenAndServe()
+
+	httpsrv := startInsecureServer(g)
+
+	quit := make(chan os.Signal, 1)
+	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
+	<-quit
+	log.Infow("Shutting down server...")
+
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+	if err := httpsrv.Shutdown(ctx); err != nil {
+		log.Errorw("Insecure Server forced to shutdown", "err", err)
+		return err
+	}
+	log.Infow("Server exiting")
 	return nil
+}
+
+// 创建并运行http服务器
+func startInsecureServer(g *gin.Engine) *http.Server {
+	// 创建 HTTP Server 实例
+	httpsrv := &http.Server{Addr: viper.GetString("addr"), Handler: g}
+	// 运行HTTP服务器。 在goroutine中启动服务器，它不会阻止下面的正常关闭处理流程
+	log.Infow("start to listening the incoming requests on http address", "addr", viper.GetString("addr"))
+	go func() {
+		if err := httpsrv.ListenAndServe(); err != nil && !errors.Is(err, http.ErrServerClosed) {
+			log.Fatalw(err.Error())
+		}
+	}()
+	return httpsrv
+}
+
+// TODO:startSecureServer
+
+func lazy() string {
+	time.Sleep(10 * time.Second)
+	return "lazy"
 }
