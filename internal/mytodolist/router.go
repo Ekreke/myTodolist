@@ -8,6 +8,7 @@ import (
 
 func installRouters(g *gin.Engine) {
 	g.NoRoute(func(c *gin.Context) {
+		//
 		core.WriteResponse(c, errno.ErrPageNotFound, nil)
 	})
 
