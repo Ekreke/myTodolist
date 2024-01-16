@@ -1,7 +1,14 @@
-2024-01-16 15:22:57.847	info	mytodolist/mytodolist.go:61	root
-2024-01-16 15:22:57.869	info	mytodolist/mytodolist.go:90	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-16 15:23:02.264	info	mytodolist/mytodolist.go:64	Healthz function called	{"X-Request-ID": "a533a28b-4054-4291-b70f-13e9e07fabeb"}
-2024-01-16 15:23:03.900	info	mytodolist/mytodolist.go:64	Healthz function called	{"X-Request-ID": "417f1027-cee4-4b78-b765-24c007a55e2f"}
-2024-01-16 15:23:05.159	info	mytodolist/mytodolist.go:64	Healthz function called	{"X-Request-ID": "5f5734b3-fde6-4031-b341-c8e1ece713b8"}
-2024-01-16 15:25:58.867	info	mytodolist/mytodolist.go:73	Shutting down server...
-2024-01-16 15:25:58.868	info	mytodolist/mytodolist.go:81	Server exiting
+2024-01-17 00:52:15.705	info	mytodolist/mytodolist.go:37	login	{"name": "ekreke", "password": "10000"}
+2024-01-17 01:19:11.010	info	mytodolist/mytodolist.go:95	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 01:19:22.803	info	user/login.go:12	Login function called	{"X-Request-ID": "87afe71b-034b-4877-bd63-7c1a0d722f64"}
+2024-01-17 01:27:20.951	info	mytodolist/mytodolist.go:78	Shutting down server...
+2024-01-17 01:27:20.951	info	mytodolist/mytodolist.go:86	Server exiting
+2024-01-17 01:27:27.104	info	mytodolist/mytodolist.go:95	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 01:27:31.242	info	user/login.go:12	Login function called	{"X-Request-ID": "6283bf21-426b-4b8b-af87-185c3cf2408c"}
+2024-01-17 01:34:27.999	info	mytodolist/mytodolist.go:78	Shutting down server...
+2024-01-17 01:34:27.999	info	mytodolist/mytodolist.go:86	Server exiting
+2024-01-17 01:34:34.127	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 01:34:39.218	info	user/login.go:12	Login function called	{"X-Request-ID": "4b9423d3-de8d-4cbe-aec5-e42c8bed1df8"}
+2024-01-17 01:34:49.028	info	user/login.go:12	Login function called	{"X-Request-ID": "209f8f23-71dd-4dc2-9656-01569a0abd83"}
+2024-01-17 01:35:07.477	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-17 01:35:07.477	info	mytodolist/mytodolist.go:91	Server exiting

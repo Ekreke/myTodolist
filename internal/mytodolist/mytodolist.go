@@ -10,8 +10,10 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/ekreke/myTodolist/internal/pkg/known"
 	"github.com/ekreke/myTodolist/internal/pkg/log"
 	mw "github.com/ekreke/myTodolist/internal/pkg/middleware"
+	"github.com/ekreke/myTodolist/pkg/token"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -22,12 +24,10 @@ var cfgFile string
 // newmytodolist 创建一个 *cobra.Command 对象之后 ， 可以使用Command对象的execute方法来启动一个应用程序
 func NewMyTodolistCommand() *cobra.Command {
 	cmd := &cobra.Command{
-		Use:   "mytodolist",
-		Short: "mytodolist is a todo list application",
-		Long:  "mytodolist is a todo list application , used to create a todolist server",
-
+		Use:          "mytodolist",
+		Short:        "mytodolist is a todo list application",
+		Long:         "mytodolist is a todo list application , used to create a todolist server",
 		SilenceUsage: true,
-
 		RunE: func(cmd *cobra.Command, args []string) error {
 			log.Init(logOptions())
 			return run()
@@ -54,24 +54,34 @@ func NewMyTodolistCommand() *cobra.Command {
 	return cmd
 }
 
+// run函数是实际的业务代码的入口函数
 func run() error {
+
+	if err := initStore(); err != nil {
+		return err
+	}
+
+	// read jwt secret from config to signed token && parase
+	token.Init(viper.GetString("jwt-sercret"), known.XUsernameKey)
+	// set gin mode
+	gin.SetMode(viper.GetString("runmode"))
+	// create gin engine
 	g := gin.New()
+	// use gin.recovery / no cache / cors / secure / requestID middleware
 	mws := []gin.HandlerFunc{gin.Recovery(), mw.NoCache, mw.Cors, mw.Secure, mw.RequestID()}
 	g.Use(mws...)
-	log.Infow(viper.GetString("db.username"))
-	g.GET("/healthz", func(c *gin.Context) {
-		// s := lazy()
-		log.C(c).Infow("Healthz function called")
-		c.JSON(http.StatusOK, gin.H{"status": "ok"})
-	})
-
+	// install router
+	if err := installRouters(g); err != nil {
+		return err
+	}
+	// start a insecure server
 	httpsrv := startInsecureServer(g)
-
+	//  graceful quit
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
 	log.Infow("Shutting down server...")
-
+	// wait for the server handle remaining svc
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	if err := httpsrv.Shutdown(ctx); err != nil {
@@ -98,7 +108,7 @@ func startInsecureServer(g *gin.Engine) *http.Server {
 
 // TODO:startSecureServer
 
-// test graceful stop
+// test graceful quit
 func lazy() string {
 	time.Sleep(10 * time.Second)
 	return "lazy"
