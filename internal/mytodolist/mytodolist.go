@@ -60,7 +60,6 @@ func run() error {
 	if err := initStore(); err != nil {
 		return err
 	}
-
 	// read jwt secret from config to signed token && parase
 	token.Init(viper.GetString("jwt-sercret"), known.XUsernameKey)
 	// set gin mode
@@ -107,7 +106,6 @@ func startInsecureServer(g *gin.Engine) *http.Server {
 }
 
 // TODO:startSecureServer
-
 // test graceful quit
 func lazy() string {
 	time.Sleep(10 * time.Second)

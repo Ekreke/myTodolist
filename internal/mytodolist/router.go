@@ -16,7 +16,12 @@ func installRouters(g *gin.Engine) error {
 	// 注册 pprof 路由
 	pprof.Register(g)
 	uc := user.New(store.S)
-	g.POST("/login", uc.Login)
-	g.POST("/register", uc.Register)
+	ug := g.Group("/user")
+	{
+		g.POST("/login", uc.Login)
+		g.POST("/register", uc.Register)
+		g.GET("/info", uc.Info)
+	}
+
 	return nil
 }

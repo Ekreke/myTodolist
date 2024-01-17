@@ -17,7 +17,13 @@ func (b *userBiz) Register(ctx context.Context, r *v1.RegisterRequest) (*v1.Regi
 		CreatedAt: time.Now(),
 		DeletedAt: time.Now().AddDate(1, 0, 0),
 	}
-	err := b.ds.Users().Create(ctx, u)
+	_, err := b.ds.Users().Get(ctx, r.Username)
+	if err == nil {
+		return nil, errno.ErrUserAlreadyExist
+
+	}
+
+	err = b.ds.Users().Create(ctx, u)
 	if err != nil {
 		return nil, errno.ErrUserCreateFailed
 	}
