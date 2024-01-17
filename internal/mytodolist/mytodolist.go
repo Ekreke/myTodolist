@@ -73,6 +73,7 @@ func run() error {
 	if err := installRouters(g); err != nil {
 		return err
 	}
+	g.GET("/test2", mw.Authn())
 	// start a insecure server
 	httpsrv := startInsecureServer(g)
 	//  graceful quit

@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/ekreke/myTodolist/internal/pkg/errno"
+	"github.com/ekreke/myTodolist/internal/pkg/log"
 	"github.com/ekreke/myTodolist/internal/pkg/model"
 	v1 "github.com/ekreke/myTodolist/pkg/api/mytodolist"
 )
@@ -17,7 +18,12 @@ func (b *userBiz) Register(ctx context.Context, r *v1.RegisterRequest) (*v1.Regi
 		CreatedAt: time.Now(),
 		DeletedAt: time.Now().AddDate(1, 0, 0),
 	}
-	_, err := b.ds.Users().Get(ctx, r.Username)
+	// FIXME: user exit
+	bu, err := b.ds.Users().Get(ctx, r.Username)
+	log.C(ctx).Debugw("bu.name : ", bu.Username, "username:", r.Username)
+	if bu.Username == r.Username {
+		return nil, errno.ErrUserAlreadyExist
+	}
 	if err == nil {
 		return nil, errno.ErrUserAlreadyExist
 

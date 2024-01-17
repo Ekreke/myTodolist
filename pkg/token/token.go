@@ -16,6 +16,8 @@ type Config struct {
 	identityKey string
 }
 
+var K = config.key
+
 var ErrMissingHeader = errors.New("the length of the `Authorization` header is zero")
 
 var (
@@ -43,7 +45,6 @@ func Parse(tokenString string, key string) (string, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, jwt.ErrSignatureInvalid
 		}
-
 		return []byte(key), nil
 	})
 	// 解析失败
@@ -61,15 +62,9 @@ func Parse(tokenString string, key string) (string, error) {
 // ParseRequest 从请求头中获取令牌，并将其传递给 Parse 函数以解析令牌.
 func ParseRequest(c *gin.Context) (string, error) {
 	header := c.Request.Header.Get("Authorization")
-
-	if len(header) == 0 {
-		return "", ErrMissingHeader
-	}
-
 	var t string
 	// 从请求头中取出 token
 	fmt.Sscanf(header, "Bearer %s", &t)
-
 	return Parse(t, config.key)
 }
 

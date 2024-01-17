@@ -1,0 +1,17 @@
+2024-01-17 16:35:30.813	debug	middleware/authn.go:15	token	{"tk": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3MzMwODcsImlhdCI6MTcwNTQ3Mzg4NywibmJmIjoxNzA1NDczODg3fQ.gZA8i-CTs64_BX2JyU8xf8_bz4sVkcD1Ip4vxcfKX0s"}
+2024-01-17 16:43:53.892	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-17 16:43:53.895	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-17 16:44:00.297	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 16:44:03.279	debug	middleware/authn.go:22	token	{"tk": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3MzMwODcsImlhdCI6MTcwNTQ3Mzg4NywibmJmIjoxNzA1NDczODg3fQ.gZA8i-CTs64_BX2JyU8xf8_bz4sVkcD1Ip4vxcfKX0s"}
+2024-01-17 16:44:04.144	debug	middleware/authn.go:22	token	{"tk": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3MzMwODcsImlhdCI6MTcwNTQ3Mzg4NywibmJmIjoxNzA1NDczODg3fQ.gZA8i-CTs64_BX2JyU8xf8_bz4sVkcD1Ip4vxcfKX0s"}
+2024-01-17 16:44:04.973	debug	middleware/authn.go:22	token	{"tk": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3MzMwODcsImlhdCI6MTcwNTQ3Mzg4NywibmJmIjoxNzA1NDczODg3fQ.gZA8i-CTs64_BX2JyU8xf8_bz4sVkcD1Ip4vxcfKX0s"}
+2024-01-17 16:44:05.619	debug	middleware/authn.go:22	token	{"tk": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3MzMwODcsImlhdCI6MTcwNTQ3Mzg4NywibmJmIjoxNzA1NDczODg3fQ.gZA8i-CTs64_BX2JyU8xf8_bz4sVkcD1Ip4vxcfKX0s"}
+2024-01-17 16:44:47.620	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-17 16:44:47.628	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-17 16:44:58.222	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 16:44:59.783	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3MzMwODcsImlhdCI6MTcwNTQ3Mzg4NywibmJmIjoxNzA1NDczODg3fQ.gZA8i-CTs64_BX2JyU8xf8_bz4sVkcD1Ip4vxcfKX0s"}
+2024-01-17 16:45:15.487	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-17 16:45:15.489	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-17 16:45:22.264	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 16:45:25.647	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3MzMwODcsImlhdCI6MTcwNTQ3Mzg4NywibmJmIjoxNzA1NDczODg3fQ.gZA8i-CTs64_BX2JyU8xf8_bz4sVkcD1Ip4vxcfKX0s"}
+2024-01-17 16:45:25.647	debug	middleware/authn.go:29	username	{"username": "laika"}
