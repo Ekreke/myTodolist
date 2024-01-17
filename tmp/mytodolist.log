@@ -3,3 +3,7 @@
 2024-01-17 17:23:59.926	info	user/info.go:10	Info function called	{"X-Request-ID": "014366a5-fd9a-4ac8-9fed-8b45008175d9", "X-Username": "laika"}
 2024-01-17 17:26:02.591	info	mytodolist/mytodolist.go:83	Shutting down server...
 2024-01-17 17:26:02.592	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-17 17:26:10.392	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 17:26:13.732	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3NDA4NDUsImlhdCI6MTcwNTQ4MTY0NSwibmJmIjoxNzA1NDgxNjQ1fQ.C_2zhoE6cKne8a1AtrM1wkxL1q14DFW724r-aq3KCFg"}
+2024-01-17 17:26:13.732	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-17 17:26:13.732	info	user/info.go:10	Info function called	{"X-Request-ID": "49d3410b-f911-407e-81b0-397ff8f9933f", "X-Username": "laika"}
