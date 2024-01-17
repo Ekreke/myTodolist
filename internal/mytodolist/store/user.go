@@ -4,6 +4,7 @@ import (
 	"context"
 
 	"github.com/ekreke/myTodolist/internal/pkg/model"
+	v1 "github.com/ekreke/myTodolist/pkg/api/mytodolist"
 	"gorm.io/gorm"
 )
 
@@ -11,6 +12,7 @@ import (
 type UserStore interface {
 	Create(ctx context.Context, user *model.Users) error
 	Get(ctx context.Context, username string) (*model.Users, error)
+	GetInfo(username string) (*v1.InfoResponse, error)
 }
 
 // UserStore 接口的实现.
@@ -37,4 +39,20 @@ func (u *users) Get(ctx context.Context, username string) (*model.Users, error) 
 		return nil, err
 	}
 	return &user, nil
+}
+
+func (u *users) GetInfo(username string) (*v1.InfoResponse, error) {
+	var user model.Users
+	if err := u.db.Where("username = ?", username).First(&user).Error; err != nil {
+		return nil, err
+	}
+	resp := &v1.InfoResponse{
+		Username:   user.Username,
+		Bio:        user.Bio,
+		Link:       user.Link,
+		Avatar:     user.Avatar,
+		Root:       int(user.Root),
+		Created_At: user.CreatedAt,
+	}
+	return resp, nil
 }

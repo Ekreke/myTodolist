@@ -1,11 +1,17 @@
 package v1
 
+import "time"
+
 type LoginRequest struct {
 	Username string `json:"username" form:"username" valid:"alphanum,required,stringlength(1|255)"`
 	Password string `json:"password" form:"password" valid:"required,stringlength(6|18)"`
 }
 
 type LoginResponse struct {
+	Token string `json:"token"`
+}
+
+type InfoRequest struct {
 	Token string `json:"token"`
 }
 
@@ -18,4 +24,13 @@ type RegisterRequest struct {
 
 type RegisterResponse struct {
 	Msg string `json:"msg"`
+}
+
+type InfoResponse struct {
+	Username   string    `json:"username"`
+	Bio        string    `json:"bio"`
+	Link       string    `json:"link"`
+	Avatar     string    `json:"avatar"`
+	Root       int       `json:"root"`
+	Created_At time.Time `json:"created_at"`
 }

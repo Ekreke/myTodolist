@@ -10,6 +10,7 @@ import (
 type UserBiz interface {
 	Login(ctx context.Context, r *v1.LoginRequest) (*v1.LoginResponse, error)
 	Register(ctx context.Context, r *v1.RegisterRequest) (*v1.RegisterResponse, error)
+	Info(ctx context.Context, username string) (*v1.InfoResponse, error)
 	// Get(ctx context.Context, username string, r *v1.GetRequest) (*v1.GetResponse, error)
 	// Delete(ctx context.Context, username string, r *v1.DeleteRequest) (*v1.DeleteResponse, error)
 	// Update(ctx context.Context, username string, r *v1.UpdateRequest) (*v1.UpdateResponse, error)
