@@ -9,4 +9,6 @@ var (
 
 	// ErrPasswordIncorrect 表示密码不正确.
 	ErrPasswordIncorrect = &Errno{HTTP: 401, Code: "InvalidParameter.PasswordIncorrect", Message: "Password was incorrect."}
+
+	ErrUserCreateFailed = &Errno{HTTP: 500, Code: "InternalError.UserCreateFailed", Message: "User create failed."}
 )

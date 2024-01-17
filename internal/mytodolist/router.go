@@ -17,5 +17,6 @@ func installRouters(g *gin.Engine) error {
 	pprof.Register(g)
 	uc := user.New(store.S)
 	g.POST("/login", uc.Login)
+	g.POST("/register", uc.Register)
 	return nil
 }

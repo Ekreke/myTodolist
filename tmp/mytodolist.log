@@ -1,14 +1,4 @@
-2024-01-17 00:52:15.705	info	mytodolist/mytodolist.go:37	login	{"name": "ekreke", "password": "10000"}
-2024-01-17 01:19:11.010	info	mytodolist/mytodolist.go:95	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-17 01:19:22.803	info	user/login.go:12	Login function called	{"X-Request-ID": "87afe71b-034b-4877-bd63-7c1a0d722f64"}
-2024-01-17 01:27:20.951	info	mytodolist/mytodolist.go:78	Shutting down server...
-2024-01-17 01:27:20.951	info	mytodolist/mytodolist.go:86	Server exiting
-2024-01-17 01:27:27.104	info	mytodolist/mytodolist.go:95	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-17 01:27:31.242	info	user/login.go:12	Login function called	{"X-Request-ID": "6283bf21-426b-4b8b-af87-185c3cf2408c"}
-2024-01-17 01:34:27.999	info	mytodolist/mytodolist.go:78	Shutting down server...
-2024-01-17 01:34:27.999	info	mytodolist/mytodolist.go:86	Server exiting
-2024-01-17 01:34:34.127	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-17 01:34:39.218	info	user/login.go:12	Login function called	{"X-Request-ID": "4b9423d3-de8d-4cbe-aec5-e42c8bed1df8"}
-2024-01-17 01:34:49.028	info	user/login.go:12	Login function called	{"X-Request-ID": "209f8f23-71dd-4dc2-9656-01569a0abd83"}
-2024-01-17 01:35:07.477	info	mytodolist/mytodolist.go:83	Shutting down server...
-2024-01-17 01:35:07.477	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-17 11:38:11.410	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-17 11:38:39.604	info	user/register.go:11	Register function called	{"X-Request-ID": "e36fd363-81fa-49ad-8645-e7cc62e1cfcc"}
+2024-01-17 11:47:23.035	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-17 11:47:23.036	info	mytodolist/mytodolist.go:91	Server exiting

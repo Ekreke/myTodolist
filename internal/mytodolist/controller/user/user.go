@@ -15,7 +15,3 @@ type UserController struct {
 func New(ds store.Istore) *UserController {
 	return &UserController{b: biz.NewBiz(ds)}
 }
-
-func Helloworld() {
-
-}
