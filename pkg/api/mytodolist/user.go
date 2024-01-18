@@ -1,6 +1,10 @@
 package mytodolist
 
-import "time"
+import (
+	"time"
+)
+
+var pagination string
 
 type LoginRequest struct {
 	Username string `json:"username" form:"username" valid:"alphanum,required,stringlength(1|255)"`
@@ -44,4 +48,23 @@ type UpdateInfoRequest struct {
 
 type UpdateInfoResponse struct {
 	Msg string `json:"msg"`
+}
+
+type ImportantRequest struct {
+	Pagination string `form:"pagination"`
+}
+
+type ImportantResponse struct {
+	ImportantItems []ItemInfo `json:"items"`
+	CursorToken    string     `json:"cursor_token"`
+}
+
+type ItemInfo struct {
+	ID          int64     `json:"id" gorm:"id"`
+	ItemName    string    `json:"item_name" gorm:"item_name"`
+	Description string    `json:"description" gorm:"description"`
+	ProjectId   int64     `json:"project_id" gorm:"project_id"`
+	Deadline    time.Time `json:"deadline" gorm:"deadline"`
+	Done        int8      `json:"done" gorm:"done"`
+	CreatedTime time.Time `json:"created_time" gorm:"created_time"`
 }

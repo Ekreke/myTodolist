@@ -3,8 +3,10 @@ package store
 import (
 	"context"
 
+	"github.com/ekreke/myTodolist/internal/pkg/log"
 	"github.com/ekreke/myTodolist/internal/pkg/model"
 	v1 "github.com/ekreke/myTodolist/pkg/api/mytodolist"
+	"github.com/ekreke/myTodolist/pkg/token"
 	"gorm.io/gorm"
 )
 
@@ -15,6 +17,7 @@ type UserStore interface {
 	GetInfo(username string) (*v1.InfoResponse, error)
 	CheckUserIfExist(username string) (bool, error)
 	UpdateInfo(req *v1.UpdateInfoRequest, username string) error
+	GetImportantItems(next_id int, page_size int, username string) ([]v1.ItemInfo, token.Page, error)
 }
 
 // UserStore 接口的实现.
@@ -88,5 +91,56 @@ func (u *users) UpdateInfo(req *v1.UpdateInfoRequest, username string) error {
 		user.Link = req.Link
 	}
 	return u.db.Save(&user).Error
+}
+
+func (u *users) GetImportantItems(next_id int, page_size int, username string) ([]v1.ItemInfo, token.Page, error) {
+	// 根据 username 查询所有的item id
+	tmpu := &model.Users{}
+	// select id from users where username = ?
+	err := u.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
+	if err != nil {
+		log.Infow("根据 username 查询所有的item id err :", err)
+	}
+	users_items := &[]model.ItemsUsers{}
+	// FIXME: pagesize
+	err = u.db.Debug().Select("item_id").Where("user_id = ? and item_id > ?", tmpu.ID, next_id).Limit(page_size).Find(&users_items).Error
+	if err != nil {
+		return nil, token.Page{}, err
+	}
+	// 获取 全部的id
+	var ids []int
+	for _, v := range *users_items {
+		ids = append(ids, int(v.ItemId))
+	}
+
+	var items []model.Items
+	// 根据item id 查询所有的item
+	err = u.db.Debug().Where("id in ?", ids).Find(&items).Order("created_time ASC").Error
+	if err != nil {
+		return nil, token.Page{}, err
+	}
+	lsItemId := items[len(items)-1].ID
+
+	// 更新page
+	page := token.Page{
+		NextID:   int(lsItemId),
+		PageSize: int64(page_size),
+	}
+	// 返回数据(page / info / error)
+	var resp []v1.ItemInfo
+	for _, v := range items {
+		i := &v1.ItemInfo{
+			ID:          v.ID,
+			ItemName:    v.ItemName,
+			Description: v.Description,
+			ProjectId:   v.ProjectId,
+			Deadline:    v.Deadline,
+			Done:        v.Done,
+			CreatedTime: v.CreatedTime,
+		}
+		resp = append(resp, *i)
+
+	}
+	return resp, page, nil
 
 }

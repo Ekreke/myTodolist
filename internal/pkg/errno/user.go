@@ -12,5 +12,6 @@ var (
 
 	ErrUserCreateFailed = &Errno{HTTP: 500, Code: "InternalError.UserCreateFailed", Message: "User create failed."}
 
-	ErrUserUpdateFailed = &Errno{HTTP: 500, Code: "InternalError.UserUpdateFailed", Message: "User update failed."}
+	ErrUserUpdateFailed        = &Errno{HTTP: 500, Code: "InternalError.UserUpdateFailed", Message: "User update failed."}
+	ErrLoadImportantItemFailed = &Errno{HTTP: 500, Code: "InternalError.LoadImportantItemFailed", Message: "Load important item failed."}
 )

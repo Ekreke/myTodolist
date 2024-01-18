@@ -23,5 +23,4 @@ func (ctrl *UserController) UpdateInfo(ctx *gin.Context) {
 	}
 	core.WriteResponse(ctx, err, resp)
 	ctx.Redirect(302, "/user/login")
-
 }

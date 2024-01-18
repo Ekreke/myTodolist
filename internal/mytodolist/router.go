@@ -25,16 +25,14 @@ func installRouters(g *gin.Engine) error {
 		ug.Use(middleware.Authn())
 		// get user info
 		ug.GET("/info", uc.Info)
-		// TODO:
+		// update info
 		ug.POST("/updateinfo", uc.UpdateInfo)
 		// TODO:
 		ug.POST("/updatepwd")
 		// TODO:
-		ug.POST("/updateavat/ar")
+		ug.GET("/myday", uc.Myday)
 		// TODO:
-		ug.GET("/myday")
-		// TODO:
-		ug.GET("/important")
+		ug.GET("/important", uc.Important)
 		// TODO:
 		ug.GET("/getcollction")
 		// TODO:

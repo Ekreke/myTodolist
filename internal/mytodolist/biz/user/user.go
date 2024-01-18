@@ -5,6 +5,7 @@ import (
 
 	"github.com/ekreke/myTodolist/internal/mytodolist/store"
 	v1 "github.com/ekreke/myTodolist/pkg/api/mytodolist"
+	"github.com/ekreke/myTodolist/pkg/token"
 )
 
 type UserBiz interface {
@@ -12,7 +13,8 @@ type UserBiz interface {
 	Login(ctx context.Context, r *v1.LoginRequest) (*v1.LoginResponse, error)
 	Register(ctx context.Context, r *v1.RegisterRequest) (*v1.RegisterResponse, error)
 	Info(ctx context.Context, username string) (*v1.InfoResponse, error)
-	UpdateInfo(ctx context.Context, req *v1.UpdateInfoRequest, username string) (v1.CommonResponseWizMsg, error)
+	UpdateInfo(ctx context.Context, req *v1.UpdateInfoRequest, username string) (*v1.CommonResponseWizMsg, error)
+	LoadImportantItems(ctx context.Context, req *v1.ImportantRequest, username string) (*v1.ImportantResponse, token.Token, error)
 	// Get(ctx context.Context, username string, r *v1.GetRequest) (*v1.GetResponse, error)
 	// Delete(ctx context.Context, username string, r *v1.DeleteRequest) (*v1.DeleteResponse, error)
 }

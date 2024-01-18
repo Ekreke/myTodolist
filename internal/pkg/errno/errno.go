@@ -28,7 +28,6 @@ func Decode(err error) (int, string, string) {
 		return typed.HTTP, typed.Code, typed.Message
 	default:
 	}
-
 	// 默认返回未知错误码和错误信息. 该错误代表服务端出错
 	return InternalServerError.HTTP, InternalServerError.Code, err.Error()
 }

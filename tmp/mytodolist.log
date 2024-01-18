@@ -1,17 +1,26 @@
-2024-01-18 16:52:15.469	info	mytodolist/mytodolist.go:83	Shutting down server...
-2024-01-18 16:52:15.474	info	mytodolist/mytodolist.go:91	Server exiting
-2024-01-18 16:52:20.539	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-18 16:52:34.901	info	user/login.go:12	Login function called	{"X-Request-ID": "635b5b9e-6ee1-4388-9e2c-4a901cdb7cd2"}
-2024-01-18 16:53:09.071	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoiZWtyZWtlIiwiZXhwIjoxNzA1ODI3MTU0LCJpYXQiOjE3MDU1Njc5NTQsIm5iZiI6MTcwNTU2Nzk1NH0.CLX_IBoYWxXUcZ0FzzM47IretfkT1EhbpLkqnA0ZCb4"}
-2024-01-18 16:53:09.072	debug	middleware/authn.go:29	username	{"username": "ekreke"}
-2024-01-18 16:53:09.072	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "120e2753-cccc-4298-9556-675d3ef13f69", "X-Username": "ekreke"}
-2024-01-18 16:54:42.451	info	user/register.go:11	Register function called	{"X-Request-ID": "f2b3f0bd-69e9-48ae-984d-de0104b86e1d"}
-2024-01-18 16:55:30.209	info	user/register.go:11	Register function called	{"X-Request-ID": "09211062-5ce1-4045-9853-46cd84a94dcf"}
-2024-01-18 17:00:04.631	info	mytodolist/mytodolist.go:83	Shutting down server...
-2024-01-18 17:00:04.632	info	mytodolist/mytodolist.go:91	Server exiting
-2024-01-18 17:00:12.359	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-18 17:00:18.155	info	user/register.go:11	Register function called	{"X-Request-ID": "b86603d6-6794-4ab9-9217-aed3113891ff"}
-2024-01-18 17:03:04.153	info	mytodolist/mytodolist.go:83	Shutting down server...
-2024-01-18 17:03:04.154	info	mytodolist/mytodolist.go:91	Server exiting
-2024-01-18 17:03:08.937	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-18 17:03:13.995	info	user/register.go:11	Register function called	{"X-Request-ID": "63030ac6-d38e-4b2f-8f67-dd2020ff2a45"}
+2024-01-18 22:57:40.566	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-18 22:57:40.568	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-18 22:57:48.240	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-18 22:57:49.969	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoiZWtyZWtlMzQ1NTUiLCJleHAiOjE3MDU4MzE1NjYsImlhdCI6MTcwNTU3MjM2NiwibmJmIjoxNzA1NTcyMzY2fQ.OkeOAyO3Y1-icZOBbuMq7A5aUUENCz_4FxpDkZJCSdc"}
+2024-01-18 22:57:49.969	debug	middleware/authn.go:29	username	{"username": "ekreke34555"}
+2024-01-18 22:57:49.970	info	user/important.go:12	Important function called	{"X-Request-ID": "c4993a03-4593-4445-99da-6bd3595e278d", "X-Username": "ekreke34555"}
+2024-01-18 22:59:05.547	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoiZWtyZWtlMzQ1NTUiLCJleHAiOjE3MDU4MzE1NjYsImlhdCI6MTcwNTU3MjM2NiwibmJmIjoxNzA1NTcyMzY2fQ.OkeOAyO3Y1-icZOBbuMq7A5aUUENCz_4FxpDkZJCSdc"}
+2024-01-18 22:59:05.547	debug	middleware/authn.go:29	username	{"username": "ekreke34555"}
+2024-01-18 22:59:05.547	info	user/important.go:12	Important function called	{"X-Request-ID": "be882594-3949-4339-abce-92d3acaeaf28", "X-Username": "ekreke34555"}
+2024-01-18 22:59:05.547	error	log/log.go:111	Ignored key without a value.	{"ignored": 10}
+2024-01-18 22:59:05.547	debug	user/LoadImportantItems.go:33	the page's nextId is
+2024-01-18 22:59:27.703	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoiZWtyZWtlMzQ1NTUiLCJleHAiOjE3MDU4MzE1NjYsImlhdCI6MTcwNTU3MjM2NiwibmJmIjoxNzA1NTcyMzY2fQ.OkeOAyO3Y1-icZOBbuMq7A5aUUENCz_4FxpDkZJCSdc"}
+2024-01-18 22:59:27.703	debug	middleware/authn.go:29	username	{"username": "ekreke34555"}
+2024-01-18 22:59:27.703	info	user/important.go:12	Important function called	{"X-Request-ID": "9a2f2f24-4fcf-44e0-a566-fc164aaeed66", "X-Username": "ekreke34555"}
+2024-01-18 22:59:40.214	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoiZWtyZWtlMzQ1NTUiLCJleHAiOjE3MDU4MzE1NjYsImlhdCI6MTcwNTU3MjM2NiwibmJmIjoxNzA1NTcyMzY2fQ.OkeOAyO3Y1-icZOBbuMq7A5aUUENCz_4FxpDkZJCSdc"}
+2024-01-18 22:59:40.214	debug	middleware/authn.go:29	username	{"username": "ekreke34555"}
+2024-01-18 22:59:40.214	info	user/important.go:12	Important function called	{"X-Request-ID": "0b9fba73-5eed-4a11-95a0-683ef0b0f04e", "X-Username": "ekreke34555"}
+2024-01-18 22:59:40.214	error	log/log.go:111	Ignored key without a value.	{"ignored": 10}
+2024-01-18 22:59:40.214	debug	user/LoadImportantItems.go:33	the page's nextId is
+2024-01-18 23:00:00.451	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoiZWtyZWtlMzQ1NTUiLCJleHAiOjE3MDU4MzE1NjYsImlhdCI6MTcwNTU3MjM2NiwibmJmIjoxNzA1NTcyMzY2fQ.OkeOAyO3Y1-icZOBbuMq7A5aUUENCz_4FxpDkZJCSdc"}
+2024-01-18 23:00:00.451	debug	middleware/authn.go:29	username	{"username": "ekreke34555"}
+2024-01-18 23:00:00.451	info	user/important.go:12	Important function called	{"X-Request-ID": "5644115c-adda-4aad-9b1e-5681966617ae", "X-Username": "ekreke34555"}
+2024-01-18 23:00:00.451	error	log/log.go:111	Ignored key without a value.	{"ignored": 10}
+2024-01-18 23:00:00.451	debug	user/LoadImportantItems.go:33	the page's nextId is
+2024-01-18 23:00:05.277	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-18 23:00:05.277	info	mytodolist/mytodolist.go:91	Server exiting
