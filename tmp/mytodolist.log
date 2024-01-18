@@ -47,3 +47,14 @@
 2024-01-18 16:30:27.900	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "f97546ae-7af8-451c-a068-5deab1f2c7f8", "X-Username": "laika"}
 2024-01-18 16:42:18.950	info	mytodolist/mytodolist.go:83	Shutting down server...
 2024-01-18 16:42:18.950	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-18 16:42:24.611	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-18 16:42:30.061	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:42:30.061	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:42:30.061	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "e93eb3ab-a958-4a57-94fc-854a09a649e3", "X-Username": "laika"}
+2024-01-18 16:42:51.618	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:42:51.618	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:42:51.618	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "39bf3001-3549-4240-8d67-097cb7447b13", "X-Username": "laika"}
+2024-01-18 16:43:45.799	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:43:45.800	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:43:45.800	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "04a2247b-6db1-4587-9ccd-89fe4db89f9c", "X-Username": "laika"}
+2024-01-18 16:46:05.930	info	user/login.go:12	Login function called	{"X-Request-ID": "2d19405e-cb79-4929-b746-1edf695892f8"}
