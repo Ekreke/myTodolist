@@ -7,3 +7,43 @@
 2024-01-17 17:26:13.732	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU3NDA4NDUsImlhdCI6MTcwNTQ4MTY0NSwibmJmIjoxNzA1NDgxNjQ1fQ.C_2zhoE6cKne8a1AtrM1wkxL1q14DFW724r-aq3KCFg"}
 2024-01-17 17:26:13.732	debug	middleware/authn.go:29	username	{"username": "laika"}
 2024-01-17 17:26:13.732	info	user/info.go:10	Info function called	{"X-Request-ID": "49d3410b-f911-407e-81b0-397ff8f9933f", "X-Username": "laika"}
+2024-01-18 16:17:54.146	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-18 16:19:02.522	info	user/login.go:12	Login function called	{"X-Request-ID": "2347d2ee-6659-4152-8356-58442694bee2"}
+2024-01-18 16:19:49.171	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:19:49.172	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:19:49.172	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "71e4b6a5-8e79-4667-9f3a-0d52dd8f66ab", "X-Username": "laika"}
+2024-01-18 16:19:53.319	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:19:53.320	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:19:53.320	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "8f9269e0-38c0-4529-b457-125cdd362e6f", "X-Username": "laika"}
+2024-01-18 16:20:27.164	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:20:27.164	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:20:27.165	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "35b2dd63-b84c-4719-80f6-53d984576994", "X-Username": "laika"}
+2024-01-18 16:20:35.376	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:20:35.379	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:20:35.380	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "c2d7af99-ce53-4ee9-93e8-acf8db4dff47", "X-Username": "laika"}
+2024-01-18 16:22:36.815	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-18 16:22:36.815	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-18 16:22:46.424	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-18 16:22:51.694	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:22:51.694	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:22:51.695	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "9d47d08d-d0b8-44ae-9e46-c5103f17bde9", "X-Username": "laika"}
+2024-01-18 16:23:17.874	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:23:17.874	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:23:17.874	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "8f7415a8-feb4-4f89-98e9-14d7b1c3a5da", "X-Username": "laika"}
+2024-01-18 16:27:16.448	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-18 16:27:16.448	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-18 16:27:22.599	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-18 16:27:27.178	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:27:27.179	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:27:27.179	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "89bc92a8-b0fd-4acc-86cb-30a202f44a74", "X-Username": "laika"}
+2024-01-18 16:27:43.983	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:27:43.984	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:27:43.984	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "389c6aec-5528-4523-a7aa-9875c2eda208", "X-Username": "laika"}
+2024-01-18 16:30:14.772	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-18 16:30:14.773	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-18 16:30:20.895	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-18 16:30:27.900	debug	middleware/authn.go:22	token	{"tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJYLVVzZXJuYW1lIjoibGFpa2EiLCJleHAiOjE3MDU4MjUxNDIsImlhdCI6MTcwNTU2NTk0MiwibmJmIjoxNzA1NTY1OTQyfQ.UJss9pBYoK_NIMhc2Ww3p5yWNw-cb0KyM3agjb1wXnA"}
+2024-01-18 16:30:27.900	debug	middleware/authn.go:29	username	{"username": "laika"}
+2024-01-18 16:30:27.900	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "f97546ae-7af8-451c-a068-5deab1f2c7f8", "X-Username": "laika"}
+2024-01-18 16:42:18.950	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-18 16:42:18.950	info	mytodolist/mytodolist.go:91	Server exiting

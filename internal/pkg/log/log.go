@@ -166,13 +166,15 @@ func C(ctx context.Context) *zapLogger {
 	return std.C(ctx)
 }
 
+// inject request's userinfo
 func (l *zapLogger) C(ctx context.Context) *zapLogger {
 	lc := l.clone()
-
+	// inject request id
 	if requestID := ctx.Value(known.XRequestIDKey); requestID != nil {
 		lc.z = lc.z.With(zap.Any(known.XRequestIDKey, requestID))
 	}
 
+	// inject request username
 	if userID := ctx.Value(known.XUsernameKey); userID != nil {
 		lc.z = lc.z.With(zap.Any(known.XUsernameKey, userID))
 	}

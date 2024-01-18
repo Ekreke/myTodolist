@@ -1,4 +1,4 @@
-package v1
+package mytodolist
 
 import "time"
 
@@ -33,4 +33,15 @@ type InfoResponse struct {
 	Avatar     string    `json:"avatar"`
 	Root       int       `json:"root"`
 	Created_At time.Time `json:"created_at"`
+}
+
+type UpdateInfoRequest struct {
+	Username string `form:"username"`
+	Bio      string `form:"bio"`
+	Avatar   string `form:"avatar"`
+	Link     string `form:"link"`
+}
+
+type UpdateInfoResponse struct {
+	Msg string `json:"msg"`
 }

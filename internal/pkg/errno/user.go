@@ -11,4 +11,6 @@ var (
 	ErrPasswordIncorrect = &Errno{HTTP: 401, Code: "InvalidParameter.PasswordIncorrect", Message: "Password was incorrect."}
 
 	ErrUserCreateFailed = &Errno{HTTP: 500, Code: "InternalError.UserCreateFailed", Message: "User create failed."}
+
+	ErrUserUpdateFailed = &Errno{HTTP: 500, Code: "InternalError.UserUpdateFailed", Message: "User update failed."}
 )

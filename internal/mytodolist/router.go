@@ -26,7 +26,7 @@ func installRouters(g *gin.Engine) error {
 		// get user info
 		ug.GET("/info", uc.Info)
 		// TODO:
-		ug.POST("/updateinfo")
+		ug.POST("/updateinfo", uc.UpdateInfo)
 		// TODO:
 		ug.POST("/updatepwd")
 		// TODO:

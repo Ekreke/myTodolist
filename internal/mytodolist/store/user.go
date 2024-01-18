@@ -13,6 +13,8 @@ type UserStore interface {
 	Create(ctx context.Context, user *model.Users) error
 	Get(ctx context.Context, username string) (*model.Users, error)
 	GetInfo(username string) (*v1.InfoResponse, error)
+	CheckUserIfExist(username string) (bool, error)
+	UpdateInfo(req *v1.UpdateInfoRequest, username string) error
 }
 
 // UserStore 接口的实现.
@@ -55,4 +57,36 @@ func (u *users) GetInfo(username string) (*v1.InfoResponse, error) {
 		Created_At: user.CreatedAt,
 	}
 	return resp, nil
+}
+
+// if exist , return true else return false
+func (u *users) CheckUserIfExist(username string) (bool, error) {
+	var uname string
+	if err := u.db.Debug().Where("username = ?", username).Select(&uname).Error; err != nil {
+		return false, err
+	}
+	return true, nil
+}
+
+func (u *users) UpdateInfo(req *v1.UpdateInfoRequest, username string) error {
+	// user := &model.Users{}
+	user := &model.Users{}
+	err := u.db.Debug().Where("username = ?", username).First(&user).Error
+	if err != nil {
+		return err
+	}
+	if req.Username != "" {
+		user.Username = req.Username
+	}
+	if req.Bio != "" {
+		user.Bio = req.Bio
+	}
+	if req.Avatar != "" {
+		user.Avatar = req.Avatar
+	}
+	if req.Link != "" {
+		user.Link = req.Link
+	}
+	return u.db.Save(&user).Error
+
 }
