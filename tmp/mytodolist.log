@@ -13,3 +13,5 @@
 2024-01-18 17:00:18.155	info	user/register.go:11	Register function called	{"X-Request-ID": "b86603d6-6794-4ab9-9217-aed3113891ff"}
 2024-01-18 17:03:04.153	info	mytodolist/mytodolist.go:83	Shutting down server...
 2024-01-18 17:03:04.154	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-18 17:03:08.937	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-18 17:03:13.995	info	user/register.go:11	Register function called	{"X-Request-ID": "63030ac6-d38e-4b2f-8f67-dd2020ff2a45"}
