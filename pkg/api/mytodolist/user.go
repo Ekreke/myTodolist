@@ -68,3 +68,8 @@ type ItemInfo struct {
 	Done        int8      `json:"done" gorm:"done"`
 	CreatedTime time.Time `json:"created_time" gorm:"created_time"`
 }
+
+type UpdatepwdRequest struct {
+	Prepwd string `form:"prepwd"`
+	Newpwd string `form:"newpwd"` // 新密码
+}

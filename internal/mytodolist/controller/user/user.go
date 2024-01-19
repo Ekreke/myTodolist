@@ -20,6 +20,7 @@ type IUserController interface {
 	Info(c *gin.Context)
 	Myday(c *gin.Context)
 	Important(c *gin.Context)
+	Updatepwd(c *gin.Context)
 }
 
 var _ IUserController = (*UserController)(nil)

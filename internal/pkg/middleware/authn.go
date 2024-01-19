@@ -6,7 +6,6 @@ import (
 	"github.com/ekreke/myTodolist/internal/pkg/core"
 	"github.com/ekreke/myTodolist/internal/pkg/errno"
 	"github.com/ekreke/myTodolist/internal/pkg/known"
-	"github.com/ekreke/myTodolist/internal/pkg/log"
 	"github.com/ekreke/myTodolist/pkg/token"
 	"github.com/gin-gonic/gin"
 )
@@ -19,14 +18,12 @@ func Authn() gin.HandlerFunc {
 		}
 		var t string
 		fmt.Sscanf(tk, "Bearer %s", &t)
-		log.Debugw("token", "tk", t)
 		username, err := token.Parse(t, token.K)
 		if err != nil {
 			core.WriteResponse(c, errno.ErrTokenInvalid, nil)
 			c.Abort()
 			return
 		}
-		log.Debugw("username", "username", username)
 		c.Set(known.XUsernameKey, username)
 		c.Next()
 	}

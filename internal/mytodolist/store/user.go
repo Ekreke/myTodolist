@@ -18,6 +18,7 @@ type UserStore interface {
 	CheckUserIfExist(username string) (bool, error)
 	UpdateInfo(req *v1.UpdateInfoRequest, username string) error
 	GetImportantItems(next_id int, page_size int, username string) ([]v1.ItemInfo, token.Page, error)
+	UpdatePwd(username string, newpwd string) error
 }
 
 // UserStore 接口的实现.
@@ -64,8 +65,8 @@ func (u *users) GetInfo(username string) (*v1.InfoResponse, error) {
 
 // if exist , return true else return false
 func (u *users) CheckUserIfExist(username string) (bool, error) {
-	var uname string
-	if err := u.db.Debug().Where("username = ?", username).Select(&uname).Error; err != nil {
+	user := &model.Users{}
+	if err := u.db.Debug().Where("username = ?", username).First(&user).Error; err != nil {
 		return false, err
 	}
 	return true, nil
@@ -143,4 +144,14 @@ func (u *users) GetImportantItems(next_id int, page_size int, username string) (
 	}
 	return resp, page, nil
 
+}
+
+func (u *users) UpdatePwd(username string, newpwd string) error {
+	user := &model.Users{}
+	err := u.db.Debug().Where("username = ?", username).First(&user).Error
+	if err != nil {
+		return err
+	}
+	user.Password = newpwd
+	return u.db.Save(&user).Error
 }

@@ -15,6 +15,7 @@ type UserBiz interface {
 	Info(ctx context.Context, username string) (*v1.InfoResponse, error)
 	UpdateInfo(ctx context.Context, req *v1.UpdateInfoRequest, username string) (*v1.CommonResponseWizMsg, error)
 	LoadImportantItems(ctx context.Context, req *v1.ImportantRequest, username string) (*v1.ImportantResponse, token.Token, error)
+	UpdatePwd(ctx context.Context, username string, prepwd string, newpwd string) (*v1.CommonResponseWizMsg, error)
 	// Get(ctx context.Context, username string, r *v1.GetRequest) (*v1.GetResponse, error)
 	// Delete(ctx context.Context, username string, r *v1.DeleteRequest) (*v1.DeleteResponse, error)
 }
