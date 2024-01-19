@@ -7,5 +7,4 @@ import (
 
 func (ctrl *UserController) Myday(c *gin.Context) {
 	log.C(c).Infow("Myday function called")
-
 }

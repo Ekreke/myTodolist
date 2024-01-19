@@ -17,7 +17,10 @@ func installRouters(g *gin.Engine) error {
 	})
 	// 注册 pprof 路由
 	pprof.Register(g)
+	// uercontroller
 	uc := user.New(store.S)
+	// item controller
+	// ic := item.New(store.S)
 	ug := g.Group("/user")
 	{
 		ug.POST("/login", uc.Login)
@@ -27,7 +30,6 @@ func installRouters(g *gin.Engine) error {
 		ug.GET("/info", uc.Info)
 		// update info
 		ug.POST("/updateinfo", uc.UpdateInfo)
-		// TODO:
 		ug.POST("/updatepwd", uc.Updatepwd)
 		// TODO:
 		ug.GET("/myday", uc.Myday)
@@ -41,7 +43,32 @@ func installRouters(g *gin.Engine) error {
 		ug.GET("/myitem")
 		//TODO:
 		ug.GET("/nodes")
-
 	}
+	ig := g.Group("/item")
+	{
+		// TODO:
+		ig.POST("/creatitem")
+		ig.GET("/deleteitem")
+		ig.POST("/updateiteminfo")
+		ig.GET("/getiteminfo")
+		ig.GET("/setitemdone")
+		ig.GET("/setitemundone")
+	}
+	pg := g.Group("project")
+	{
+		pg.POST("/joinproject")
+		pg.POST("/myprojects")
+		pg.GET("/exitproject")
+	}
+	cg := g.Group("/collection")
+	{
+		cg.POST("/creatcollection")
+		cg.GET("/deletecollection")
+		cg.POST("/updatecollectioninfo")
+		cg.GET("/getcollectioninfo")
+		cg.GET("/mycollections")
+		cg.GET("/getitemsbycollections")
+	}
+
 	return nil
 }
