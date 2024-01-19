@@ -12,3 +12,4 @@
 2024-01-19 23:52:29.212	info	user/updatepwd.go:21	controlle update pwd run failed	{"X-Request-ID": "81ce918b-0954-4ed8-8a7d-0aab1af14f03", "X-Username": "ekreke34555"}
 2024-01-19 23:52:58.492	info	mytodolist/mytodolist.go:83	Shutting down server...
 2024-01-19 23:52:58.497	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-19 23:53:05.217	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
