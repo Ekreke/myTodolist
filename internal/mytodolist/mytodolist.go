@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"runtime"
 	"syscall"
 	"time"
 
@@ -81,6 +82,10 @@ func run() error {
 	signal.Notify(quit, syscall.SIGINT, syscall.SIGTERM)
 	<-quit
 	log.Infow("Shutting down server...")
+	ng := runtime.NumGoroutine()
+	if ng != 0 {
+		log.Infow("Waiting for all goroutines to finish;", "the gotroutine number is:", ng)
+	}
 	// wait for the server handle remaining svc
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
@@ -88,7 +93,7 @@ func run() error {
 		log.Errorw("Insecure Server forced to shutdown", "err", err)
 		return err
 	}
-	log.Infow("Server exiting")
+	log.Infow("Server exited")
 	return nil
 }
 
@@ -108,7 +113,3 @@ func startInsecureServer(g *gin.Engine) *http.Server {
 
 // TODO:startSecureServer
 // test graceful quit
-func lazy() string {
-	time.Sleep(10 * time.Second)
-	return "lazy"
-}
