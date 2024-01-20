@@ -22,3 +22,5 @@
 2024-01-20 16:32:41.424	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "1ca83e20-b946-4d8f-8735-8619db7c785c", "X-Username": "ekreke34555"}
 2024-01-20 16:33:28.767	info	mytodolist/mytodolist.go:83	Shutting down server...
 2024-01-20 16:33:28.769	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-20 16:33:37.714	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-20 16:33:37.799	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "3df96276-335c-4eed-81fa-34a61e69af7e", "X-Username": "ekreke34555"}
