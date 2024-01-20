@@ -19,6 +19,7 @@ type UserStore interface {
 	UpdateInfo(req *v1.UpdateInfoRequest, username string) error
 	GetImportantItems(next_id int, page_size int, username string) ([]v1.ItemInfo, token.Page, error)
 	UpdatePwd(username string, newpwd string) error
+	GetCollections(username string) (*v1.CollectionsResponse, error)
 }
 
 // UserStore 接口的实现.
@@ -154,4 +155,42 @@ func (u *users) UpdatePwd(username string, newpwd string) error {
 	}
 	user.Password = newpwd
 	return u.db.Save(&user).Error
+}
+
+func (u *users) GetCollections(username string) (*v1.CollectionsResponse, error) {
+	// get user id by username
+	tmpu := &model.Users{}
+	// select  id from users where username = ?
+	err := u.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
+	if err != nil {
+		log.Errorw("find user id failed")
+		return nil, err
+	}
+	collectionsids := &[]model.CollectionsUsers{}
+	var ids []int
+
+	// select collection_id from collections_users where user_id = ?
+	// get collection id by user_id from the middleware table
+	err = u.db.Debug().Select("collection_id").Where("user_id = ?", tmpu.ID).Find(&collectionsids).Error
+	if err != nil {
+		log.Errorw("find collections_ids failed")
+		return nil, err
+	}
+	for _, v := range *collectionsids {
+		ids = append(ids, int(v.CollectionId))
+	}
+	// get collections by collection_id from collections table
+	collections := &[]model.Collections{}
+	// select * from collections where id in ?
+	err = u.db.Debug().Where("id in ?", ids).Find(&collections).Error
+	if err != nil {
+		log.Errorw("find collections failed")
+		return nil, err
+	}
+
+	// inject collections into response
+	resp := &v1.CollectionsResponse{}
+	resp.Collections = append(resp.Collections, *collections...)
+
+	return resp, nil
 }

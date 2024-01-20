@@ -1,15 +1,24 @@
-2024-01-19 23:48:24.157	info	user/updatepwd.go:14	check user if exist failed
-2024-01-19 23:48:24.157	info	user/updatepwd.go:21	controlle update pwd run failed	{"X-Request-ID": "f7362205-74d3-4b68-90d0-1fdd7b5644d4", "X-Username": "ekreke34555"}
-2024-01-19 23:51:06.478	info	mytodolist/mytodolist.go:83	Shutting down server...
-2024-01-19 23:51:06.479	info	mytodolist/mytodolist.go:91	Server exiting
-2024-01-19 23:51:12.374	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-19 23:51:13.996	info	user/updatepwd.go:14	check user if exist failed
-2024-01-19 23:51:13.996	info	user/updatepwd.go:21	controlle update pwd run failed	{"X-Request-ID": "3c92f47c-ab34-428e-bfa3-f782759787a4", "X-Username": "ekreke34555"}
-2024-01-19 23:51:47.303	info	mytodolist/mytodolist.go:83	Shutting down server...
-2024-01-19 23:51:47.306	info	mytodolist/mytodolist.go:91	Server exiting
-2024-01-19 23:51:52.825	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-01-19 23:51:57.206	info	user/updatepwd.go:21	controlle update pwd run failed	{"X-Request-ID": "3d573d33-4985-469e-9ce5-a2c439503503", "X-Username": "ekreke34555"}
-2024-01-19 23:52:29.212	info	user/updatepwd.go:21	controlle update pwd run failed	{"X-Request-ID": "81ce918b-0954-4ed8-8a7d-0aab1af14f03", "X-Username": "ekreke34555"}
-2024-01-19 23:52:58.492	info	mytodolist/mytodolist.go:83	Shutting down server...
-2024-01-19 23:52:58.497	info	mytodolist/mytodolist.go:91	Server exiting
-2024-01-19 23:53:05.217	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-20 15:24:22.848	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-20 15:24:22.849	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-20 15:24:29.538	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-20 15:24:30.828	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "518289bd-ea4e-4edc-9da0-656c80cab1b5", "X-Username": "ekreke34555"}
+2024-01-20 15:24:30.830	error	log/log.go:111	Ignored key without a value.	{"ignored": []}
+2024-01-20 15:24:30.830	debug	store/user.go:181	the ids is :
+2024-01-20 15:31:06.641	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "56713b16-0a6c-4eca-8037-ed935a6349fd", "X-Username": "ekreke34555"}
+2024-01-20 15:31:06.645	error	log/log.go:111	Ignored key without a value.	{"ignored": []}
+2024-01-20 15:31:06.645	debug	store/user.go:181	the ids is :
+2024-01-20 15:33:29.774	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "64347e51-0499-4bba-b338-6c3cd0a94772", "X-Username": "ekreke34555"}
+2024-01-20 15:33:29.778	error	log/log.go:111	Ignored key without a value.	{"ignored": []}
+2024-01-20 15:33:29.778	debug	store/user.go:181	the ids is :
+2024-01-20 15:33:31.162	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "4622aa5a-b81a-4afb-9a5a-baf7e5028979", "X-Username": "ekreke34555"}
+2024-01-20 15:33:31.164	error	log/log.go:111	Ignored key without a value.	{"ignored": []}
+2024-01-20 15:33:31.164	debug	store/user.go:181	the ids is :
+2024-01-20 16:31:36.882	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "915272e6-3972-4f5e-a583-a495c884af61", "X-Username": "ekreke34555"}
+2024-01-20 16:31:36.888	error	log/log.go:111	Ignored key without a value.	{"ignored": []}
+2024-01-20 16:31:36.888	debug	store/user.go:181	the ids is :
+2024-01-20 16:32:31.381	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-20 16:32:31.384	info	mytodolist/mytodolist.go:91	Server exiting
+2024-01-20 16:32:40.494	info	mytodolist/mytodolist.go:100	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-20 16:32:41.424	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "1ca83e20-b946-4d8f-8735-8619db7c785c", "X-Username": "ekreke34555"}
+2024-01-20 16:33:28.767	info	mytodolist/mytodolist.go:83	Shutting down server...
+2024-01-20 16:33:28.769	info	mytodolist/mytodolist.go:91	Server exiting

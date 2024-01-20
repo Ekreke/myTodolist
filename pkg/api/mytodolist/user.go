@@ -2,6 +2,8 @@ package mytodolist
 
 import (
 	"time"
+
+	"github.com/ekreke/myTodolist/internal/pkg/model"
 )
 
 var pagination string
@@ -72,4 +74,8 @@ type ItemInfo struct {
 type UpdatepwdRequest struct {
 	Prepwd string `form:"prepwd"`
 	Newpwd string `form:"newpwd"` // 新密码
+}
+
+type CollectionsResponse struct {
+	Collections []model.Collections `json:"collections"`
 }

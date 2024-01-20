@@ -35,7 +35,7 @@ func installRouters(g *gin.Engine) error {
 		ug.GET("/myday", uc.Myday)
 		ug.GET("/important", uc.Important)
 		// TODO:
-		ug.GET("/getcollction")
+		ug.GET("/getcollction", uc.GetCollctions)
 		// TODO:
 		// contain both items and nodes
 		ug.GET("/items")
