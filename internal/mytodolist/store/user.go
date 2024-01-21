@@ -17,9 +17,10 @@ type UserStore interface {
 	GetInfo(username string) (*v1.InfoResponse, error)
 	CheckUserIfExist(username string) (bool, error)
 	UpdateInfo(req *v1.UpdateInfoRequest, username string) error
-	GetImportantItems(next_id int, page_size int, username string) ([]v1.ItemInfo, token.Page, error)
+	GetImportantItems(nextid int, pagesize int, username string) ([]v1.ItemInfo, token.Page, error)
 	UpdatePwd(username string, newpwd string) error
 	GetCollections(username string) (*v1.CollectionsResponse, error)
+	GetMydayItems(nextid int, pagesize int, username string) (items []model.Items, npage token.Page, err error)
 }
 
 // UserStore 接口的实现.
@@ -193,4 +194,36 @@ func (u *users) GetCollections(username string) (*v1.CollectionsResponse, error)
 	resp.Collections = append(resp.Collections, *collections...)
 
 	return resp, nil
+}
+
+func (u *users) GetMydayItems(next_id int, page_size int, username string) (items []model.Items, npage token.Page, err error) {
+	// 根据 username 查询 user id
+	tmpu := &model.Users{}
+	// select id from users where username = ?
+	err = u.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
+	if err != nil {
+		log.Fatalw("get userid from username failed")
+	}
+
+	// get myday_items id from myday_items_users table
+	myday_ids := &[]model.Myday{}
+	err = u.db.Debug().Select("item_id").Where("user_id = ?", tmpu.ID).Limit(page_size).Find(&myday_ids).Error
+	if err != nil {
+		log.Fatalw("get myday from myday table failed")
+	}
+	// get ids
+	var ids []int
+	for _, v := range *myday_ids {
+		ids = append(ids, int(v.Item_id))
+	}
+	its := []model.Items{}
+	err = u.db.Debug().Where("id in ?", ids).Find(&its).Error
+	if err != nil {
+		log.Fatalw("get items from items table failed")
+	}
+	if len(its) != 0 {
+		npage.NextID = int(its[len(its)-1].ID)
+	}
+	npage.PageSize = int64(page_size)
+	return its, npage, nil
 }

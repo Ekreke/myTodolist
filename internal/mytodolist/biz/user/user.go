@@ -17,6 +17,7 @@ type UserBiz interface {
 	LoadImportantItems(ctx context.Context, req *v1.ImportantRequest, username string) (*v1.ImportantResponse, token.Token, error)
 	UpdatePwd(ctx context.Context, username string, prepwd string, newpwd string) (*v1.CommonResponseWizMsg, error)
 	GetCollctions(ctx context.Context, username string) (*v1.CollectionsResponse, error)
+	LoadMydayItems(ctx context.Context, req *v1.MydayRequest, username string) (*v1.MydayResponse, error)
 	// Get(ctx context.Context, username string, r *v1.GetRequest) (*v1.GetResponse, error)
 	// Delete(ctx context.Context, username string, r *v1.DeleteRequest) (*v1.DeleteResponse, error)
 }

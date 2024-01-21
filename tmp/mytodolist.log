@@ -1,0 +1,53 @@
+2024-01-21 12:06:25.384	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-21 12:08:04.906	info	user/myday.go:12	Myday function called	{"X-Request-ID": "a1639094-832e-4972-9b99-bba29d6777d2", "X-Username": "ekreke34555"}
+2024-01-21 12:08:04.936	fatal	store/user.go:212	get myday from myday table failed
+github.com/ekreke/myTodolist/internal/mytodolist/store.(*users).GetMydayItems
+	C:/Golang/myTodolist/internal/mytodolist/store/user.go:212
+github.com/ekreke/myTodolist/internal/mytodolist/biz/user.(*userBiz).LoadMydayItems
+	C:/Golang/myTodolist/internal/mytodolist/biz/user/myday.go:16
+github.com/ekreke/myTodolist/internal/mytodolist/controller/user.(*UserController).Myday
+	C:/Golang/myTodolist/internal/mytodolist/controller/user/myday.go:18
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.installRouters.Authn.func2
+	C:/Golang/myTodolist/internal/pkg/middleware/authn.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.run.RequestID.func1
+	C:/Golang/myTodolist/internal/pkg/middleware/requestid.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.Cors
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.NoCache
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:17
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
+net/http.serverHandler.ServeHTTP
+	C:/Program Files/Go/src/net/http/server.go:2938
+net/http.(*conn).serve
+	C:/Program Files/Go/src/net/http/server.go:2009
+2024-01-21 12:08:56.633	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-21 12:08:59.708	info	user/myday.go:12	Myday function called	{"X-Request-ID": "a5c7153e-9628-41bc-b670-748ee15db2d1", "X-Username": "ekreke34555"}
+2024-01-21 12:10:33.384	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-21 12:10:33.384	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-21 12:10:33.385	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-21 12:10:39.419	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-21 12:10:46.169	info	user/myday.go:12	Myday function called	{"X-Request-ID": "f4215c4f-ae8d-4775-a6b7-d8f62446379f", "X-Username": "ekreke34555"}
+2024-01-21 12:11:32.957	info	user/myday.go:12	Myday function called	{"X-Request-ID": "89f5f45f-e22f-4afc-bef7-231793b7b11e", "X-Username": "ekreke34555"}
+2024-01-21 12:12:31.339	info	user/myday.go:12	Myday function called	{"X-Request-ID": "a6971723-3376-42c2-abe8-7614e57dc122", "X-Username": "ekreke34555"}
+2024-01-21 12:13:11.865	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-21 12:13:11.865	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-21 12:13:11.869	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-21 12:13:16.407	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-21 12:13:18.742	info	user/myday.go:12	Myday function called	{"X-Request-ID": "8c4831e4-54fa-4710-af66-29ff226f92c1", "X-Username": "ekreke34555"}

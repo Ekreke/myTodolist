@@ -16,4 +16,5 @@ var (
 	ErrLoadImportantItemFailed = &Errno{HTTP: 500, Code: "InternalError.LoadImportantItemFailed", Message: "Load important item failed."}
 	ErrUpdatePwdFailed         = &Errno{HTTP: 500, Code: "InternalError.UpdatePwdFailed", Message: "Update pwd failed."}
 	ErrPwdDuplicate            = &Errno{HTTP: 400, Code: "InvalidParameter.PwdDuplicate", Message: "Password was duplicate."}
+	ErrLoadMydayItemFailed     = &Errno{HTTP: 500, Code: "InternalError.LoadMydayItemFailed", Message: "Load myday item failed."}
 )

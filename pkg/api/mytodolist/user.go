@@ -79,3 +79,12 @@ type UpdatepwdRequest struct {
 type CollectionsResponse struct {
 	Collections []model.Collections `json:"collections"`
 }
+
+type MydayRequest struct {
+	Pagination string `form:"pagination"`
+}
+
+type MydayResponse struct {
+	Items       []model.Items
+	CursorToken string
+}
