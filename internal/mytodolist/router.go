@@ -44,7 +44,6 @@ func installRouters(g *gin.Engine) error {
 		ug.POST("/updateinfo", uc.UpdateInfo)
 		// update user pwd
 		ug.POST("/updatepwd", uc.Updatepwd)
-		// TODO:
 		// get myday items
 		// record limit
 		ug.GET("/myday", uc.Myday)
@@ -53,19 +52,16 @@ func installRouters(g *gin.Engine) error {
 		ug.GET("/important", uc.Important)
 		// get collections
 		ug.GET("/getcollction", uc.GetCollctions)
-		// TODO:
 		//get items
 		// contain both items and nodes
 		// record limit
-		ug.GET("/items")
-		// TODO:
+		ug.GET("/items", uc.Items)
 		// get items user created
 		// record limit
-		ug.GET("/myitem")
-		// TODO:
+		ug.GET("/myitems", uc.MyItems)
 		// get items create by projects
 		// record limit
-		ug.GET("/nodes")
+		ug.GET("/nodes", uc.Nodes)
 	}
 	// item group
 	ig := g.Group("/item")
