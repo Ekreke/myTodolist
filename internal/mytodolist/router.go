@@ -1,6 +1,7 @@
 package mytodolist
 
 import (
+	"github.com/ekreke/myTodolist/internal/mytodolist/controller/item"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/t"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/user"
 	"github.com/ekreke/myTodolist/internal/mytodolist/store"
@@ -21,6 +22,7 @@ func installRouters(g *gin.Engine) error {
 	// uercontroller
 	uc := user.New(store.S)
 	tc := t.New(store.S)
+	ic := item.New(store.S)
 	// item controller
 	// ic := item.New(store.S)
 	tg := g.Group("/test")
@@ -51,7 +53,7 @@ func installRouters(g *gin.Engine) error {
 		// record limit
 		ug.GET("/important", uc.Important)
 		// get collections
-		ug.GET("/getcollction", uc.GetCollctions)
+		ug.GET("/collctions", uc.GetCollctions)
 		//get items
 		// contain both items and nodes
 		// record limit
@@ -68,22 +70,22 @@ func installRouters(g *gin.Engine) error {
 	{
 		// TODO:
 		// create a item
-		ig.POST("/create")
+		ig.POST("/create", ic.Create)
 		// TODO:
 		// delete a item
-		ig.GET("/delete")
+		ig.GET("/delete", ic.Delete)
 		// TODO:
 		// update a item info
-		ig.POST("/updateinfo")
+		ig.POST("/update", ic.Update)
 		// TODO:
 		// get a item info
-		ig.GET("/getinfo")
+		ig.GET("/info", ic.Info)
 		// TODO:
 		// update the item status :done
-		ig.GET("/setdone")
+		ig.GET("/setdone", ic.SetDone)
 		// TODO:
 		// update the item status :undone
-		ig.GET("/setundone")
+		ig.GET("/setundone", ic.SetUnDone)
 	}
 	pg := g.Group("project")
 	{
@@ -96,18 +98,21 @@ func installRouters(g *gin.Engine) error {
 		// TODO:
 		// quit a project
 		pg.GET("/quit")
+		// TODO:
+		// create a project by root
+		pg.POST("/create")
 	}
 	cg := g.Group("/collection")
 	{
 		// TODO:
 		// user creat a collection
-		cg.POST("/creatcollection")
+		cg.POST("/create")
 		// user delete a collection
 		// TODO:
-		cg.GET("/deletecollection")
+		cg.GET("/delete")
 		// TODO:
 		// user update a collection's info
-		cg.POST("/updatecollectioninfo")
+		cg.POST("/update")
 		// Todo:
 		// cg.GET("/getcollectioninfo")
 		// Todo:
@@ -119,6 +124,5 @@ func installRouters(g *gin.Engine) error {
 		// TODO:
 		cg.GET("/deleteitem")
 	}
-
 	return nil
 }
