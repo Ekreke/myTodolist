@@ -162,6 +162,9 @@ func (i *items) Delete(itemid int, username string) (resp *v1.CommonResponseWizM
 		tx.Rollback()
 	}
 	tx.Commit()
+	resp = &v1.CommonResponseWizMsg{
+		Msg: "success",
+	}
 	return resp, nil
 }
 

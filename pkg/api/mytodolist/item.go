@@ -17,7 +17,7 @@ type ItemCreateRequest struct {
 }
 
 type ItemRequesWizID struct {
-	ItemID int64 `json:"item_id"`
+	ItemID int64 `json:"item_id" form:"item_id"`
 }
 type ItemInfoResponse struct {
 	ItemName     string    `json:"item_name" gorm:"item_name"`

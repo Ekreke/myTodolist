@@ -30,3 +30,20 @@
 2024-01-22 23:35:38.486	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
 2024-01-22 23:35:45.076	info	item/create.go:12	Item create function called	{"X-Request-ID": "8d6dee1d-3068-4776-8e6e-f6eea3bc8906", "X-Username": "ekreke34555"}
 2024-01-22 23:35:45.076	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:37:33.876	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "0f586e0c-931e-4499-80c0-23ae0778769c", "X-Username": "ekreke34555"}
+2024-01-22 23:41:09.832	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-22 23:41:09.832	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-22 23:41:09.832	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-22 23:41:18.811	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-22 23:41:20.399	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "b2bafe7b-977f-48ab-b14c-2725b319c2ae", "X-Username": "ekreke34555"}
+2024-01-22 23:41:41.723	info	item/create.go:12	Item create function called	{"X-Request-ID": "b4d684b2-a18a-4b02-b533-018fd63f1bec", "X-Username": "ekreke34555"}
+2024-01-22 23:41:41.723	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:42:17.178	info	item/create.go:12	Item create function called	{"X-Request-ID": "0f4f7ca6-4d79-47e8-9318-92ef6812adfa", "X-Username": "ekreke34555"}
+2024-01-22 23:42:17.178	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:42:17.181	error	store/items.go:44	save record to items failed
+2024-01-22 23:42:39.538	info	item/create.go:12	Item create function called	{"X-Request-ID": "936a88f2-0af5-4f60-8e4b-3cd0124da82f", "X-Username": "ekreke34555"}
+2024-01-22 23:42:39.538	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:43:06.929	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "024af5b3-c311-482b-91a6-80edc4c3cbf2", "X-Username": "ekreke34555"}
+2024-01-22 23:45:45.963	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-22 23:45:45.963	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-01-22 23:45:45.966	info	mytodolist/mytodolist.go:96	Server exited

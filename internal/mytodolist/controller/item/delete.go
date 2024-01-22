@@ -14,10 +14,12 @@ func (ctrl *ItemController) Delete(ctx *gin.Context) {
 	var r v1.ItemRequesWizID
 	if err := ctx.ShouldBind(&r); err != nil {
 		core.WriteResponse(ctx, errno.ErrBind, nil)
+		return
 	}
 	resp, err := ctrl.b.Items().Delete(int(r.ItemID), username)
 	if err != nil {
 		core.WriteResponse(ctx, errno.ErrDeleteItemFailed, nil)
+		return
 	}
 	core.WriteResponse(ctx, nil, resp)
 }
