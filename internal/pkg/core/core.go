@@ -27,6 +27,5 @@ func WriteResponse(c *gin.Context, err error, data interface{}) {
 
 		return
 	}
-
 	c.JSON(http.StatusOK, data)
 }

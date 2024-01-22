@@ -14,6 +14,7 @@ var (
 
 type Istore interface {
 	Users() UserStore
+	Items() ItemStore
 }
 
 type datastore struct {
@@ -35,4 +36,8 @@ func NewStore(db *gorm.DB) *datastore {
 // Users 返回一个实现了 UserStore 接口的实例.
 func (ds *datastore) Users() UserStore {
 	return newUsers(ds.db)
+}
+
+func (ds *datastore) Items() ItemStore {
+	return newItems(ds.db)
 }
