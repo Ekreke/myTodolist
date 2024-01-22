@@ -37,19 +37,7 @@ func (i *items) Create(it *model.Items, username string) (resp *v1.CommonRespons
 	// insert into projects nodes
 	tx := i.db.Begin()
 	tx.SavePoint("begin")
-	if it.ProjectId != 0 {
-		i_p := &model.ProjectsNodes{
-			ProjectId: it.ProjectId,
-			ItemId:    it.ID,
-			UserId:    tmpu.ID,
-		}
-		err := tx.Debug().Save(&i_p).Error
-		if err != nil {
-			log.Errorw("save record to projects_nodes failed")
-			tx.RollbackTo("begin")
-			return nil, err
-		}
-	}
+	// FIXME: item index
 	// insert into items
 	err = tx.Save(&it).Error
 	if err != nil {
@@ -58,13 +46,27 @@ func (i *items) Create(it *model.Items, username string) (resp *v1.CommonRespons
 		return nil, err
 	}
 
+	if it.ProjectId != 0 {
+		i_p := &model.ProjectsNodes{
+			ProjectId: it.ProjectId,
+			ItemId:    it.ID,
+			UserId:    tmpu.ID,
+		}
+		err := tx.Debug().Create(&i_p).Error
+		if err != nil {
+			log.Errorw("save record to projects_nodes failed")
+			tx.RollbackTo("begin")
+			return nil, err
+		}
+	}
+
 	// insert into myday && users
 	if it.Myday != 0 {
 		i_m := &model.Myday{
 			Item_id: it.ID,
 			User_id: tmpu.ID,
 		}
-		err := tx.Save(&i_m).Error
+		err := tx.Create(&i_m).Error
 		if err != nil {
 			log.Errorw("save record to myday failed")
 			return nil, err
@@ -78,7 +80,7 @@ func (i *items) Create(it *model.Items, username string) (resp *v1.CommonRespons
 			CollectionId: it.CollectionId,
 		}
 
-		err := tx.Save(&i_c).Error
+		err := tx.Create(&i_c).Error
 		if err != nil {
 			log.Errorw("save record to collections_items failed ")
 			return nil, err
@@ -105,7 +107,62 @@ func (i *items) Create(it *model.Items, username string) (resp *v1.CommonRespons
 
 // delete a item by item id
 func (i *items) Delete(itemid int, username string) (resp *v1.CommonResponseWizMsg, err error) {
-	return resp, err
+
+	// get item info
+	item := &model.Items{}
+	err = i.db.Where("id = ?", itemid).Find(&item).Error
+	if err != nil {
+		log.Errorw("get item info error")
+		return nil, err
+	}
+
+	tx := i.db.Begin()
+	// delete from projects
+	if item.ProjectId != 0 {
+		i_p := &model.ProjectsNodes{}
+		err = tx.Where("item_id = ?", itemid).Delete(&i_p).Error
+		if err != nil {
+			log.Errorw("delete project_item failed")
+			tx.Rollback()
+		}
+
+	}
+	// delete from mydays
+	if item.Myday != 0 {
+		i_m := &model.Myday{}
+		err = tx.Where("item_id = ?", itemid).Delete(&i_m).Error
+		if err != nil {
+			log.Errorw("delete myday_item failed")
+			tx.Rollback()
+		}
+	}
+	// delete from collections_items
+
+	if item.CollectionId != 0 {
+		i_c := &model.CollectionsItems{}
+		// FIXME: column should be item
+		err = tx.Where("items_id = ?", itemid).Delete(&i_c).Error
+		if err != nil {
+			log.Errorw("delete collections_item failed")
+			tx.Rollback()
+		}
+	}
+	// delete from items_users
+	i_u := &model.ItemsUsers{}
+	err = tx.Where("item_id = ?", itemid).Delete(&i_u).Error
+	if err != nil {
+		log.Errorw("delete user_items failed")
+		tx.Rollback()
+	}
+
+	// delete from items
+	err = tx.Where("id = ?", itemid).Delete(&item).Error
+	if err != nil {
+		log.Errorw("delete items failed")
+		tx.Rollback()
+	}
+	tx.Commit()
+	return resp, nil
 }
 
 // get info by item id
@@ -143,15 +200,24 @@ func (i *items) Info(itemid int, username string) (resp *v1.ItemInfoResponse, er
 
 // set a item undone by item id
 func (i *items) SetUnDone(itemid int, username string) (resp *v1.CommonResponseWizMsg, err error) {
-	return resp, err
+	// get user id
+	tmpu := &model.Users{}
+	// select id from users where username = ?
+	err = i.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
+	if err != nil {
+		log.Fatalw("get userid from username failed")
+	}
+
+	return resp, nil
 }
 
 // set a item done by item id
 func (i *items) SetDone(itemid int, username string) (resp *v1.CommonResponseWizMsg, err error) {
-	return resp, err
+
+	return resp, nil
 }
 
 // update a item's info
 func (i *items) Update(it *model.Items, username string) (resp *v1.CommonResponseWizMsg, err error) {
-	return resp, err
+	return resp, nil
 }

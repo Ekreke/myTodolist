@@ -4,3 +4,26 @@
 2024-01-22 22:42:37.344	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
 2024-01-22 22:42:42.461	info	item/create.go:12	Item create function called	{"X-Request-ID": "e5b7600d-d8d7-4054-88ae-5e5c06016c00", "X-Username": "ekreke34555"}
 2024-01-22 22:42:42.461	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:28:28.451	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-22 23:28:28.452	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-22 23:28:28.454	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-22 23:28:36.416	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-22 23:30:25.328	info	item/create.go:12	Item create function called	{"X-Request-ID": "d7f6478b-69c0-467e-88b6-d1a3c2bd56ac", "X-Username": "ekreke34555"}
+2024-01-22 23:30:25.328	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:30:25.331	error	store/items.go:48	save record to projects_nodes failed
+2024-01-22 23:31:07.899	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-22 23:31:07.900	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-01-22 23:31:07.910	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-22 23:31:14.628	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-22 23:31:16.288	info	item/create.go:12	Item create function called	{"X-Request-ID": "6cb7db8d-47a2-4bd0-b432-f873ca9589d1", "X-Username": "ekreke34555"}
+2024-01-22 23:31:16.288	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:31:16.296	error	store/items.go:69	save record to myday failed
+2024-01-22 23:31:49.844	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-22 23:31:49.844	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-01-22 23:31:49.845	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-22 23:31:56.553	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-22 23:31:58.461	info	item/create.go:12	Item create function called	{"X-Request-ID": "9e2ff8be-d5f5-4c16-9dd2-4b09dfda5f97", "X-Username": "ekreke34555"}
+2024-01-22 23:31:58.461	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-01-22 23:35:31.605	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-22 23:35:31.605	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-22 23:35:31.606	info	mytodolist/mytodolist.go:96	Server exited
