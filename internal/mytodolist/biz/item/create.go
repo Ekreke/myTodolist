@@ -8,11 +8,14 @@ import (
 )
 
 func (i *itemBiz) Create(request *v1.ItemCreateRequest, username string) (resp *v1.CommonResponseWizMsg, err error) {
+	ut := request.Deadline
+	tm := time.Unix(ut, 0)
+
 	it := &model.Items{
 		ItemName:     request.ItemName,
 		Description:  request.Description,
 		ProjectId:    request.ProjectId,
-		Deadline:     time.Now(),
+		Deadline:     tm,
 		Important:    request.Important,
 		Done:         request.Done,
 		Myday:        request.Myday,

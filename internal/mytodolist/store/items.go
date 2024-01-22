@@ -96,8 +96,11 @@ func (i *items) Create(it *model.Items, username string) (resp *v1.CommonRespons
 		return nil, err
 	}
 	tx.Commit()
+	resp = &v1.CommonResponseWizMsg{
+		Msg: "success",
+	}
 
-	return resp, err
+	return resp, nil
 }
 
 // delete a item by item id

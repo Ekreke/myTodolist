@@ -1,0 +1,6 @@
+2024-01-22 22:42:29.316	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-22 22:42:29.317	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-22 22:42:29.317	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-22 22:42:37.344	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-22 22:42:42.461	info	item/create.go:12	Item create function called	{"X-Request-ID": "e5b7600d-d8d7-4054-88ae-5e5c06016c00", "X-Username": "ekreke34555"}
+2024-01-22 22:42:42.461	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}

@@ -6,7 +6,7 @@ type ItemCreateRequest struct {
 	ItemName     string    `json:"item_name" form:"item_name"`
 	Description  string    `json:"description" form:"description"`
 	ProjectId    int64     `json:"project_id" form:"project_id"`
-	Deadline     time.Time `json:"deadline" form:"deadline"`
+	Deadline     int64     `json:"deadline" form:"deadline"`
 	Important    int8      `json:"important" form:"important"`
 	Done         int8      `json:"done" form:"done"`
 	Myday        int8      `json:"myDay" form:"myDay"`
