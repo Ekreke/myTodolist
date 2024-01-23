@@ -69,16 +69,13 @@ func installRouters(g *gin.Engine) error {
 	ig := g.Group("/item")
 	{
 		ig.Use(middleware.Authn())
-		// TODO:
 		// create a item
 		ig.POST("/create", ic.Create)
-		// TODO:
 		// delete a item
 		ig.GET("/delete", ic.Delete)
 		// TODO:
 		// update a item info
 		ig.POST("/update", ic.Update)
-		// TODO:
 		// get a item info by item id
 		ig.GET("/info", ic.Info)
 		// TODO:

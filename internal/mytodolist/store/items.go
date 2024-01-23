@@ -210,7 +210,6 @@ func (i *items) SetUnDone(itemid int, username string) (resp *v1.CommonResponseW
 	if err != nil {
 		log.Fatalw("get userid from username failed")
 	}
-
 	return resp, nil
 }
 

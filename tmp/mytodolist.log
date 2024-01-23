@@ -50,3 +50,6 @@
 2024-01-22 23:45:53.874	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
 2024-01-22 23:45:59.927	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "9979559d-4166-48f1-892a-5f2b02fd8230", "X-Username": "ekreke34555"}
 2024-01-22 23:46:09.299	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "29f7222e-3ed9-42f5-9920-be8394536ef2", "X-Username": "ekreke34555"}
+2024-01-23 00:21:38.493	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-23 00:21:38.494	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 6}
+2024-01-23 00:21:38.495	info	mytodolist/mytodolist.go:96	Server exited
