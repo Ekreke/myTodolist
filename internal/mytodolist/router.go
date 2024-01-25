@@ -78,10 +78,8 @@ func installRouters(g *gin.Engine) error {
 		ig.POST("/update", ic.Update)
 		// get a item info by item id
 		ig.GET("/info", ic.Info)
-		// TODO:
 		// update the item status :done
 		ig.GET("/setdone", ic.SetDone)
-		// TODO:
 		// update the item status :undone
 		ig.GET("/setundone", ic.SetUnDone)
 	}
@@ -118,7 +116,7 @@ func installRouters(g *gin.Engine) error {
 		// TODO:
 		cg.GET("/getitems")
 		// TODO:
-		cg.GET("/additems")
+		cg.GET("/additem")
 		// TODO:
 		cg.GET("/deleteitem")
 	}

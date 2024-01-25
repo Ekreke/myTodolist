@@ -238,6 +238,131 @@ func (i *items) SetDone(itemid int, username string) (resp *v1.CommonResponseWiz
 }
 
 // update a item's info
+// FIXME: 事务
 func (i *items) Update(it *model.Items, username string) (resp *v1.CommonResponseWizMsg, err error) {
-	return resp, nil
+	// get user id
+	tmpu := &model.Users{}
+	// select id from users where username = ?
+	err = i.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
+	if err != nil {
+		log.Fatalw("get userid from username failed")
+		return nil, err
+	}
+	// get pre items
+	tx := i.db.Begin()
+	preitem := &model.Items{}
+	err = tx.Debug().Where("id = ?", it.ID).Find(&preitem).Error
+	if err != nil {
+		log.Fatalw("get pre item failed ... ")
+		return nil, err
+	}
+	// edit item name if changed
+	if it.ItemName != preitem.ItemName {
+		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("item_name", it.ItemName).Error
+		if err != nil {
+			tx.Rollback()
+			log.Fatalw("update item name failed ... ")
+			return nil, err
+		}
+	}
+
+	// edit description if changed
+	if it.Description != preitem.Description {
+		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("description", it.Description).Error
+		if err != nil {
+			tx.Rollback()
+			log.Fatalw("update item description failed ... ")
+			return nil, err
+		}
+	}
+
+	// edit deadline if changed
+	if it.Deadline != preitem.Deadline {
+
+		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("deadline", it.Deadline).Error
+		if err != nil {
+			tx.Rollback()
+			log.Fatalw("update item deadline failed ... ")
+			return nil, err
+		}
+	}
+
+	// edit important if changed
+	if it.Important != preitem.Important {
+		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("important", it.Important).Error
+		if err != nil {
+			tx.Rollback()
+			log.Fatalw("update item important failed ... ")
+			return nil, err
+		}
+	}
+
+	// edit myday if changed
+	if it.Myday != preitem.Myday {
+		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("myday", it.Myday).Error
+		if err != nil {
+			tx.Rollback()
+			log.Fatalw("update item myday failed ... ")
+			return nil, err
+		}
+		if it.Myday == 1 {
+			// add record to mydays
+			md := &model.Myday{Item_id: it.ID, User_id: tmpu.ID}
+			err = tx.Debug().Save(&md).Error
+			if err != nil {
+				tx.Rollback()
+				log.Fatalw("add record to mydays failed ... ")
+				return nil, err
+			}
+		} else {
+			// delete record from mydays
+			err = tx.Debug().Where("item_id = ?", it.ID).Delete(&model.Myday{}).Error
+			if err != nil {
+				tx.Rollback()
+				log.Fatalw("delete record from mydays failed ... ")
+				return nil, err
+			}
+		}
+	}
+
+	// edit collection if changed
+	// collection maybe nil
+	if it.CollectionId != preitem.CollectionId {
+		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("collection_id", it.CollectionId).Error
+		if err != nil {
+			tx.Rollback()
+			log.Fatalw("update item collection_id failed ... ")
+			return nil, err
+		}
+		// change collection
+		if preitem.CollectionId != 0 {
+
+			// delete record
+			cu := &model.CollectionsItems{
+				CollectionId: preitem.CollectionId,
+				ItemsId:      it.ID,
+			}
+			// delete pre record
+			err = tx.Debug().Where("items_id = ?", it.ID).Delete(&cu).Error
+			if err != nil {
+				tx.Rollback()
+				log.Fatalw("delete collection_items record failed")
+				return nil, err
+			}
+
+		}
+		ncu := &model.CollectionsItems{
+			CollectionId: it.CollectionId,
+			ItemsId:      it.ID,
+		}
+		// add new record
+		err = tx.Debug().Create(&ncu).Error
+		if err != nil {
+			log.Fatalw("add collection_items record failed")
+			tx.Rollback()
+			return nil, err
+		}
+	}
+	tx.Commit()
+	return &v1.CommonResponseWizMsg{Msg: "success"}, nil
 }

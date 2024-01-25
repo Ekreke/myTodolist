@@ -97,3 +97,144 @@ net/http.(*conn).serve
 	C:/Program Files/Go/src/net/http/server.go:2009
 2024-01-25 18:43:26.707	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
 2024-01-25 18:43:30.839	info	item/setundone.go:11	Item setundone function called	{"X-Request-ID": "2e64f5f0-416a-46fa-bc70-8868be4b8221", "X-Username": "ekreke34555"}
+2024-01-25 18:57:10.853	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-25 18:57:10.853	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-25 18:57:10.854	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-25 20:35:21.193	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 20:40:27.346	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-25 20:40:27.347	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 4}
+2024-01-25 20:40:27.348	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-25 20:40:33.686	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 20:41:40.820	info	item/update.go:12	Item Update function called	{"X-Request-ID": "046b96de-ded2-46f8-8ce4-f868f9345164", "X-Username": "ekreke34555"}
+2024-01-25 20:43:05.335	info	item/update.go:12	Item Update function called	{"X-Request-ID": "bdaf8e96-1e3e-487a-8002-f9efd99fd59d", "X-Username": "ekreke34555"}
+2024-01-25 20:43:05.341	fatal	store/items.go:279	update item deadline failed ... 
+github.com/ekreke/myTodolist/internal/mytodolist/store.(*items).Update
+	C:/Golang/myTodolist/internal/mytodolist/store/items.go:279
+github.com/ekreke/myTodolist/internal/mytodolist/biz/item.(*itemBiz).Update
+	C:/Golang/myTodolist/internal/mytodolist/biz/item/update.go:24
+github.com/ekreke/myTodolist/internal/mytodolist/controller/item.(*ItemController).Update
+	C:/Golang/myTodolist/internal/mytodolist/controller/item/update.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.installRouters.Authn.func3
+	C:/Golang/myTodolist/internal/pkg/middleware/authn.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.run.RequestID.func1
+	C:/Golang/myTodolist/internal/pkg/middleware/requestid.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.Cors
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.NoCache
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:17
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
+net/http.serverHandler.ServeHTTP
+	C:/Program Files/Go/src/net/http/server.go:2938
+net/http.(*conn).serve
+	C:/Program Files/Go/src/net/http/server.go:2009
+2024-01-25 20:51:50.688	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 20:52:02.311	info	item/update.go:12	Item Update function called	{"X-Request-ID": "1a3008fe-a8d7-4b52-a92e-a9b0a51b3517", "X-Username": "ekreke34555"}
+2024-01-25 20:52:02.338	fatal	store/items.go:341	delete collection_items record failed
+github.com/ekreke/myTodolist/internal/mytodolist/store.(*items).Update
+	C:/Golang/myTodolist/internal/mytodolist/store/items.go:341
+github.com/ekreke/myTodolist/internal/mytodolist/biz/item.(*itemBiz).Update
+	C:/Golang/myTodolist/internal/mytodolist/biz/item/update.go:28
+github.com/ekreke/myTodolist/internal/mytodolist/controller/item.(*ItemController).Update
+	C:/Golang/myTodolist/internal/mytodolist/controller/item/update.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.installRouters.Authn.func3
+	C:/Golang/myTodolist/internal/pkg/middleware/authn.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.run.RequestID.func1
+	C:/Golang/myTodolist/internal/pkg/middleware/requestid.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.Cors
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.NoCache
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:17
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
+net/http.serverHandler.ServeHTTP
+	C:/Program Files/Go/src/net/http/server.go:2938
+net/http.(*conn).serve
+	C:/Program Files/Go/src/net/http/server.go:2009
+2024-01-25 20:53:20.021	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 20:53:43.810	info	item/update.go:12	Item Update function called	{"X-Request-ID": "b6430d47-91c8-4f76-86bc-3b077028d4b9", "X-Username": "ekreke34555"}
+2024-01-25 20:56:02.350	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-25 20:56:02.351	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-25 20:56:02.352	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-25 20:56:07.737	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 20:56:15.710	info	item/update.go:12	Item Update function called	{"X-Request-ID": "66d66dc6-08d5-49e0-9c31-4d3fd98559be", "X-Username": "ekreke34555"}
+2024-01-25 21:01:44.708	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-25 21:01:44.708	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-25 21:01:44.709	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-25 21:01:52.108	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 21:01:58.321	info	item/update.go:12	Item Update function called	{"X-Request-ID": "5c1461ef-e583-41df-9111-a6356c590e48", "X-Username": "ekreke34555"}
+2024-01-25 21:02:30.981	info	item/update.go:12	Item Update function called	{"X-Request-ID": "56e48e0f-d5c8-4d71-ac44-680fbcc44c25", "X-Username": "ekreke34555"}
+2024-01-25 21:09:43.145	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-25 21:09:43.145	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-01-25 21:09:43.147	info	mytodolist/mytodolist.go:96	Server exited
+2024-01-25 21:09:54.656	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 21:09:59.480	info	item/update.go:12	Item Update function called	{"X-Request-ID": "32ddab6b-e09c-4497-8c25-1693cabd8053", "X-Username": "ekreke34555"}
+2024-01-25 21:09:59.484	fatal	store/items.go:361	add collection_items record failed
+github.com/ekreke/myTodolist/internal/mytodolist/store.(*items).Update
+	C:/Golang/myTodolist/internal/mytodolist/store/items.go:361
+github.com/ekreke/myTodolist/internal/mytodolist/biz/item.(*itemBiz).Update
+	C:/Golang/myTodolist/internal/mytodolist/biz/item/update.go:28
+github.com/ekreke/myTodolist/internal/mytodolist/controller/item.(*ItemController).Update
+	C:/Golang/myTodolist/internal/mytodolist/controller/item/update.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.installRouters.Authn.func3
+	C:/Golang/myTodolist/internal/pkg/middleware/authn.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.run.RequestID.func1
+	C:/Golang/myTodolist/internal/pkg/middleware/requestid.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.Cors
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.NoCache
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:17
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
+net/http.serverHandler.ServeHTTP
+	C:/Program Files/Go/src/net/http/server.go:2938
+net/http.(*conn).serve
+	C:/Program Files/Go/src/net/http/server.go:2009
