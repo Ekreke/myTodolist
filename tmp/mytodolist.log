@@ -238,3 +238,5 @@ net/http.serverHandler.ServeHTTP
 	C:/Program Files/Go/src/net/http/server.go:2938
 net/http.(*conn).serve
 	C:/Program Files/Go/src/net/http/server.go:2009
+2024-01-25 21:10:39.449	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 21:10:44.786	info	item/update.go:12	Item Update function called	{"X-Request-ID": "5eb0b517-c6c7-49d8-93b7-d95c36fe187d", "X-Username": "ekreke34555"}
