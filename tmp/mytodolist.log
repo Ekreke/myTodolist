@@ -55,3 +55,43 @@
 2024-01-23 00:21:38.495	info	mytodolist/mytodolist.go:96	Server exited
 2024-01-24 17:50:34.445	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
 2024-01-24 18:04:53.708	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-01-25 18:37:00.760	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-01-25 18:40:19.393	info	user/login.go:12	Login function called	{"X-Request-ID": "51b079ca-c4d3-4757-af23-62ec10ecb212"}
+2024-01-25 18:40:31.196	info	item/setundone.go:11	Item setundone function called	{"X-Request-ID": "66b06bf1-b754-47fa-91f3-75c52553cb5a", "X-Username": "ekreke34555"}
+2024-01-25 18:40:31.206	fatal	store/items.go:218	update items undone failed
+github.com/ekreke/myTodolist/internal/mytodolist/store.(*items).SetUnDone
+	C:/Golang/myTodolist/internal/mytodolist/store/items.go:218
+github.com/ekreke/myTodolist/internal/mytodolist/biz/item.(*itemBiz).SetUnDone
+	C:/Golang/myTodolist/internal/mytodolist/biz/item/setundone.go:9
+github.com/ekreke/myTodolist/internal/mytodolist/controller/item.(*ItemController).SetUnDone
+	C:/Golang/myTodolist/internal/mytodolist/controller/item/setundone.go:18
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.installRouters.Authn.func3
+	C:/Golang/myTodolist/internal/pkg/middleware/authn.go:28
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.run.RequestID.func1
+	C:/Golang/myTodolist/internal/pkg/middleware/requestid.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.Cors
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.NoCache
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:17
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
+net/http.serverHandler.ServeHTTP
+	C:/Program Files/Go/src/net/http/server.go:2938
+net/http.(*conn).serve
+	C:/Program Files/Go/src/net/http/server.go:2009

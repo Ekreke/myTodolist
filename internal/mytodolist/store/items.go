@@ -209,13 +209,31 @@ func (i *items) SetUnDone(itemid int, username string) (resp *v1.CommonResponseW
 	err = i.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
 	if err != nil {
 		log.Fatalw("get userid from username failed")
+		return nil, err
+	}
+	err = i.db.Debug().Model(&model.Items{}).Where("id = ?", itemid).Update("done", 0).Error
+	if err != nil {
+		log.Fatalw("update items undone failed")
+		return nil, err
 	}
 	return resp, nil
 }
 
 // set a item done by item id
 func (i *items) SetDone(itemid int, username string) (resp *v1.CommonResponseWizMsg, err error) {
-
+	// get user id
+	tmpu := &model.Users{}
+	// select id from users where username = ?
+	err = i.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
+	if err != nil {
+		log.Fatalw("get userid from username failed")
+		return nil, err
+	}
+	err = i.db.Debug().Model(&model.Items{}).Where("id = ?", itemid).Update("done", 1).Error
+	if err != nil {
+		log.Fatalw("update items done failed")
+		return nil, err
+	}
 	return resp, nil
 }
 
