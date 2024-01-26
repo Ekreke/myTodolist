@@ -73,7 +73,6 @@ func installRouters(g *gin.Engine) error {
 		ig.POST("/create", ic.Create)
 		// delete a item
 		ig.GET("/delete", ic.Delete)
-		// TODO:
 		// update a item info
 		ig.POST("/update", ic.Update)
 		// get a item info by item id
