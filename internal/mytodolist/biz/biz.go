@@ -1,6 +1,7 @@
 package biz
 
 import (
+	"github.com/ekreke/myTodolist/internal/mytodolist/biz/collection"
 	"github.com/ekreke/myTodolist/internal/mytodolist/biz/item"
 	"github.com/ekreke/myTodolist/internal/mytodolist/biz/user"
 	"github.com/ekreke/myTodolist/internal/mytodolist/store"
@@ -9,6 +10,7 @@ import (
 type IBiz interface {
 	Users() user.UserBiz
 	Items() item.ItemBiz
+	Collections() collection.CollectionBiz
 }
 
 // 确保 biz 实现了 IBiz 接口.
@@ -30,4 +32,8 @@ func (b *biz) Users() user.UserBiz {
 
 func (b *biz) Items() item.ItemBiz {
 	return item.New(b.ds)
+}
+
+func (b *biz) Collections() collection.CollectionBiz {
+	return collection.New(b.ds)
 }

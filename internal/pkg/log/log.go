@@ -160,7 +160,6 @@ func (l *zapLogger) Fatalw(msg string, keysAndValues ...interface{}) {
 	l.z.Sugar().Fatalw(msg, keysAndValues...)
 }
 
-// TODO: requestID
 // 每次一个请求建立都会深度复制(from golbal logger instance)一个zaplogger实例,然后填入requestID
 func C(ctx context.Context) *zapLogger {
 	return std.C(ctx)

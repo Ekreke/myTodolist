@@ -17,3 +17,7 @@ type CommonResponseWizItemsAndPagination struct {
 	Items      []model.Items `json:"items"`
 	Pagination string        `json:"pagination"`
 }
+
+type CollectionLoadItemsResp struct {
+	Items []model.Items `json:"items"`
+}

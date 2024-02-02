@@ -1,6 +1,7 @@
 package mytodolist
 
 import (
+	"github.com/ekreke/myTodolist/internal/mytodolist/controller/collection"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/item"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/t"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/user"
@@ -23,6 +24,7 @@ func installRouters(g *gin.Engine) error {
 	uc := user.New(store.S)
 	tc := t.New(store.S)
 	ic := item.New(store.S)
+	cc := collection.New(store.S)
 	// item controller
 	// ic := item.New(store.S)
 	tg := g.Group("/test")
@@ -99,12 +101,11 @@ func installRouters(g *gin.Engine) error {
 	}
 	cg := g.Group("/collection")
 	{
-		// TODO:
+		cg.Use(middleware.Authn())
 		// user creat a collection
-		cg.POST("/create")
+		cg.POST("/create", cc.Create)
 		// user delete a collection
-		// TODO:
-		cg.GET("/delete")
+		cg.GET("/delete", cc.Delete)
 		// TODO:
 		// user update a collection's info
 		cg.POST("/update")
@@ -113,7 +114,7 @@ func installRouters(g *gin.Engine) error {
 		// Todo:
 		// cg.GET("/mycollections")
 		// TODO:
-		cg.GET("/getitems")
+		cg.GET("/loaditems")
 		// TODO:
 		cg.GET("/additem")
 		// TODO:

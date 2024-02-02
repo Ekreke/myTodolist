@@ -15,6 +15,7 @@ var (
 type Istore interface {
 	Users() UserStore
 	Items() ItemStore
+	Collection() CollectionStore
 }
 
 type datastore struct {
@@ -40,4 +41,8 @@ func (ds *datastore) Users() UserStore {
 
 func (ds *datastore) Items() ItemStore {
 	return newItems(ds.db)
+}
+
+func (ds *datastore) Collection() CollectionStore {
+	return newCollection(ds.db)
 }
