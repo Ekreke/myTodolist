@@ -293,3 +293,8 @@ net/http.(*conn).serve
 2024-02-02 20:58:38.922	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-02-02 20:58:38.923	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
 2024-02-02 20:58:38.923	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-02 20:58:45.180	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-02 20:58:49.904	info	collection/create.go:12	collection create function called	{"X-Request-ID": "2de61b44-700b-4a7d-a1c5-c88035e4f83b", "X-Username": "ekreke34555"}
+2024-02-02 20:58:49.905	debug	collection/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-02-02 21:00:16.554	info	collection/delete.go:12	collection create function called	{"X-Request-ID": "dfe56a9c-4768-4d98-a4a2-66bc1ef9aaf2", "X-Username": "ekreke34555"}
+2024-02-02 21:00:16.554	debug	collection/delete.go:14	the username is:	{"username:": "ekreke34555"}
