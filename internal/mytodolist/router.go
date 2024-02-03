@@ -3,6 +3,7 @@ package mytodolist
 import (
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/collection"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/item"
+	"github.com/ekreke/myTodolist/internal/mytodolist/controller/project"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/t"
 	"github.com/ekreke/myTodolist/internal/mytodolist/controller/user"
 	"github.com/ekreke/myTodolist/internal/mytodolist/store"
@@ -20,12 +21,12 @@ func installRouters(g *gin.Engine) error {
 	})
 	// 注册 pprof 路由
 	pprof.Register(g)
-	// uercontroller
+	// controllers
 	uc := user.New(store.S)
 	tc := t.New(store.S)
 	ic := item.New(store.S)
 	cc := collection.New(store.S)
-	// item controller
+	pc := project.New(store.S)
 	// ic := item.New(store.S)
 	tg := g.Group("/test")
 	{
@@ -86,15 +87,16 @@ func installRouters(g *gin.Engine) error {
 	}
 	pg := g.Group("project")
 	{
+		pg.Use(middleware.Authn())
 		// TODO:
 		// user join a project -> request with join code
-		pg.POST("/join")
+		pg.POST("/join", pc.Join)
 		// TODO:
 		// list projects belong to the projects
-		pg.POST("/myprojects")
+		pg.POST("/myprojects", pc.Myprojects)
 		// TODO:
 		// quit a project
-		pg.GET("/quit")
+		pg.GET("/quit", pc.Quit)
 		// TODO:
 		// create a project by root
 		pg.POST("/create")
@@ -106,7 +108,6 @@ func installRouters(g *gin.Engine) error {
 		cg.POST("/create", cc.Create)
 		// user delete a collection
 		cg.GET("/delete", cc.Delete)
-		// TODO:
 		// user update a collection's info
 		cg.POST("/update", cc.Update)
 		// Todo:

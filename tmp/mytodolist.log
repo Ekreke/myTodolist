@@ -1,0 +1,23 @@
+2024-02-03 18:05:44.801	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-03 18:06:42.231	info	project/quit.go:13	project quit function called	{"X-Request-ID": "aa5ebc90-defd-448e-9e3c-9dbefbf8fbf7"}
+2024-02-03 18:07:05.790	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-03 18:07:05.790	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-03 18:07:05.790	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-03 18:07:11.552	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-03 18:07:14.396	info	project/quit.go:13	project quit function called	{"X-Request-ID": "54876004-e323-4242-9b0b-fae5640d39be"}
+2024-02-03 18:07:59.619	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-03 18:07:59.619	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-03 18:07:59.621	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-03 18:08:06.253	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-03 18:08:08.075	info	project/quit.go:13	project quit function called	{"X-Request-ID": "e3c0ab5a-d339-49df-a618-43d7d2a3931b"}
+2024-02-03 18:09:52.311	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-03 18:09:52.311	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-03 18:09:52.312	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-03 18:09:58.624	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-03 18:10:33.714	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-03 18:10:33.714	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 4}
+2024-02-03 18:10:33.714	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-03 18:10:41.676	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-03 18:10:44.986	error	log/log.go:120	Ignored key without a value.	{"ignored": 1}
+2024-02-03 18:10:44.986	info	middleware/authn.go:37	username is	{"ekreke34555": "userid is "}
+2024-02-03 18:10:44.986	info	project/quit.go:13	project quit function called	{"X-Request-ID": "be4ac031-fe07-4d99-8a9e-b94386b5845a", "X-Username": "ekreke34555"}

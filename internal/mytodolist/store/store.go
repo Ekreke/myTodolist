@@ -3,6 +3,8 @@ package store
 import (
 	"sync"
 
+	"github.com/ekreke/myTodolist/internal/pkg/log"
+	"github.com/ekreke/myTodolist/internal/pkg/model"
 	"gorm.io/gorm"
 )
 
@@ -16,6 +18,7 @@ type Istore interface {
 	Users() UserStore
 	Items() ItemStore
 	Collection() CollectionStore
+	Projects() ProjectStore
 }
 
 type datastore struct {
@@ -45,4 +48,20 @@ func (ds *datastore) Items() ItemStore {
 
 func (ds *datastore) Collection() CollectionStore {
 	return newCollection(ds.db)
+}
+
+func (ds *datastore) Projects() ProjectStore {
+	return newProjects(ds.db)
+}
+
+func GetUserIdByUserName(username string) (int, error) {
+	// 根据 username 查询 user id
+	tmpu := &model.Users{}
+	// select id from users where username = ?
+	err := S.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
+	if err != nil {
+		log.Fatalw("get userid from username failed")
+		return 0, err
+	}
+	return int(tmpu.ID), nil
 }

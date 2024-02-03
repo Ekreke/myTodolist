@@ -3,6 +3,7 @@ package middleware
 import (
 	"fmt"
 
+	"github.com/ekreke/myTodolist/internal/mytodolist/store"
 	"github.com/ekreke/myTodolist/internal/pkg/core"
 	"github.com/ekreke/myTodolist/internal/pkg/errno"
 	"github.com/ekreke/myTodolist/internal/pkg/known"
@@ -24,7 +25,14 @@ func Authn() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
+		id, err := store.GetUserIdByUserName(username)
+		if err != nil {
+			core.WriteResponse(c, errno.ErrUserNotFound, nil)
+			c.Abort()
+			return
+		}
 		c.Set(known.XUsernameKey, username)
+		c.Set(known.XUserID, id)
 		c.Next()
 	}
 }
