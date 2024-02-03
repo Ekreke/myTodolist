@@ -6,7 +6,7 @@ import (
 )
 
 func (c *collectionBiz) DeleteItem(r *v1.CollectionDeleteItemRequest, username string) (*v1.CommonResponseWizMsg, error) {
-	resp, err := c.ds.Collection().DeleteItem(r.ItemId, username)
+	resp, err := c.ds.Collection().DeleteItem(r.ItemId, r.CollectionId, username)
 	if err != nil {
 		log.Errorw("delete item from collection failed")
 		return nil, err

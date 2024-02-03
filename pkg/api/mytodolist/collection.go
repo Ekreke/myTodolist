@@ -21,7 +21,8 @@ type CollectionLoadItemsWizIdRequest struct {
 }
 
 type CollectionDeleteItemRequest struct {
-	ItemId int64 `form:"item_id"`
+	ItemId       int64 `form:"item_id"`
+	CollectionId int64 `form:"collection_id"`
 }
 
 type DeleteCollectionWizIDRequest struct {

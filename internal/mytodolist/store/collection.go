@@ -11,7 +11,7 @@ type CollectionStore interface {
 	AddItem(itemid int64, collectionid int64, username string) (*v1.CommonResponseWizMsg, error)
 	Create(icon int64, name string, username string) (*v1.CommonResponseWizMsg, error)
 	Delete(collectionid int64, username string) (*v1.CommonResponseWizMsg, error)
-	DeleteItem(itemid int64, username string) (*v1.CommonResponseWizMsg, error)
+	DeleteItem(itemid int64, collectionid int64, username string) (*v1.CommonResponseWizMsg, error)
 	Update(collectionid int64, icon int64, name string, username string) (*v1.CommonResponseWizMsg, error)
 	LoadItems(collectionid int64, username string) (*v1.CollectionLoadItemsResp, error)
 }
@@ -22,7 +22,19 @@ type collection struct {
 
 // AddItem implements CollectionStore.
 func (c *collection) AddItem(itemid int64, collectionid int64, username string) (*v1.CommonResponseWizMsg, error) {
-	panic("unimplemented")
+	// save record to collections-items
+	tx := c.db.Begin()
+	ci := &model.CollectionsItems{ItemsId: itemid, CollectionId: collectionid}
+	if err := tx.Debug().Create(&ci).Error; err != nil {
+		log.Errorw("save record to collections-items failed")
+		tx.Rollback()
+		return nil, err
+	}
+	// FIXME: 废弃的字段：items->dollection_id
+	// add item's collection id
+	// return response
+	tx.Commit()
+	return &v1.CommonResponseWizMsg{Msg: "success"}, nil
 }
 
 // Create implements CollectionStore.
@@ -88,18 +100,76 @@ func (c *collection) Delete(collectionid int64, username string) (*v1.CommonResp
 }
 
 // DeleteItem implements CollectionStore.
-func (c *collection) DeleteItem(itemid int64, username string) (*v1.CommonResponseWizMsg, error) {
-	panic("unimplemented")
+func (c *collection) DeleteItem(itemid int64, collectionid int64, username string) (*v1.CommonResponseWizMsg, error) {
+	// delete item from collections_items
+	ci := &model.CollectionsItems{}
+	if err := c.db.Debug().Where("collection_id = ? and items_id = ?", collectionid, itemid).Delete(&ci).Error; err != nil {
+		log.Errorw("delete ci failed")
+		return nil, err
+	}
+	return &v1.CommonResponseWizMsg{Msg: "success"}, nil
 }
 
 // LoadItems implements CollectionStore.
 func (c *collection) LoadItems(collectionid int64, username string) (*v1.CollectionLoadItemsResp, error) {
-	panic("unimplemented")
+	tx := c.db.Begin()
+	citemids := &[]model.CollectionsItems{}
+	if err := tx.Debug().Where("collection_id = ?", collectionid).Find(&citemids).Error; err != nil {
+		log.Errorw("get items id failed")
+		tx.Rollback()
+		return nil, err
+	}
+	ids := []int{}
+	for _, itemid := range *citemids {
+		ids = append(ids, int(itemid.ItemsId))
+	}
+
+	items := &[]model.Items{}
+	if err := tx.Debug().Where("id in ?", ids).Find(&items).Error; err != nil {
+		log.Errorw("get item by item id failed")
+		tx.Rollback()
+		return nil, err
+	}
+	return &v1.CollectionLoadItemsResp{Items: *items}, nil
 }
 
 // Update implements CollectionStore.
 func (c *collection) Update(collectionid int64, icon int64, name string, username string) (*v1.CommonResponseWizMsg, error) {
-	panic("unimplemented")
+	// get user id
+	tmpu := &model.Users{}
+	// select id from users where username = ?
+	if err := c.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error; err != nil {
+		log.Fatalw("get userid from username failed")
+	}
+
+	// select pre collection
+	preco := &model.Collections{}
+	tx := c.db.Begin()
+	if err := tx.Debug().Table("collections").Where("id = ?", collectionid).First(&preco).Error; err != nil {
+		log.Errorw("get collection by id failed")
+		tx.Rollback()
+		return nil, err
+	}
+
+	// update icon if icon changed
+	if preco.Icon != icon {
+		if err := tx.Debug().Model(&model.Collections{}).Where("id = ?", collectionid).Update("icon", icon).Error; err != nil {
+			log.Errorw("update icon failed")
+			tx.Rollback()
+			return nil, err
+		}
+	}
+	// update name if name changed
+	if preco.Name != name {
+		if err := tx.Debug().Model(&model.Collections{}).Where("id = ?", collectionid).Update("name", name).Error; err != nil {
+			log.Errorw("update name failed")
+			tx.Rollback()
+			return nil, err
+		}
+	}
+	tx.Commit()
+	return &v1.CommonResponseWizMsg{Msg: "success"}, nil
+	// commit
 }
 
 var _ CollectionStore = (*collection)(nil)

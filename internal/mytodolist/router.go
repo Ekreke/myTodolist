@@ -108,17 +108,14 @@ func installRouters(g *gin.Engine) error {
 		cg.GET("/delete", cc.Delete)
 		// TODO:
 		// user update a collection's info
-		cg.POST("/update")
+		cg.POST("/update", cc.Update)
 		// Todo:
 		// cg.GET("/getcollectioninfo")
 		// Todo:
 		// cg.GET("/mycollections")
-		// TODO:
-		cg.GET("/loaditems")
-		// TODO:
-		cg.GET("/additem")
-		// TODO:
-		cg.GET("/deleteitem")
+		cg.GET("/loaditems", cc.LoadItems)
+		cg.GET("/additem", cc.AddItem)
+		cg.GET("/deleteitem", cc.DeleteItem)
 	}
 	return nil
 }
