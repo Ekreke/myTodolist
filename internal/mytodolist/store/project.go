@@ -12,6 +12,8 @@ type ProjectStore interface {
 	CheckUserIfInProject(projectid int64, userid int64) (in bool, err error)
 	CheckPwdIfMatch(projectid int64, pwd string) (match bool, err error)
 	AddRecordPU(projectid int64, userid int64) (affectedRows int, err error)
+	GetProjectInfoById(projectid int64) (project model.Projects, err error)
+	GetProjectsIdsByUserId(userid int64) (ids []int, err error)
 }
 
 type projectStore struct {
@@ -81,4 +83,27 @@ func (ps *projectStore) AddRecordPU(projectid int64, userid int64) (affectedRows
 		return int(ps.db.RowsAffected), err
 	}
 	return int(ps.db.RowsAffected), nil
+}
+
+// GetProjectInfoById implements ProjectStore.
+func (ps *projectStore) GetProjectInfoById(projectid int64) (project model.Projects, err error) {
+	p := &model.Projects{}
+	if err := ps.db.Debug().Where("id = ?", projectid).First(&p).Error; err != nil {
+		return *p, err
+	}
+
+	return *p, nil
+
+}
+
+// GetProjectsIdsByUserId implements ProjectStore.
+func (ps *projectStore) GetProjectsIdsByUserId(userid int64) (ids []int, err error) {
+	pus := &[]model.ProjectsUsers{}
+	if err := ps.db.Debug().Where("users_id = ?", userid).Find(&pus).Error; err != nil {
+		return ids, err
+	}
+	for _, pu := range *pus {
+		ids = append(ids, int(pu.ProjectsId))
+	}
+	return ids, nil
 }

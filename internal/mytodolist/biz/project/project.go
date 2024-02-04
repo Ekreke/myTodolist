@@ -9,6 +9,7 @@ type ProjectBiz interface {
 	Join(userid int64, projectid int64, pwd string) (*v1.CommonResponseWizMsg, error)
 	Myprojects(userid int64) (*v1.MyprojectsResponse, error)
 	Quit(userid int64, projectid int64) (*v1.CommonResponseWizMsg, error)
+	Info(projectid int64) (*v1.ProjectInfoResponse, error)
 }
 
 type projectBiz struct {

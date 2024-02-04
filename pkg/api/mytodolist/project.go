@@ -13,3 +13,11 @@ type JoinProjectRequest struct {
 	ProjectId int64  `form:"project_id"`
 	Password  string `form:"password"`
 }
+
+type ProjectInfoRequest struct {
+	ProjectId int64 `form:"project_id"`
+}
+
+type ProjectInfoResponse struct {
+	Projects model.Projects `json:"projects"`
+}

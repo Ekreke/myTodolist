@@ -1,0 +1,21 @@
+2024-02-04 14:07:45.543	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-04 14:09:04.216	info	user/login.go:12	Login function called	{"X-Request-ID": "ffb39350-cd06-4e47-b5ca-f284286b0322"}
+2024-02-04 14:09:17.192	info	project/info.go:12	project info function called	{"X-Request-ID": "64547b43-eafc-4dbc-a32e-130ca2da0149", "X-Username": "ekreke34555"}
+2024-02-04 14:33:19.748	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-04 14:33:19.748	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-04 14:33:19.748	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-04 14:33:26.585	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-04 14:33:43.409	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-04 14:33:43.409	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-04 14:33:43.410	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-04 14:33:49.149	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-04 14:33:57.467	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "5f02a28a-abd1-401d-97bf-16f9aa783870", "X-Username": "ekreke34555"}
+2024-02-04 14:35:00.405	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-04 14:35:00.405	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-04 14:35:00.407	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-04 14:35:07.039	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-04 14:35:08.938	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "cc735328-bce0-410f-9949-b232dd2c8b75", "X-Username": "ekreke34555"}
+2024-02-04 14:36:24.263	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "63bea9fa-4257-4f98-96f9-0f39d09c820e", "X-Username": "ekreke34555"}
+2024-02-04 14:36:31.712	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-04 14:36:31.712	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-02-04 14:36:31.713	info	mytodolist/mytodolist.go:96	Server exited

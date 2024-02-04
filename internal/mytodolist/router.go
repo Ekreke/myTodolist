@@ -92,12 +92,14 @@ func installRouters(g *gin.Engine) error {
 		pg.POST("/join", pc.Join)
 		// TODO:
 		// list projects belong to the projects
-		pg.POST("/myprojects", pc.Myprojects)
+		pg.GET("/myprojects", pc.Myprojects)
 		// quit a project
 		pg.GET("/quit", pc.Quit)
 		// TODO:
 		// create a project by root
 		pg.POST("/create")
+		// get project info by id
+		pg.GET("/info", pc.Info)
 	}
 	cg := g.Group("/collection")
 	{

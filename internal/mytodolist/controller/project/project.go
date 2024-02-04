@@ -14,6 +14,7 @@ type IProjectController interface {
 	Join(ctx *gin.Context)
 	Quit(ctx *gin.Context)
 	Myprojects(ctx *gin.Context)
+	Info(ctx *gin.Context)
 }
 
 var _ IProjectController = (*ProjectController)(nil)
