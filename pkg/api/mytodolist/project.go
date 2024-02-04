@@ -9,3 +9,7 @@ type MyprojectsResponse struct {
 type ProjectQuitRequest struct {
 	ProjectId int64 `form:"project_id"`
 }
+type JoinProjectRequest struct {
+	ProjectId int64  `form:"project_id"`
+	Password  string `form:"password"`
+}

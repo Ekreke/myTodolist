@@ -88,13 +88,11 @@ func installRouters(g *gin.Engine) error {
 	pg := g.Group("project")
 	{
 		pg.Use(middleware.Authn())
-		// TODO:
 		// user join a project -> request with join code
 		pg.POST("/join", pc.Join)
 		// TODO:
 		// list projects belong to the projects
 		pg.POST("/myprojects", pc.Myprojects)
-		// TODO:
 		// quit a project
 		pg.GET("/quit", pc.Quit)
 		// TODO:
