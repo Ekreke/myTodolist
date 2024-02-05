@@ -37,3 +37,7 @@
 2024-02-05 17:49:26.002	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-02-05 17:49:26.002	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
 2024-02-05 17:49:26.003	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-05 18:26:26.536	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-05 18:26:42.150	info	user/register.go:19	Register function called	{"X-Request-ID": "0615ab66-2fb7-4817-b76b-cc1e6909979b"}
+2024-02-05 18:27:11.678	info	user/login.go:12	Login function called	{"X-Request-ID": "7b05968c-7da0-41c3-bf08-3149dbe57f42"}
+2024-02-05 18:27:45.838	debug	middleware/authz.go:23	Build authorize context	{"sub": "devtest", "obj": "/test/lazy", "act": "GET"}
