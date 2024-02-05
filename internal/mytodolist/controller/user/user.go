@@ -2,6 +2,7 @@ package user
 
 import (
 	"github.com/ekreke/myTodolist/internal/mytodolist/biz"
+	"github.com/ekreke/myTodolist/pkg/auth"
 	"github.com/gin-gonic/gin"
 
 	"github.com/ekreke/myTodolist/internal/mytodolist/store"
@@ -9,6 +10,7 @@ import (
 
 type UserController struct {
 	// casbin
+	a *auth.Authz
 	// grpc
 	b biz.IBiz
 }
@@ -26,6 +28,6 @@ type IUserController interface {
 
 var _ IUserController = (*UserController)(nil)
 
-func New(ds store.Istore) *UserController {
-	return &UserController{b: biz.NewBiz(ds)}
+func New(ds store.Istore, a *auth.Authz) *UserController {
+	return &UserController{b: biz.NewBiz(ds), a: a}
 }

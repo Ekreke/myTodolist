@@ -10,6 +10,7 @@ import (
 	"github.com/ekreke/myTodolist/internal/pkg/core"
 	"github.com/ekreke/myTodolist/internal/pkg/errno"
 	"github.com/ekreke/myTodolist/internal/pkg/middleware"
+	"github.com/ekreke/myTodolist/pkg/auth"
 	"github.com/gin-contrib/pprof"
 	"github.com/gin-gonic/gin"
 )
@@ -21,8 +22,13 @@ func installRouters(g *gin.Engine) error {
 	})
 	// 注册 pprof 路由
 	pprof.Register(g)
+	authz, err := auth.NewAuthz(store.S.DB())
+	if err != nil {
+		return err
+	}
+
 	// controllers
-	uc := user.New(store.S)
+	uc := user.New(store.S, authz)
 	tc := t.New(store.S)
 	ic := item.New(store.S)
 	cc := collection.New(store.S)
@@ -43,10 +49,11 @@ func installRouters(g *gin.Engine) error {
 		ug.POST("/register", uc.Register)
 		// signed the next request need authn
 		ug.Use(middleware.Authn())
+		ug.Use(middleware.Authz(authz))
 		// get user info
 		ug.GET("/info", uc.Info)
 		// update info
-		ug.POST("/updateinfo", uc.UpdateInfo)
+		ug.POST("/info", uc.UpdateInfo)
 		// update user pwd
 		ug.POST("/updatepwd", uc.Updatepwd)
 		// get myday items
@@ -73,13 +80,13 @@ func installRouters(g *gin.Engine) error {
 	{
 		ig.Use(middleware.Authn())
 		// create a item
-		ig.POST("/create", ic.Create)
+		ig.POST("", ic.Create)
 		// delete a item
-		ig.GET("/delete", ic.Delete)
+		ig.DELETE("", ic.Delete)
 		// update a item info
-		ig.POST("/update", ic.Update)
+		ig.PUT("", ic.Update)
 		// get a item info by item id
-		ig.GET("/info", ic.Info)
+		ig.GET("", ic.Info)
 		// update the item status :done
 		ig.GET("/setdone", ic.SetDone)
 		// update the item status :undone

@@ -65,3 +65,7 @@ func GetUserIdByUserName(username string) (int, error) {
 	}
 	return int(tmpu.ID), nil
 }
+
+func (ds *datastore) DB() *gorm.DB {
+	return ds.db
+}

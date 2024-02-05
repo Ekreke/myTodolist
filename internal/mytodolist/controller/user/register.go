@@ -7,6 +7,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+const defaultMethods = "(GET)|(POST)|(PUT)|(DELETE)"
+
 func (ctrl *UserController) Register(ctx *gin.Context) {
 	log.C(ctx).Infow("Register function called")
 	var r v1.RegisterRequest
@@ -17,6 +19,15 @@ func (ctrl *UserController) Register(ctx *gin.Context) {
 	resp, err := ctrl.b.Users().Register(ctx, &r)
 	if err != nil {
 		core.WriteResponse(ctx, err, nil)
+		return
+	}
+
+	log.Debugw("nil:", "-->", ctrl.a)
+	// add policy
+	_, err = ctrl.a.AddNamedPolicy("p", r.Username, "/users/"+r.Username, defaultMethods)
+	if err != nil {
+		core.WriteResponse(ctx, err, nil)
+		return
 	}
 	core.WriteResponse(ctx, err, resp)
 
