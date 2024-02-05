@@ -9,6 +9,12 @@ import (
 
 const defaultMethods = "(GET)|(POST)|(PUT)|(DELETE)"
 
+const (
+// user policy
+// root policy
+// dev policy
+)
+
 func (ctrl *UserController) Register(ctx *gin.Context) {
 	log.C(ctx).Infow("Register function called")
 	var r v1.RegisterRequest
@@ -21,14 +27,23 @@ func (ctrl *UserController) Register(ctx *gin.Context) {
 		core.WriteResponse(ctx, err, nil)
 		return
 	}
-
-	log.Debugw("nil:", "-->", ctrl.a)
 	// add policy
-	_, err = ctrl.a.AddNamedPolicy("p", r.Username, "/users/"+r.Username, defaultMethods)
+	_, err = ctrl.a.AddNamedPolicy("p", r.Username, "/user/*", defaultMethods)
 	if err != nil {
 		core.WriteResponse(ctx, err, nil)
 		return
 	}
+
+	username := r.Username
+	if username[:3] == "dev" {
+		_, err = ctrl.a.AddNamedPolicy("p", r.Username, "/test/*", defaultMethods)
+		if err != nil {
+			core.WriteResponse(ctx, err, nil)
+			return
+		}
+
+	}
+
 	core.WriteResponse(ctx, err, resp)
 
 }

@@ -2,3 +2,38 @@
 2024-02-05 17:26:53.220	debug	user/register.go:25	nil:	{"-->": {}}
 2024-02-05 17:27:43.500	info	user/register.go:13	Register function called	{"X-Request-ID": "e8f6c257-cb61-4d8d-942f-c058382bfd08"}
 2024-02-05 17:27:43.507	debug	user/register.go:25	nil:	{"-->": {}}
+2024-02-05 17:30:18.654	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-05 17:30:18.654	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-05 17:30:18.654	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-05 17:30:27.106	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-05 17:30:29.962	info	user/register.go:13	Register function called	{"X-Request-ID": "4ce8d00e-b7ed-41e2-be19-47491f3d4800"}
+2024-02-05 17:30:29.967	debug	user/register.go:25	nil:	{"-->": {}}
+2024-02-05 17:31:53.191	info	user/login.go:12	Login function called	{"X-Request-ID": "397f0cd0-4606-47a3-94b8-32a31c58b03c"}
+2024-02-05 17:32:18.684	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:32:43.941	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:37:34.021	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:39:22.990	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-05 17:39:22.992	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 5}
+2024-02-05 17:39:22.993	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-05 17:39:33.988	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-05 17:39:35.672	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:39:58.991	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-05 17:39:58.992	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-02-05 17:39:58.992	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-05 17:41:28.828	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-05 17:41:30.015	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:45:03.323	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:45:03.323	info	user/info.go:10	Info function called	{"X-Request-ID": "626b1122-cc3c-400b-a14a-63adea452d94", "X-Username": "csbintest"}
+2024-02-05 17:47:00.697	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/myday", "act": "GET"}
+2024-02-05 17:47:10.144	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:47:40.416	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-05 17:47:40.416	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-02-05 17:47:40.420	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-05 17:47:49.860	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-05 17:47:50.653	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/info", "act": "GET"}
+2024-02-05 17:47:50.653	info	user/info.go:10	Info function called	{"X-Request-ID": "07beeac7-45a6-4aeb-a582-ea3044795c94", "X-Username": "csbintest"}
+2024-02-05 17:48:01.430	debug	middleware/authz.go:23	Build authorize context	{"sub": "csbintest", "obj": "/user/myday", "act": "GET"}
+2024-02-05 17:48:01.430	info	user/myday.go:12	Myday function called	{"X-Request-ID": "b631576f-eca5-4a91-b3e7-dcdcbd600974", "X-Username": "csbintest"}
+2024-02-05 17:49:26.002	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-05 17:49:26.002	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-02-05 17:49:26.003	info	mytodolist/mytodolist.go:96	Server exited

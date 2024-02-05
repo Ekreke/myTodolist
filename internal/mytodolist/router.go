@@ -36,6 +36,8 @@ func installRouters(g *gin.Engine) error {
 	// ic := item.New(store.S)
 	tg := g.Group("/test")
 	{
+		tg.Use(middleware.Authn())
+		tg.Use(middleware.Authz(authz))
 		// test graceful shutdown , send a request and get response delay 10 seconds
 		tg.GET("/lazy", tc.Lazy)
 	}
