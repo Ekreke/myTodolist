@@ -40,6 +40,12 @@ func installRouters(g *gin.Engine) error {
 		tg.Use(middleware.Authz(authz))
 		// test graceful shutdown , send a request and get response delay 10 seconds
 		tg.GET("/lazy", tc.Lazy)
+		// get logs from remote use grpc server
+		tg.GET("/logs", tc.Logs)
+		// get user list remote use grpc server
+		tg.GET("/users", tc.GetUsers)
+		// get casbin: user/rules remote use grpc server
+		tg.GET("/rules", tc.Rules)
 	}
 
 	ug := g.Group("/user")
@@ -109,6 +115,26 @@ func installRouters(g *gin.Engine) error {
 		pg.POST("/create")
 		// get project info by id
 		pg.GET("/info", pc.Info)
+
+		// TODO:create a project
+		pg.POST("/create", pc.Create)
+		// TODO:delete a project
+		pg.DELETE("", pc.Delete)
+		// TODO:update project info
+		pg.POST("/update", pc.Update)
+		// TODO:get all projects i created
+		pg.GET("/projects", pc.projects)
+		// TODO:add node to one project
+		pg.POST("/addnode", pc.AddNode)
+		// TODO:delete a node from one project
+		pg.GET("/deletenode", pc.DeleteNode)
+		// TODO:update node info
+		pg.POST("/updatenode", pc.UpdateNode)
+		// TODO:get nodes from project
+		pg.GET("/nodes", pc.Nodes)
+		// TODO:get node info
+		pg.GET("/nodeinfo", pc.NodeInfo)
+
 	}
 	cg := g.Group("/collection")
 	{

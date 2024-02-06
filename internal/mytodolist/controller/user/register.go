@@ -41,9 +41,6 @@ func (ctrl *UserController) Register(ctx *gin.Context) {
 			core.WriteResponse(ctx, err, nil)
 			return
 		}
-
 	}
-
 	core.WriteResponse(ctx, err, resp)
-
 }
