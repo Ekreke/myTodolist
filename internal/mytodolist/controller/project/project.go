@@ -15,6 +15,20 @@ type IProjectController interface {
 	Quit(ctx *gin.Context)
 	Myprojects(ctx *gin.Context)
 	Info(ctx *gin.Context)
+	Create(ctx *gin.Context)
+	Delete(ctx *gin.Context)
+	Update(ctx *gin.Context)
+	// icreated controller
+	Icreated(ctx *gin.Context)
+	// addnode controller
+	AddNode(ctx *gin.Context)
+	// delete node controller
+	DeleteNode(ctx *gin.Context)
+	// update node controller
+	UpdateNode(ctx *gin.Context)
+	// node info controller
+	NodeInfo(ctx *gin.Context)
+	Nodes(ctx *gin.Context)
 }
 
 var _ IProjectController = (*ProjectController)(nil)

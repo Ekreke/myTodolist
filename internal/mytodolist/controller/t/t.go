@@ -44,7 +44,7 @@ func (ctrl *TestController) Logs(ctx *gin.Context) {
 }
 
 // Rules implements ITestController.
-func (*TestController) Rules(ctx *gin.Context) {
+func (ctrl *TestController) Rules(ctx *gin.Context) {
 	panic("unimplemented")
 }
 

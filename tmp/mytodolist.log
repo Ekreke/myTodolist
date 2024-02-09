@@ -44,3 +44,9 @@
 2024-02-05 19:45:22.434	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-02-05 19:45:22.450	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
 2024-02-05 19:45:22.467	info	mytodolist/mytodolist.go:96	Server exited
+2024-02-07 11:34:33.876	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-02-07 11:35:20.997	info	user/login.go:12	Login function called	{"X-Request-ID": "13c8c768-59ea-41c2-b3f5-78bd0a98cf1d"}
+2024-02-07 11:35:33.241	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "f16aee7d-e5a9-4e1b-9314-3ddb49b85af5", "X-Username": "ekreke34555"}
+2024-02-07 11:35:38.862	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-02-07 11:35:38.862	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-02-07 11:35:38.862	info	mytodolist/mytodolist.go:96	Server exited

@@ -40,10 +40,13 @@ func installRouters(g *gin.Engine) error {
 		tg.Use(middleware.Authz(authz))
 		// test graceful shutdown , send a request and get response delay 10 seconds
 		tg.GET("/lazy", tc.Lazy)
+		// TODO:
 		// get logs from remote use grpc server
 		tg.GET("/logs", tc.Logs)
+		// TODO:
 		// get user list remote use grpc server
 		tg.GET("/users", tc.GetUsers)
+		// TODO:
 		// get casbin: user/rules remote use grpc server
 		tg.GET("/rules", tc.Rules)
 	}
@@ -105,35 +108,31 @@ func installRouters(g *gin.Engine) error {
 		pg.Use(middleware.Authn())
 		// user join a project -> request with join code
 		pg.POST("/join", pc.Join)
-		// TODO:
-		// list projects belong to the projects
-		pg.GET("/myprojects", pc.Myprojects)
+		// list projects belong to me
+		pg.GET("/my", pc.Myprojects)
 		// quit a project
 		pg.GET("/quit", pc.Quit)
-		// TODO:
-		// create a project by root
-		pg.POST("/create")
 		// get project info by id
 		pg.GET("/info", pc.Info)
-
+		// root
 		// TODO:create a project
-		pg.POST("/create", pc.Create)
-		// TODO:delete a project
-		pg.DELETE("", pc.Delete)
-		// TODO:update project info
-		pg.POST("/update", pc.Update)
+		pg.POST("", pc.Create)
+		// TODO:delete a project by project id
+		pg.DELETE(":projectid", pc.Delete)
+		// TODO:update project info by project id
+		pg.PUT(":projectid", pc.Update)
 		// TODO:get all projects i created
-		pg.GET("/projects", pc.projects)
+		pg.GET("/icreated", pc.Icreated)
 		// TODO:add node to one project
-		pg.POST("/addnode", pc.AddNode)
+		pg.POST("/project/:projectid/node/:nodeid", pc.AddNode)
 		// TODO:delete a node from one project
-		pg.GET("/deletenode", pc.DeleteNode)
+		pg.DELETE("/project/:projectid/node/:nodeid", pc.DeleteNode)
 		// TODO:update node info
-		pg.POST("/updatenode", pc.UpdateNode)
-		// TODO:get nodes from project
-		pg.GET("/nodes", pc.Nodes)
+		pg.PUT("/project/:projectid/node/:nodeid", pc.UpdateNode)
 		// TODO:get node info
-		pg.GET("/nodeinfo", pc.NodeInfo)
+		pg.GET("/project/:projectid/node/:nodeid", pc.NodeInfo)
+		// TODO:get nodes from project
+		pg.GET("/project/:projectid/nodes", pc.Nodes)
 
 	}
 	cg := g.Group("/collection")
