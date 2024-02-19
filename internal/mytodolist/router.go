@@ -115,24 +115,25 @@ func installRouters(g *gin.Engine) error {
 		// get project info by id
 		pg.GET("/info", pc.Info)
 		// root
-		// TODO:create a project
+		// FIXME: invalid columen nodeid
+		// create a project
 		pg.POST("", pc.Create)
-		// TODO:delete a project by project id
+		// delete a project by project id
 		pg.DELETE(":projectid", pc.Delete)
 		// TODO:update project info by project id
 		pg.PUT(":projectid", pc.Update)
-		// TODO:get all projects i created
+		// get all projects i created
 		pg.GET("/icreated", pc.Icreated)
-		// TODO:add node to one project
-		pg.POST("/project/:projectid/node/:nodeid", pc.AddNode)
-		// TODO:delete a node from one project
-		pg.DELETE("/project/:projectid/node/:nodeid", pc.DeleteNode)
-		// TODO:update node info
-		pg.PUT("/project/:projectid/node/:nodeid", pc.UpdateNode)
-		// TODO:get node info
-		pg.GET("/project/:projectid/node/:nodeid", pc.NodeInfo)
-		// TODO:get nodes from project
-		pg.GET("/project/:projectid/nodes", pc.Nodes)
+		// add node to one project not add the item
+		pg.POST("/:projectid/node/:nodeid", pc.AddNode)
+		// delete a node from one project not delete the item itself
+		pg.DELETE("/:projectid/node/:nodeid", pc.DeleteNode)
+		// update node info
+		pg.PUT("/:projectid/node/:nodeid", pc.UpdateNode)
+		// get node info
+		pg.GET("/:projectid/node/:nodeid", pc.NodeInfo)
+		// get nodes from project
+		pg.GET("/:projectid/nodes", pc.Nodes)
 
 	}
 	cg := g.Group("/collection")

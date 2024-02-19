@@ -11,4 +11,5 @@ var (
 	ErrListProjectsICreated = &Errno{HTTP: 400, Code: "FailedOperation.ListProjectsICreated", Message: "List projects I created failed."}
 	ErrProjectUpdate        = &Errno{HTTP: 400, Code: "FailedOperation.ProjectUpdate", Message: "Project update failed."}
 	ErrProjectUpdateNode    = &Errno{HTTP: 400, Code: "FailedOperation.ProjectUpdateNode", Message: "Project update node failed."}
+	ErrProjectNodeInfo      = &Errno{HTTP: 404, Code: "ResourceNotFound.ProjectNodeInfo", Message: "Project node info not found."}
 )

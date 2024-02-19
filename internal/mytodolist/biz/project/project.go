@@ -17,18 +17,31 @@ type ProjectBiz interface {
 	Quit(userid int64, projectid int64) (*v1.CommonResponseWizMsg, error)
 	Create(description string, endtime int64, name string, userid int64) (*v1.CommonResponseWizMsg, error)
 	Info(projectid int64) (*v1.ProjectInfoResponse, error)
-	Delete(projectid int64, userid int64) (*v1.CommonResponseWizMsg, error)
+	Delete(projectid string, userid int64) (*v1.CommonResponseWizMsg, error)
 	DeleteNode(projectid string, nodeid string, userid int64) (*v1.CommonResponseWizMsg, error)
 	AddNode(projectid string, nodeid string, userid int64) (*v1.CommonResponseWizMsg, error)
 	Icreated(userid int64) (*v1.IcreatedResponse, error)
-	Update(description string, endtime int64, name string, userid int64) (*v1.CommonResponseWizMsg, error)
+	Update(id int, description string, endtime int64, name string, userid int64) (*v1.CommonResponseWizMsg, error)
 	// the user id here is int not int64
 	UpdateNode(projectid string, nodeid string, userid int, item *model.Items) (*v1.CommonResponseWizMsg, error)
 	NodeInfo(projectid string, nodeid string, userid int) (*v1.ProjectNodeInfoResponse, error)
+	Nodes(projectid string, userid int) (*v1.ProjectNodes, error)
 }
 
 type projectBiz struct {
 	ds store.Istore
+}
+
+// Nodes implements ProjectBiz.
+func (pb *projectBiz) Nodes(projectid string, userid int) (*v1.ProjectNodes, error) {
+	resp, err := pb.ds.Projects().Nodes(projectid, userid)
+	if err != nil {
+		return nil, err
+	}
+	r := &v1.ProjectNodes{
+		Nodes: *resp,
+	}
+	return r, nil
 }
 
 var _ ProjectBiz = (*projectBiz)(nil)
@@ -39,7 +52,7 @@ func New(ds store.Istore) *projectBiz {
 
 // DeleteNode implements ProjectBiz.
 func (pb *projectBiz) DeleteNode(projectid string, nodeid string, userid int64) (*v1.CommonResponseWizMsg, error) {
-	_, err := pb.ds.Projects().DeleteNode(projectid, nodeid)
+	_, err := pb.ds.Projects().DeleteNode(projectid, nodeid, userid)
 	if err != nil {
 		return nil, err
 	}
@@ -47,7 +60,7 @@ func (pb *projectBiz) DeleteNode(projectid string, nodeid string, userid int64) 
 }
 
 // Delete implements ProjectBiz.
-func (pb *projectBiz) Delete(projectid int64, userid int64) (*v1.CommonResponseWizMsg, error) {
+func (pb *projectBiz) Delete(projectid string, userid int64) (*v1.CommonResponseWizMsg, error) {
 	_, err := pb.ds.Projects().DeleteProject(projectid, userid)
 	if err != nil {
 		return nil, err
@@ -99,8 +112,8 @@ func (pb *projectBiz) Icreated(userid int64) (*v1.IcreatedResponse, error) {
 }
 
 // Update implements ProjectBiz.
-func (pb *projectBiz) Update(description string, endtime int64, name string, userid int64) (*v1.CommonResponseWizMsg, error) {
-	_, err := pb.ds.Projects().UpdateProjectInfo(description, endtime, name, userid)
+func (pb *projectBiz) Update(id int, description string, endtime int64, name string, userid int64) (*v1.CommonResponseWizMsg, error) {
+	_, err := pb.ds.Projects().UpdateProjectInfo(id, description, endtime, name, userid)
 	if err != nil {
 		return nil, err
 	}
@@ -123,7 +136,7 @@ func (pb *projectBiz) NodeInfo(projectid string, nodeid string, userid int) (*v1
 	if err != nil {
 		return nil, err
 	}
-	nodeinfo := &v1.ProjectNodeInfoResponse{NodeInfo: info}
+	nodeinfo := &v1.ProjectNodeInfoResponse{NodeInfo: *info}
 	return nodeinfo, nil
 }
 

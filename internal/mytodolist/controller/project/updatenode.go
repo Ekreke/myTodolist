@@ -22,6 +22,7 @@ func (pc *ProjectController) UpdateNode(ctx *gin.Context) {
 		log.C(ctx).Errorw("project update node function called", "error", err)
 	}
 	nTime := time.Unix(r.Deadline, 0)
+	cTime := time.Unix(time.Now().Unix(), 0)
 	item := &model.Items{
 		ItemName:     r.ItemName,
 		Description:  r.Description,
@@ -31,7 +32,7 @@ func (pc *ProjectController) UpdateNode(ctx *gin.Context) {
 		Checkpoint:   r.Checkpoint,
 		Node:         r.Node,
 		Myday:        r.Myday,
-		CreatedTime:  r.CreatedTime,
+		CreatedTime:  cTime,
 		CollectionId: r.CollectionId,
 	}
 	resp, err := pc.b.Projects().UpdateNode(projectid, nodeid, userid, item)

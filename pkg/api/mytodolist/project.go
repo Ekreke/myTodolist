@@ -38,6 +38,7 @@ type IcreatedResponse struct {
 }
 
 type ProjectUpdateRequest struct {
+	ID          int    `form:"id"`
 	Name        string `form:"name"`
 	Description string `form:"description"`
 	// endtime input with unix time
@@ -60,4 +61,8 @@ type ProjectUpdateNodeRequest struct {
 
 type ProjectNodeInfoResponse struct {
 	NodeInfo model.Items `json:"node_info"`
+}
+
+type ProjectNodes struct {
+	Nodes []model.Items `json:"nodes"`
 }
