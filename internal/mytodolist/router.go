@@ -85,6 +85,8 @@ func installRouters(g *gin.Engine) error {
 		// get items create by projects
 		// record limit
 		ug.GET("/nodes", uc.Nodes)
+		// get log of myday
+		// get advice of important
 	}
 	// item group
 	ig := g.Group("/item")

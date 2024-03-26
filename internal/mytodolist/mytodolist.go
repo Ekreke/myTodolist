@@ -112,4 +112,3 @@ func startInsecureServer(g *gin.Engine) *http.Server {
 }
 
 // TODO:startSecureServer
-// test graceful quit
