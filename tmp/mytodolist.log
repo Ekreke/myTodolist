@@ -134,3 +134,4 @@
 2024-03-31 20:46:46.506	info	mytodolist/mytodolist.go:96	Server exited
 2024-04-04 21:56:38.229	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
 2024-04-04 21:57:05.108	info	user/login.go:12	Login function called	{"X-Request-ID": "c08d157d-b3b3-447f-af7c-5f2eb6ec2e8d"}
+2024-04-05 15:42:33.425	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
