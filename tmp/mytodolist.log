@@ -91,3 +91,46 @@
 2024-03-10 23:44:07.503	info	user/register.go:19	Register function called	{"X-Request-ID": "75337573-02a9-45c0-b227-cc3bf643ea65"}
 2024-03-10 23:44:24.045	info	user/login.go:12	Login function called	{"X-Request-ID": "f405215e-707a-4e09-8b2e-7d8d09e177af"}
 2024-03-10 23:44:36.256	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "abc432fb-5261-4ca5-b2d6-cf576b1e1a94", "X-Username": "ekreke34555"}
+2024-03-29 23:03:07.321	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-03-29 23:05:22.773	info	user/register.go:19	Register function called	{"X-Request-ID": "6cb6d6d0-f357-40a4-bc69-1c81733e9c42"}
+2024-03-29 23:05:49.635	info	user/register.go:19	Register function called	{"X-Request-ID": "867e219e-d7e9-4af0-a125-b4a09a56cc2d"}
+2024-03-29 23:22:32.098	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-03-31 10:16:45.649	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-03-31 10:21:42.936	info	user/register.go:19	Register function called	{"X-Request-ID": "72f66712-026a-4fb7-a639-fb6dda19140b"}
+2024-03-31 10:26:22.014	info	user/register.go:19	Register function called	{"X-Request-ID": "3fb59edf-952e-43c0-bbf6-da55c8ddad94"}
+2024-03-31 10:27:13.707	info	user/register.go:19	Register function called	{"X-Request-ID": "4aade2f8-48c2-4e26-82d8-436849682317"}
+2024-03-31 10:27:26.901	info	user/register.go:19	Register function called	{"X-Request-ID": "8290af2c-1158-4091-8e3f-5375dc974541"}
+2024-03-31 10:29:52.983	info	user/register.go:19	Register function called	{"X-Request-ID": "469df034-478b-4d32-944b-2afc8d5ca619"}
+2024-03-31 10:31:33.270	info	user/register.go:19	Register function called	{"X-Request-ID": "c48a1d73-6f3c-4c68-87aa-6f6bdd776ca8"}
+2024-03-31 10:33:27.646	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-03-31 10:33:27.646	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 10}
+2024-03-31 10:33:27.647	info	mytodolist/mytodolist.go:96	Server exited
+2024-03-31 10:33:35.230	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-03-31 10:33:43.295	info	user/register.go:19	Register function called	{"X-Request-ID": "ccb24973-a3a4-44b2-ae06-18ab2003ea80"}
+2024-03-31 10:33:48.277	info	user/register.go:19	Register function called	{"X-Request-ID": "48e06e82-e743-40cd-b7ea-866c8fc8ae5d"}
+2024-03-31 10:35:06.888	info	user/register.go:19	Register function called	{"X-Request-ID": "80c9af16-b699-4272-b976-63f63c6df3de"}
+2024-03-31 10:35:38.457	info	user/register.go:19	Register function called	{"X-Request-ID": "33969a5e-6c20-4a62-ac41-4e8904d840d7"}
+2024-03-31 10:36:06.192	info	user/register.go:19	Register function called	{"X-Request-ID": "28853ae4-4552-4d21-94b2-45708114d4a2"}
+2024-03-31 10:36:22.361	info	user/register.go:19	Register function called	{"X-Request-ID": "d1a3fc41-c533-41ed-af99-9042ff3f8ac1"}
+2024-03-31 10:38:33.764	info	user/login.go:12	Login function called	{"X-Request-ID": "8647cc82-912a-436a-9f22-e9a748dfe2fe"}
+2024-03-31 10:38:55.411	info	user/login.go:12	Login function called	{"X-Request-ID": "c73fba7c-1697-452e-873b-c90690792207"}
+2024-03-31 10:39:00.692	info	user/login.go:12	Login function called	{"X-Request-ID": "075bf433-3b6f-4700-adee-191780225fcb"}
+2024-03-31 10:49:38.752	info	user/login.go:12	Login function called	{"X-Request-ID": "eaa47f99-cd6e-4be8-9165-6b985729dad0"}
+2024-03-31 10:49:47.629	info	user/login.go:12	Login function called	{"X-Request-ID": "55b99ec9-72e9-40ad-a5ab-fb06289b142d"}
+2024-03-31 10:50:17.308	info	user/login.go:12	Login function called	{"X-Request-ID": "8f397630-7402-4449-9532-75dea5658ece"}
+2024-03-31 10:50:34.682	info	user/login.go:12	Login function called	{"X-Request-ID": "e84c372f-e5cd-48e5-ae99-c4fe131a482d"}
+2024-03-31 10:54:23.412	info	user/login.go:12	Login function called	{"X-Request-ID": "0d49a67f-461c-4d36-898b-e5a43319255a"}
+2024-03-31 10:56:33.864	info	user/login.go:12	Login function called	{"X-Request-ID": "a7c6f5a4-9479-4025-90d8-076b29b2ba3a"}
+2024-03-31 10:57:00.733	info	user/login.go:12	Login function called	{"X-Request-ID": "7d63af59-3338-4445-930a-40187c6ede98"}
+2024-03-31 10:57:08.098	info	user/login.go:12	Login function called	{"X-Request-ID": "73ad0a5f-c25b-49bf-9008-d4a0599cad9d"}
+2024-03-31 10:58:20.658	info	user/login.go:12	Login function called	{"X-Request-ID": "ecfbc1da-79bc-4a6a-b825-4ffae48593ba"}
+2024-03-31 10:58:45.087	info	user/login.go:12	Login function called	{"X-Request-ID": "4f57223e-7739-435c-8764-b925575992d7"}
+2024-03-31 10:59:17.271	info	user/login.go:12	Login function called	{"X-Request-ID": "c79b343f-c592-4e6b-b613-905ca768cbbb"}
+2024-03-31 11:00:11.637	info	user/login.go:12	Login function called	{"X-Request-ID": "0986de12-8a54-47fb-855f-adb639fd5615"}
+2024-03-31 11:00:43.521	info	user/register.go:19	Register function called	{"X-Request-ID": "b7f98b2b-c0eb-4171-9a39-7a4643277d4e"}
+2024-03-31 11:01:03.703	info	user/register.go:19	Register function called	{"X-Request-ID": "bcbb0e54-deb8-47a4-bff6-cea8cdec2a82"}
+2024-03-31 20:46:46.504	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-03-31 20:46:46.505	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-03-31 20:46:46.506	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-04 21:56:38.229	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-04 21:57:05.108	info	user/login.go:12	Login function called	{"X-Request-ID": "c08d157d-b3b3-447f-af7c-5f2eb6ec2e8d"}

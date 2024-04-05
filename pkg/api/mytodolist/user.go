@@ -29,7 +29,7 @@ type RegisterRequest struct {
 }
 
 type RegisterResponse struct {
-	Msg string `json:"msg"`
+	Msg string `json:"message"`
 }
 
 type InfoResponse struct {
@@ -49,7 +49,7 @@ type UpdateInfoRequest struct {
 }
 
 type UpdateInfoResponse struct {
-	Msg string `json:"msg"`
+	Msg string `json:"message"`
 }
 
 type ImportantRequest struct {

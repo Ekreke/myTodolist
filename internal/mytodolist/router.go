@@ -55,7 +55,6 @@ func installRouters(g *gin.Engine) error {
 	{
 		// login
 		ug.POST("/login", uc.Login)
-
 		// register
 		ug.POST("/register", uc.Register)
 		// signed the next request need authn
