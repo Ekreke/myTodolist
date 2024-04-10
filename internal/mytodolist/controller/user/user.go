@@ -24,6 +24,7 @@ type IUserController interface {
 	Important(c *gin.Context)
 	Updatepwd(c *gin.Context)
 	GetCollctions(c *gin.Context)
+	MydayAi(c *gin.Context)
 }
 
 var _ IUserController = (*UserController)(nil)

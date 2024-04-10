@@ -12,6 +12,10 @@ func (b *userBiz) UpdateInfo(ctx context.Context, req *v1.UpdateInfoRequest, use
 		return &v1.CommonResponseWizMsg{Msg: "input username invalid"}, nil
 	}
 	flag, _ := b.CheckUserIfExist(req.Username)
+	// if e != nil {
+	// 	return &v1.CommonResponseWizMsg{Msg: errno.ErrPageNotFound.Code}, nil
+
+	// }
 	// if true , user exist
 	if flag {
 		return &v1.CommonResponseWizMsg{Msg: errno.ErrUserAlreadyExist.Message}, nil

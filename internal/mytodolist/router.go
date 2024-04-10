@@ -69,6 +69,8 @@ func installRouters(g *gin.Engine) error {
 		// get myday items
 		// record limit
 		ug.GET("/myday", uc.Myday)
+		// generate ai suggestion wiz myday items
+		ug.GET("/myday/ai", uc.MydayAi)
 		// get important items
 		// record limit
 		ug.GET("/important", uc.Important)

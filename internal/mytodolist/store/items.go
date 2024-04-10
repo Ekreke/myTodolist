@@ -253,15 +253,16 @@ func (i *items) Update(it *model.Items, username string) (resp *v1.CommonRespons
 	preitem := &model.Items{}
 	err = tx.Debug().Where("id = ?", it.ID).Find(&preitem).Error
 	if err != nil {
-		log.Fatalw("get pre item failed ... ")
+		log.Infow("get pre item failed ... ")
 		return nil, err
 	}
+
 	// edit item name if changed
 	if it.ItemName != preitem.ItemName {
 		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("item_name", it.ItemName).Error
 		if err != nil {
 			tx.Rollback()
-			log.Fatalw("update item name failed ... ")
+			log.Infow("update item name failed ... ")
 			return nil, err
 		}
 	}
@@ -271,7 +272,7 @@ func (i *items) Update(it *model.Items, username string) (resp *v1.CommonRespons
 		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("description", it.Description).Error
 		if err != nil {
 			tx.Rollback()
-			log.Fatalw("update item description failed ... ")
+			log.Infow("update item description failed ... ")
 			return nil, err
 		}
 	}
@@ -292,36 +293,43 @@ func (i *items) Update(it *model.Items, username string) (resp *v1.CommonRespons
 		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("important", it.Important).Error
 		if err != nil {
 			tx.Rollback()
-			log.Fatalw("update item important failed ... ")
+			log.Infow("update item important failed ... ")
 			return nil, err
 		}
 	}
 
 	// edit myday if changed
-	if it.Myday != preitem.Myday {
-		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("myday", it.Myday).Error
+	// err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("mDay", it.Myday).Error
+	// if err != nil {
+	// 	tx.Rollback()
+	// 	log.Infow("update item myday failed ... ")
+	// 	return nil, err
+	// }
+	log.Infow("it.myday & ", it.Myday, "preitem.myday", preitem.Myday)
+	err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("myday", it.Myday).Error
+	if err != nil {
+		tx.Rollback()
+		log.Infow("update item myday failed ... ")
+		return nil, err
+	}
+
+	if it.Myday == 1 {
+		// add record to mydays
+		md := &model.Myday{Item_id: it.ID, User_id: tmpu.ID}
+		// err = tx.Debug().Model(&model.Myday{}).Where("id = ?", it.ID).Update("myday", 1).Error
+		err = tx.Debug().Create(md).Error
 		if err != nil {
 			tx.Rollback()
-			log.Fatalw("update item myday failed ... ")
+			log.Infow("add record to mydays failed ... ")
 			return nil, err
 		}
-		if it.Myday == 1 {
-			// add record to mydays
-			md := &model.Myday{Item_id: it.ID, User_id: tmpu.ID}
-			err = tx.Debug().Save(&md).Error
-			if err != nil {
-				tx.Rollback()
-				log.Fatalw("add record to mydays failed ... ")
-				return nil, err
-			}
-		} else {
-			// delete record from mydays
-			err = tx.Debug().Where("item_id = ?", it.ID).Delete(&model.Myday{}).Error
-			if err != nil {
-				tx.Rollback()
-				log.Fatalw("delete record from mydays failed ... ")
-				return nil, err
-			}
+	} else {
+		// delete record from mydays
+		err = tx.Debug().Where("item_id = ?", it.ID).Delete(&model.Myday{}).Error
+		if err != nil {
+			tx.Rollback()
+			log.Infow("delete record from mydays failed ... ")
+			return nil, err
 		}
 	}
 
@@ -331,7 +339,7 @@ func (i *items) Update(it *model.Items, username string) (resp *v1.CommonRespons
 		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("collection_id", it.CollectionId).Error
 		if err != nil {
 			tx.Rollback()
-			log.Fatalw("update item collection_id failed ... ")
+			log.Infow("update item collection_id failed ... ")
 			return nil, err
 		}
 		// change collection
@@ -346,7 +354,7 @@ func (i *items) Update(it *model.Items, username string) (resp *v1.CommonRespons
 			err = tx.Debug().Where("items_id = ?", it.ID).Delete(&cu).Error
 			if err != nil {
 				tx.Rollback()
-				log.Fatalw("delete collection_items record failed")
+				log.Infow("delete collection_items record failed")
 				return nil, err
 			}
 
@@ -358,7 +366,7 @@ func (i *items) Update(it *model.Items, username string) (resp *v1.CommonRespons
 		// add new record
 		err = tx.Debug().Create(&ncu).Error
 		if err != nil {
-			log.Fatalw("add collection_items record failed")
+			log.Infow("add collection_items record failed")
 			tx.Rollback()
 			return nil, err
 		}

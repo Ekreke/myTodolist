@@ -40,6 +40,7 @@ require (
 )
 
 require (
+	github.com/anhao/go-ernie v1.0.9
 	github.com/bytedance/sonic v1.9.1 // indirect
 	github.com/casbin/casbin/v2 v2.81.0
 	github.com/casbin/gorm-adapter/v3 v3.20.0

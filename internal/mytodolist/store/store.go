@@ -60,7 +60,7 @@ func GetUserIdByUserName(username string) (int, error) {
 	// select id from users where username = ?
 	err := S.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
 	if err != nil {
-		log.Fatalw("get userid from username failed")
+		log.Infow("get userid from username failed")
 		return 0, err
 	}
 	return int(tmpu.ID), nil

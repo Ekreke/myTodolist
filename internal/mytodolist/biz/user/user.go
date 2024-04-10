@@ -21,6 +21,7 @@ type UserBiz interface {
 	LoadMyItems(ctx context.Context, req *v1.CommonRequestWizPagination, username string) (*v1.CommonResponseWizItemsAndPagination, error)
 	LoadItems(ctx context.Context, req *v1.CommonRequestWizPagination, username string) (*v1.CommonResponseWizItemsAndPagination, error)
 	LoadNodes(ctx context.Context, req *v1.CommonRequestWizPagination, username string) (*v1.CommonResponseWizItemsAndPagination, error)
+	LoadMydayAI(ctx context.Context, username string) (*v1.CommonResponseWizMsg, error)
 	// Get(ctx context.Context, username string, r *v1.GetRequest) (*v1.GetResponse, error)
 	// Delete(ctx context.Context, username string, r *v1.DeleteRequest) (*v1.DeleteResponse, error)
 }
@@ -28,6 +29,8 @@ type UserBiz interface {
 type userBiz struct {
 	ds store.Istore
 }
+
+// LoadMydayAI implements UserBiz.
 
 var _ UserBiz = (*userBiz)(nil)
 
