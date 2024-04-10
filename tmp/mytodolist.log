@@ -28,3 +28,7 @@ github.com/ekreke/myTodolist/internal/mytodolist.startInsecureServer.func1
 2024-04-05 17:41:13.126	info	user/myday.go:12	Myday function called	{"X-Request-ID": "e44b517f-9135-4492-9697-569ebb222656", "X-Username": "测试账号"}
 2024-04-05 17:41:34.611	debug	middleware/authz.go:23	Build authorize context	{"sub": "测试账号", "obj": "/user/myday", "act": "GET"}
 2024-04-05 17:41:34.611	info	user/myday.go:12	Myday function called	{"X-Request-ID": "4a1073bf-1294-4756-a864-13a57c9c5e7e", "X-Username": "测试账号"}
+2024-04-10 09:06:24.223	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-10 09:06:32.921	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-10 09:06:32.921	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-10 09:06:32.922	info	mytodolist/mytodolist.go:96	Server exited
