@@ -1,34 +1,8 @@
-2024-04-05 17:27:09.783	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-05 17:27:09.786	fatal	mytodolist/mytodolist.go:108	listen tcp :8080: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
-github.com/ekreke/myTodolist/internal/mytodolist.startInsecureServer.func1
-	C:/Golang/myTodolist/internal/mytodolist/mytodolist.go:108
-2024-04-05 17:27:46.887	info	item/update.go:12	Item Update function called	{"X-Request-ID": "02a347e3-b89a-46fd-b533-dc3d71f5ac4f", "X-Username": "测试账号"}
-2024-04-05 17:27:54.817	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-05 17:27:54.817	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
-2024-04-05 17:27:54.818	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-05 17:30:29.665	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-05 17:30:34.578	info	item/update.go:12	Item Update function called	{"X-Request-ID": "175a7b1a-2ee3-44ad-90c1-b549aaa2ee95", "X-Username": "测试账号"}
-2024-04-05 17:30:34.579	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
-2024-04-05 17:30:34.579	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
-2024-04-05 17:30:34.579	info	store/items.go:308	it.myday & 
-2024-04-05 17:30:48.804	info	item/update.go:12	Item Update function called	{"X-Request-ID": "dc0f4f24-d76c-4c35-9264-ad7a7af76a8c", "X-Username": "测试账号"}
-2024-04-05 17:30:48.808	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
-2024-04-05 17:30:48.808	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
-2024-04-05 17:30:48.808	info	store/items.go:308	it.myday & 
-2024-04-05 17:31:09.867	info	item/update.go:12	Item Update function called	{"X-Request-ID": "30afc549-cc31-4e5a-a606-f34a3646b4b5", "X-Username": "测试账号"}
-2024-04-05 17:31:09.870	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
-2024-04-05 17:31:09.870	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
-2024-04-05 17:31:09.870	info	store/items.go:308	it.myday & 
-2024-04-05 17:38:22.378	info	user/login.go:12	Login function called	{"X-Request-ID": "9955fc70-2a8f-4a8a-97e1-8e1901fa9351"}
-2024-04-05 17:39:46.130	debug	middleware/authz.go:23	Build authorize context	{"sub": "测试账号", "obj": "/user/myday", "act": "GET"}
-2024-04-05 17:39:46.132	info	user/myday.go:12	Myday function called	{"X-Request-ID": "b1fbd9be-7e4c-46d7-b7eb-4e0bf6b1c7a1", "X-Username": "测试账号"}
-2024-04-05 17:40:46.807	debug	middleware/authz.go:23	Build authorize context	{"sub": "测试账号", "obj": "/user/myday", "act": "GET"}
-2024-04-05 17:40:46.807	info	user/myday.go:12	Myday function called	{"X-Request-ID": "a8619f9d-1e5d-4bc1-8ae4-10c497d13016", "X-Username": "测试账号"}
-2024-04-05 17:41:13.125	debug	middleware/authz.go:23	Build authorize context	{"sub": "测试账号", "obj": "/user/myday", "act": "GET"}
-2024-04-05 17:41:13.126	info	user/myday.go:12	Myday function called	{"X-Request-ID": "e44b517f-9135-4492-9697-569ebb222656", "X-Username": "测试账号"}
-2024-04-05 17:41:34.611	debug	middleware/authz.go:23	Build authorize context	{"sub": "测试账号", "obj": "/user/myday", "act": "GET"}
-2024-04-05 17:41:34.611	info	user/myday.go:12	Myday function called	{"X-Request-ID": "4a1073bf-1294-4756-a864-13a57c9c5e7e", "X-Username": "测试账号"}
-2024-04-10 09:06:24.223	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-10 09:06:32.921	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-10 09:06:32.921	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
-2024-04-10 09:06:32.922	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-16 22:40:31.714	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-16 22:40:31.715	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-16 22:40:31.716	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-16 22:44:54.916	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 6}
+2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-16 22:47:19.683	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}

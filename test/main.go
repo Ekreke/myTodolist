@@ -4,6 +4,8 @@ import (
 	"crypto/rand"
 	"fmt"
 	"strings"
+
+	"github.com/ekreke/myTodolist/pkg/token"
 )
 
 func GenerateRandomProjectPwd() (pwd string, err error) {
@@ -24,10 +26,17 @@ func GenerateRandomProjectPwd() (pwd string, err error) {
 }
 
 func main() {
-	pwd, err := GenerateRandomProjectPwd()
+	// tokenString, err := token.Sign("ekreke34555")
+	// if err != nil {
+	// 	fmt.Println(err)
+	// }
+	// fmt.Println(tokenString)
+	tokenString := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTM1Mzc5OTgsImlhdCI6MTcxMzI3ODc5OCwiaWRlbnRpdHlLZXkiOiJla3Jla2UzNDU1NSIsIm5iZiI6MTcxMzI3ODc5OH0.9IvQkFmwF8podTRW5oc2fZXLV_K3vwyqp6l3Q5MAQA4"
+
+	fmt.Sscanf(tokenString, "Bearer %s", &tokenString)
+	username, err := token.Parse(tokenString, token.K)
 	if err != nil {
 		fmt.Println(err)
-	} else {
-		fmt.Println(pwd)
 	}
+	fmt.Println(username)
 }

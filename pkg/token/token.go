@@ -82,6 +82,5 @@ func Sign(identityKey string) (tokenString string, err error) {
 	})
 	// signed token
 	tokenString, err = token.SignedString([]byte(config.key))
-
 	return
 }
