@@ -59,7 +59,7 @@ func installRouters(g *gin.Engine) error {
 		ug.POST("/register", uc.Register)
 		// signed the next request need authn
 		ug.Use(middleware.Authn())
-		ug.Use(middleware.Authz(authz))
+		// ug.Use(middleware.Authz(authz))
 		// get user info
 		ug.GET("/info", uc.Info)
 		// update info

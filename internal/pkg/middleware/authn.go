@@ -19,19 +19,20 @@ func Authn() gin.HandlerFunc {
 		}
 		var t string
 		fmt.Sscanf(tk, "Bearer %s", &t)
-		username, err := token.Parse(t, token.K)
+		// TODO: delete
+		_, err := token.Parse(t, token.K)
 		if err != nil {
 			core.WriteResponse(c, errno.ErrTokenInvalid, nil)
 			c.Abort()
 			return
 		}
-		id, err := store.GetUserIdByUserName(username)
+		id, err := store.GetUserIdByUserName(tk)
 		if err != nil {
 			core.WriteResponse(c, errno.ErrUserNotFound, nil)
 			c.Abort()
 			return
 		}
-		c.Set(known.XUsernameKey, username)
+		c.Set(known.XUsernameKey, tk)
 		c.Set(known.XUserID, id)
 		c.Next()
 	}

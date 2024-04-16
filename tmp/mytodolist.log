@@ -6,3 +6,15 @@
 2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 6}
 2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:96	Server exited
 2024-04-16 22:47:19.683	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-16 23:51:28.944	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-16 23:51:31.776	info	user/login.go:12	Login function called	{"X-Request-ID": "59063ea7-cac7-4b8b-b7c5-880cdfb0fe19"}
+2024-04-16 23:51:32.598	info	user/login.go:12	Login function called	{"X-Request-ID": "38e8ad97-0d2c-4334-8179-cc705afd5f6c"}
+2024-04-16 23:51:43.066	info	store/store.go:63	get userid from username failed
+2024-04-16 23:52:15.363	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-16 23:52:15.363	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-16 23:52:15.367	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-16 23:52:22.149	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-16 23:52:41.488	debug	middleware/authz.go:23	Build authorize context	{"sub": "ekreke34555", "obj": "/user/info", "act": "GET"}
+2024-04-16 23:53:41.497	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-16 23:53:41.498	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-16 23:53:41.499	info	mytodolist/mytodolist.go:96	Server exited
