@@ -102,9 +102,9 @@ func installRouters(g *gin.Engine) error {
 		// get a item info by item id
 		ig.GET("", ic.Info)
 		// update the item status :done
-		ig.GET("/setdone", ic.SetDone)
+		ig.POST("/setdone", ic.SetDone)
 		// update the item status :undone
-		ig.GET("/setundone", ic.SetUnDone)
+		ig.POST("/setundone", ic.SetUnDone)
 	}
 	pg := g.Group("project")
 	{

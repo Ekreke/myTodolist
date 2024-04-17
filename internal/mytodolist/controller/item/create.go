@@ -11,7 +11,7 @@ import (
 func (ctrl *ItemController) Create(ctx *gin.Context) {
 	log.C(ctx).Infow("Item create function called")
 	username := ctx.GetString("X-Username")
-	log.Debugw("the username is:", "username:", username)
+	// log.Debugw("the username is:", "username:", username)
 	var r v1.ItemCreateRequest
 	err := ctx.ShouldBind(&r)
 	if err != nil {

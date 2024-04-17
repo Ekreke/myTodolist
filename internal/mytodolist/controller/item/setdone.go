@@ -14,10 +14,12 @@ func (ctrl *ItemController) SetDone(ctx *gin.Context) {
 	var r v1.ItemRequesWizID
 	if err := ctx.ShouldBind(&r); err != nil {
 		core.WriteResponse(ctx, err, nil)
+		return
 	}
 	resp, err := ctrl.b.Items().SetDone(int(r.ItemID), username)
 	if err != nil {
 		core.WriteResponse(ctx, errno.SetItemDoneFailed, nil)
+		return
 	}
 	core.WriteResponse(ctx, nil, resp)
 }

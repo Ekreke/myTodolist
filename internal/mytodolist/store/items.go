@@ -216,7 +216,8 @@ func (i *items) SetUnDone(itemid int, username string) (resp *v1.CommonResponseW
 		log.Fatalw("update items undone failed")
 		return nil, err
 	}
-	return resp, nil
+	r := &v1.CommonResponseWizMsg{Msg: "success"}
+	return r, nil
 }
 
 // set a item done by item id
@@ -234,7 +235,8 @@ func (i *items) SetDone(itemid int, username string) (resp *v1.CommonResponseWiz
 		log.Fatalw("update items done failed")
 		return nil, err
 	}
-	return resp, nil
+	r := &v1.CommonResponseWizMsg{Msg: "success"}
+	return r, nil
 }
 
 // update a item's info
@@ -283,7 +285,8 @@ func (i *items) Update(it *model.Items, username string) (resp *v1.CommonRespons
 		err = tx.Debug().Model(&model.Items{}).Where("id = ?", it.ID).Update("deadline", it.Deadline).Error
 		if err != nil {
 			tx.Rollback()
-			log.Fatalw("update item deadline failed ... ")
+			log.Infow("update item deadline failed ... ")
+			log.Infow(it.Deadline.String())
 			return nil, err
 		}
 	}
