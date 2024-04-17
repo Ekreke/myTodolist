@@ -1,22 +1,55 @@
-2024-04-16 22:40:31.714	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-16 22:40:31.715	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
-2024-04-16 22:40:31.716	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-16 22:44:54.916	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 6}
-2024-04-16 22:45:22.316	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-16 22:47:19.683	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-16 23:51:28.944	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-16 23:51:31.776	info	user/login.go:12	Login function called	{"X-Request-ID": "59063ea7-cac7-4b8b-b7c5-880cdfb0fe19"}
-2024-04-16 23:51:32.598	info	user/login.go:12	Login function called	{"X-Request-ID": "38e8ad97-0d2c-4334-8179-cc705afd5f6c"}
-2024-04-16 23:51:43.066	info	store/store.go:63	get userid from username failed
-2024-04-16 23:52:15.363	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-16 23:52:15.363	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
-2024-04-16 23:52:15.367	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-16 23:52:22.149	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-16 23:52:41.488	debug	middleware/authz.go:23	Build authorize context	{"sub": "ekreke34555", "obj": "/user/info", "act": "GET"}
-2024-04-16 23:53:41.497	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-16 23:53:41.498	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
-2024-04-16 23:53:41.499	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-16 23:53:49.483	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-16 23:53:57.142	info	user/info.go:10	Info function called	{"X-Request-ID": "e6dc84ad-e0c4-4096-b28c-910a2cedf009", "X-Username": "ekreke34555"}
+2024-04-17 08:31:24.134	info	item/create.go:12	Item create function called	{"X-Request-ID": "1b4e1734-af7f-4ccf-98d4-6672d35bba4e", "X-Username": "ekreke34555"}
+2024-04-17 08:31:24.134	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 08:32:52.825	info	item/create.go:12	Item create function called	{"X-Request-ID": "de60b303-6eca-4fcd-9ae2-e1d4d16678e5", "X-Username": "ekreke34555"}
+2024-04-17 08:32:52.825	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 08:32:52.830	error	store/items.go:44	save record to items failed
+2024-04-17 08:33:34.585	info	item/create.go:12	Item create function called	{"X-Request-ID": "4c3af856-108f-4854-a461-a3abdad74dda", "X-Username": "ekreke34555"}
+2024-04-17 08:33:34.586	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 08:33:48.206	info	item/create.go:12	Item create function called	{"X-Request-ID": "b2f4fe70-e6fd-4b81-a666-1aa9136de358", "X-Username": "ekreke34555"}
+2024-04-17 08:33:48.206	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 08:33:52.787	info	item/create.go:12	Item create function called	{"X-Request-ID": "7f4adccb-d631-4c2d-8725-da94f993d80b", "X-Username": "ekreke34555"}
+2024-04-17 08:33:52.788	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 08:34:12.286	info	item/create.go:12	Item create function called	{"X-Request-ID": "d78497d8-5920-4819-b7f3-0a1d43eaa7c0", "X-Username": "ekreke34555"}
+2024-04-17 08:34:12.287	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 08:34:20.802	info	item/create.go:12	Item create function called	{"X-Request-ID": "e81516a3-9386-4b90-9a24-6526f0e9ef9c", "X-Username": "ekreke34555"}
+2024-04-17 08:34:20.803	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 08:35:53.109	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "e7437f02-8e28-4b13-b1c3-487c459ed52c", "X-Username": "ekreke34555"}
+2024-04-17 08:38:15.507	info	user/items.go:12	Items function called	{"X-Request-ID": "5e498f0a-ab97-4e89-9b29-a943eb41f669", "X-Username": "ekreke34555"}
+2024-04-17 08:40:11.573	info	item/update.go:12	Item Update function called	{"X-Request-ID": "4e3bf482-6780-4973-b4d7-ab1753b9a19a", "X-Username": "ekreke34555"}
+2024-04-17 08:40:11.586	fatal	store/items.go:286	update item deadline failed ... 
+github.com/ekreke/myTodolist/internal/mytodolist/store.(*items).Update
+	C:/Golang/myTodolist/internal/mytodolist/store/items.go:286
+github.com/ekreke/myTodolist/internal/mytodolist/biz/item.(*itemBiz).Update
+	C:/Golang/myTodolist/internal/mytodolist/biz/item/update.go:28
+github.com/ekreke/myTodolist/internal/mytodolist/controller/item.(*ItemController).Update
+	C:/Golang/myTodolist/internal/mytodolist/controller/item/update.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.installRouters.Authn.func5
+	C:/Golang/myTodolist/internal/pkg/middleware/authn.go:37
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/mytodolist.run.RequestID.func1
+	C:/Golang/myTodolist/internal/pkg/middleware/requestid.go:19
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.Cors
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:55
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/ekreke/myTodolist/internal/pkg/middleware.NoCache
+	C:/Golang/myTodolist/internal/pkg/middleware/header.go:17
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102
+github.com/gin-gonic/gin.(*Context).Next
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
+github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
+github.com/gin-gonic/gin.(*Engine).ServeHTTP
+	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
+net/http.serverHandler.ServeHTTP
+	C:/Program Files/Go/src/net/http/server.go:2938
+net/http.(*conn).serve
+	C:/Program Files/Go/src/net/http/server.go:2009
