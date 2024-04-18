@@ -14,12 +14,14 @@ func (ctrl *ItemController) Update(ctx *gin.Context) {
 	var r v1.ItemUpdateRequest
 	err := ctx.ShouldBind(&r)
 	if err != nil {
-		core.WriteResponse(ctx, errno.ErrBind, nil)
+		core.WriteResponse(ctx, err, err)
+		return
 	}
 	resp, err := ctrl.b.Items().Update(&r, username)
 	if err != nil {
 		core.WriteResponse(ctx, errno.ErrUpdateItemFailed, nil)
 		log.C(ctx).Errorw("Item update failed", "the err is :", err)
+		return
 	}
 	core.WriteResponse(ctx, nil, resp)
 }

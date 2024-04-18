@@ -15,6 +15,7 @@ func (ctrl *UserController) Myday(c *gin.Context) {
 		core.WriteResponse(c, errno.ErrBind, nil)
 	}
 	username := c.GetString("X-Username")
+	// log.Infow("Myday Request: %+v", r)
 	resp, err := ctrl.b.Users().LoadMydayItems(c, &r, username)
 	if err != nil {
 		core.WriteResponse(c, errno.ErrLoadMydayItemFailed, nil)

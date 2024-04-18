@@ -135,16 +135,19 @@ func (u *users) GetImportantItems(next_id int, page_size int, username string) (
 	// 返回数据(page / info / error)
 	var resp []v1.ItemInfo
 	for _, v := range items {
-		i := &v1.ItemInfo{
-			ID:          v.ID,
-			ItemName:    v.ItemName,
-			Description: v.Description,
-			ProjectId:   v.ProjectId,
-			Deadline:    v.Deadline,
-			Done:        v.Done,
-			CreatedTime: v.CreatedTime,
+		// 删选important
+		if v.Important == 1 {
+			i := &v1.ItemInfo{
+				ID:          v.ID,
+				ItemName:    v.ItemName,
+				Description: v.Description,
+				ProjectId:   v.ProjectId,
+				Deadline:    v.Deadline,
+				Done:        v.Done,
+				CreatedTime: v.CreatedTime,
+			}
+			resp = append(resp, *i)
 		}
-		resp = append(resp, *i)
 
 	}
 	return resp, page, nil
@@ -211,6 +214,7 @@ func (u *users) GetMydayItems(next_id int, page_size int, username string) (item
 	// get myday_items id from myday_items_users table
 	myday_ids := &[]model.Myday{}
 	err = u.db.Debug().Select("item_id").Where("user_id = ? and item_id > ? ", tmpu.ID, next_id).Limit(page_size).Find(&myday_ids).Error
+	log.Infow("pagesize:", page_size, "next_id:", next_id)
 	if err != nil {
 		log.Fatalw("get myday from myday table failed")
 	}
@@ -227,6 +231,7 @@ func (u *users) GetMydayItems(next_id int, page_size int, username string) (item
 	if len(its) != 0 {
 		npage.NextID = int(its[len(its)-1].ID)
 	}
+	log.Infow("items", its)
 	npage.PageSize = int64(page_size)
 	return its, npage, nil
 }
@@ -235,6 +240,7 @@ func (u *users) LoadItems(nextid int, pagesize int, username string) (items []mo
 	// 根据 username 查询 user id
 	tmpu := &model.Users{}
 	// select id from users where username = ?
+	log.Infow("page msgs:", "pagesize:", pagesize, "next_id:", nextid)
 	err = u.db.Debug().Table("users").Select("id").Where("username = ?", username).Limit(int(npage.PageSize)).First(&tmpu).Error
 	if err != nil {
 		log.Fatalw("get userid from username failed")

@@ -1,95 +1,298 @@
-2024-04-17 12:42:58.217	info	item/create.go:12	Item create function called	{"X-Request-ID": "15a9c441-67fd-4ee4-a6b9-dcc1d34c602f", "X-Username": "ekreke34555"}
-2024-04-17 12:42:58.218	debug	item/create.go:14	the username is:	{"username:": "ekreke34555"}
-2024-04-17 12:44:12.567	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 12:44:12.568	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
-2024-04-17 12:44:12.568	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-17 12:44:18.343	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 12:44:29.324	info	item/update.go:12	Item Update function called	{"X-Request-ID": "394f4f51-17b7-4982-acc6-dd504bbab16f", "X-Username": "ekreke34555"}
-2024-04-17 12:49:49.727	info	item/update.go:12	Item Update function called	{"X-Request-ID": "bbaa81b7-3e20-490a-bd13-6e93c26a1eff", "X-Username": "ekreke34555"}
-2024-04-17 12:49:52.459	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 12:49:52.459	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
-2024-04-17 12:49:52.460	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-17 12:49:59.430	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 12:50:06.358	info	item/update.go:12	Item Update function called	{"X-Request-ID": "c9867330-e15b-43c0-a02c-c8fa9448dfa9", "X-Username": "ekreke34555"}
-2024-04-17 12:50:21.727	info	item/update.go:12	Item Update function called	{"X-Request-ID": "5097ac34-e301-4e85-96af-a6ff2bffc288", "X-Username": "ekreke34555"}
-2024-04-17 12:50:36.923	info	item/update.go:12	Item Update function called	{"X-Request-ID": "aef1f43a-c864-4460-9c75-2a3c011bd3d5", "X-Username": "ekreke34555"}
-2024-04-17 12:50:44.094	info	item/update.go:12	Item Update function called	{"X-Request-ID": "d5a057d9-3373-4400-8f17-c468ab174728", "X-Username": "ekreke34555"}
-2024-04-17 12:53:37.909	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 12:53:37.909	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
-2024-04-17 12:53:37.910	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-17 12:53:50.476	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 12:53:53.145	info	item/update.go:12	Item Update function called	{"X-Request-ID": "53a7118b-9b45-4df0-9f11-4e8cd8df7157", "X-Username": "ekreke34555"}
-2024-04-17 12:53:53.155	fatal	store/items.go:286	update item deadline failed ... 
-github.com/ekreke/myTodolist/internal/mytodolist/store.(*items).Update
-	C:/Golang/myTodolist/internal/mytodolist/store/items.go:286
-github.com/ekreke/myTodolist/internal/mytodolist/biz/item.(*itemBiz).Update
-	C:/Golang/myTodolist/internal/mytodolist/biz/item/update.go:28
-github.com/ekreke/myTodolist/internal/mytodolist/controller/item.(*ItemController).Update
-	C:/Golang/myTodolist/internal/mytodolist/controller/item/update.go:19
-github.com/gin-gonic/gin.(*Context).Next
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
-github.com/ekreke/myTodolist/internal/mytodolist.installRouters.Authn.func5
-	C:/Golang/myTodolist/internal/pkg/middleware/authn.go:37
-github.com/gin-gonic/gin.(*Context).Next
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
-github.com/ekreke/myTodolist/internal/mytodolist.run.RequestID.func1
-	C:/Golang/myTodolist/internal/pkg/middleware/requestid.go:19
-github.com/gin-gonic/gin.(*Context).Next
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
-github.com/ekreke/myTodolist/internal/pkg/middleware.Cors
-	C:/Golang/myTodolist/internal/pkg/middleware/header.go:55
-github.com/gin-gonic/gin.(*Context).Next
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
-github.com/ekreke/myTodolist/internal/pkg/middleware.NoCache
-	C:/Golang/myTodolist/internal/pkg/middleware/header.go:17
-github.com/gin-gonic/gin.(*Context).Next
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
-github.com/gin-gonic/gin.CustomRecoveryWithWriter.func1
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/recovery.go:102
-github.com/gin-gonic/gin.(*Context).Next
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/context.go:174
-github.com/gin-gonic/gin.(*Engine).handleHTTPRequest
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:620
-github.com/gin-gonic/gin.(*Engine).ServeHTTP
-	C:/Users/Laika/go/pkg/mod/github.com/gin-gonic/gin@v1.9.1/gin.go:576
-net/http.serverHandler.ServeHTTP
-	C:/Program Files/Go/src/net/http/server.go:2938
-net/http.(*conn).serve
-	C:/Program Files/Go/src/net/http/server.go:2009
-2024-04-17 12:58:16.016	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 12:58:26.135	info	store/store.go:63	get userid from username failed
-2024-04-17 12:58:56.979	info	item/setdone.go:12	Item function setdone called	{"X-Request-ID": "faa7e750-dcb9-4c15-b00c-9a424911fc2c", "X-Username": "ekreke34555"}
-2024-04-17 13:00:41.865	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 13:00:41.866	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
-2024-04-17 13:00:41.868	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-17 13:00:49.514	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 13:00:56.133	info	item/setdone.go:12	Item function setdone called	{"X-Request-ID": "1f23c346-7918-4385-b2da-07278762824e", "X-Username": "ekreke34555"}
-2024-04-17 13:01:47.574	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 13:01:47.577	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
-2024-04-17 13:01:47.584	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-17 13:01:55.844	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 13:02:09.521	info	item/setdone.go:12	Item function setdone called	{"X-Request-ID": "04525439-779d-4432-9f68-fb12e1dcb928", "X-Username": "ekreke34555"}
-2024-04-17 13:02:34.447	info	item/setdone.go:12	Item function setdone called	{"X-Request-ID": "82537c07-ff0b-4a1d-9ee2-ea5986f84a1c", "X-Username": "ekreke34555"}
-2024-04-17 13:06:33.035	info	store/store.go:63	get userid from username failed
-2024-04-17 13:06:55.944	info	item/setundone.go:11	Item setundone function called	{"X-Request-ID": "56e46499-d1d1-43f3-b8d1-ee9ea6029f48", "X-Username": "ekreke34555"}
-2024-04-17 13:07:20.486	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 13:07:20.486	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
-2024-04-17 13:07:20.486	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-17 13:07:27.303	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 13:07:42.385	info	item/setundone.go:11	Item setundone function called	{"X-Request-ID": "2fea2c4a-6be0-45ba-bcf3-42aa673209eb", "X-Username": "ekreke34555"}
-2024-04-17 13:11:48.709	info	store/store.go:63	get userid from username failed
-2024-04-17 13:12:16.422	info	collection/create.go:12	collection create function called	{"X-Request-ID": "9979a35b-98c5-4eb1-8151-9ccfbc128209", "X-Username": "ekreke34555"}
-2024-04-17 13:12:16.423	debug	collection/create.go:14	the username is:	{"username:": "ekreke34555"}
-2024-04-17 13:12:26.221	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "96afa8c0-5362-4fa0-b3c4-c72a863b3367", "X-Username": "ekreke34555"}
-2024-04-17 13:14:45.043	info	collection/delete.go:12	collection create function called	{"X-Request-ID": "5984c484-b59c-494d-a3fc-55af2167478c", "X-Username": "ekreke34555"}
-2024-04-17 13:14:45.044	debug	collection/delete.go:14	the username is:	{"username:": "ekreke34555"}
-2024-04-17 13:14:53.161	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "d014f51f-7f5e-4ff7-822f-289017630c25", "X-Username": "ekreke34555"}
-2024-04-17 13:15:15.081	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 13:15:15.081	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
-2024-04-17 13:15:15.081	info	mytodolist/mytodolist.go:96	Server exited
-2024-04-17 13:15:45.131	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
-2024-04-17 13:15:51.022	info	collection/create.go:12	collection create function called	{"X-Request-ID": "353bdd9c-57db-4ead-be34-9e6c739da497", "X-Username": "ekreke34555"}
-2024-04-17 13:15:51.022	debug	collection/create.go:14	the username is:	{"username:": "ekreke34555"}
-2024-04-17 13:15:57.376	info	mytodolist/mytodolist.go:84	Shutting down server...
-2024-04-17 13:15:57.376	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
-2024-04-17 13:15:57.377	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-17 18:23:25.708	info	item/create.go:12	Item create function called	{"X-Request-ID": "3f28d718-6090-46fe-9674-d0ec8290ffbb", "X-Username": "ekreke34555"}
+2024-04-17 18:23:28.128	info	item/create.go:12	Item create function called	{"X-Request-ID": "b052529c-3758-4a03-a558-0883f324dc92", "X-Username": "ekreke34555"}
+2024-04-17 18:24:28.696	info	item/create.go:12	Item create function called	{"X-Request-ID": "ed7e3554-62aa-41a4-92c3-acbe139a9289", "X-Username": "ekreke34555"}
+2024-04-17 18:25:48.981	info	item/create.go:12	Item create function called	{"X-Request-ID": "e60c8e4c-c22b-4e11-8708-656c1708a216", "X-Username": "ekreke34555"}
+2024-04-17 18:25:57.285	info	item/create.go:12	Item create function called	{"X-Request-ID": "6db31ec5-fc47-4ce1-95c7-c815feb1c428", "X-Username": "ekreke34555"}
+2024-04-17 18:25:57.289	error	store/items.go:44	save record to items failed
+2024-04-17 18:26:13.196	info	item/create.go:12	Item create function called	{"X-Request-ID": "fc7fbc61-a12b-49dc-a115-811cb24605b5", "X-Username": "ekreke34555"}
+2024-04-17 18:26:13.199	error	store/items.go:44	save record to items failed
+2024-04-17 18:26:23.550	info	item/create.go:12	Item create function called	{"X-Request-ID": "5681bbfe-f70b-4806-b7fb-50446378c2cb", "X-Username": "ekreke34555"}
+2024-04-17 18:26:23.553	error	store/items.go:44	save record to items failed
+2024-04-17 18:26:32.377	info	item/create.go:12	Item create function called	{"X-Request-ID": "9f035c93-6ea7-4add-8061-285383da9388", "X-Username": "ekreke34555"}
+2024-04-17 18:26:45.699	info	item/create.go:12	Item create function called	{"X-Request-ID": "6111bffc-51fa-4b0d-b1ab-7969b8f6328d", "X-Username": "ekreke34555"}
+2024-04-17 18:30:08.897	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-17 18:30:08.897	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 14}
+2024-04-17 18:30:08.898	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-17 18:30:49.704	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-17 18:30:52.443	info	collection/create.go:12	collection create function called	{"X-Request-ID": "cd1e10af-8f92-46b9-aa02-3671d8d9189e", "X-Username": "ekreke34555"}
+2024-04-17 18:30:52.443	debug	collection/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 18:30:57.496	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-17 18:30:57.496	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 9}
+2024-04-17 18:30:57.497	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-17 18:39:12.474	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-17 18:39:15.492	info	collection/update.go:12	collection Update function called	{"X-Request-ID": "44e39834-baef-4f9e-b0cf-d8532c5cee87", "X-Username": "ekreke34555"}
+2024-04-17 18:39:15.492	debug	collection/update.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 18:39:15.496	error	store/collection.go:149	get collection by id failed
+2024-04-17 18:39:15.496	error	collection/update.go:23	collection update error
+2024-04-17 18:39:38.690	info	collection/update.go:12	collection Update function called	{"X-Request-ID": "2296ff8c-b866-458d-81b8-d679252948c6", "X-Username": "ekreke34555"}
+2024-04-17 18:39:38.691	debug	collection/update.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 18:42:18.457	info	collection/loaditems.go:12	collection's loaditems function called	{"X-Request-ID": "376b526b-a93b-4d8a-8611-c1f148f7d9a6", "X-Username": "ekreke34555"}
+2024-04-17 18:42:18.458	debug	collection/loaditems.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-17 20:42:00.464	info	user/register.go:19	Register function called	{"X-Request-ID": "d930776f-f01b-4a40-b7fe-095aef6e0838"}
+2024-04-17 20:42:07.158	info	user/login.go:12	Login function called	{"X-Request-ID": "bba9609b-9d41-4813-8495-955dc2faa9ae"}
+2024-04-17 20:42:07.392	info	store/store.go:63	get userid from username failed
+2024-04-17 20:42:07.397	info	store/store.go:63	get userid from username failed
+2024-04-17 20:42:40.776	info	user/info.go:10	Info function called	{"X-Request-ID": "c944b05e-0a88-4202-8f11-9efc27ddc802", "X-Username": "ekreke34555"}
+2024-04-17 20:44:20.859	info	store/store.go:63	get userid from username failed
+2024-04-17 20:44:29.537	info	user/info.go:10	Info function called	{"X-Request-ID": "df1dbad0-4405-445e-9deb-028f3b914044", "X-Username": "123"}
+2024-04-17 20:45:08.230	info	store/store.go:63	get userid from username failed
+2024-04-17 20:46:19.755	info	user/login.go:12	Login function called	{"X-Request-ID": "3da13eaa-5496-43bd-81aa-1e0ee05c6d5d"}
+2024-04-17 20:46:19.888	info	user/info.go:10	Info function called	{"X-Request-ID": "453c9222-5085-4a04-8525-0a3249ebbcda", "X-Username": "123"}
+2024-04-17 20:46:19.894	info	user/myday.go:12	Myday function called	{"X-Request-ID": "e3bb0ad4-8c1c-43d9-a019-ee8da715ebf8", "X-Username": "123"}
+2024-04-17 20:57:31.277	info	user/info.go:10	Info function called	{"X-Request-ID": "053e6445-a68a-46fc-b6e6-e9e118899b99", "X-Username": "123"}
+2024-04-17 20:58:52.766	info	user/myday.go:12	Myday function called	{"X-Request-ID": "b4224350-6a24-4561-b3c2-ddbf41a1ba65", "X-Username": "123"}
+2024-04-17 20:58:57.002	info	item/create.go:12	Item create function called	{"X-Request-ID": "69df7aa3-89af-4e15-9ebc-0c10eae8d959", "X-Username": "123"}
+2024-04-17 20:58:57.008	error	store/items.go:44	save record to items failed
+2024-04-17 21:03:47.614	info	item/create.go:12	Item create function called	{"X-Request-ID": "7a5830f2-62d8-4109-846d-7d86a134a4c9", "X-Username": "123"}
+2024-04-17 21:05:44.106	info	user/info.go:10	Info function called	{"X-Request-ID": "bf50d54d-5ee1-49ea-8cb9-252e9fbae850", "X-Username": "123"}
+2024-04-17 21:05:58.224	info	user/myday.go:12	Myday function called	{"X-Request-ID": "10bd343c-8d7f-427c-82b8-44bfc6490bee", "X-Username": "123"}
+2024-04-17 21:11:09.546	info	item/create.go:12	Item create function called	{"X-Request-ID": "3364392a-47c6-4e39-a8a0-0ec642fe7fb7", "X-Username": "123"}
+2024-04-17 21:11:09.549	error	store/items.go:44	save record to items failed
+2024-04-17 22:32:55.911	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-17 22:32:55.911	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 14}
+2024-04-17 22:32:55.913	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-17 22:32:57.805	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-17 22:33:03.025	info	item/update.go:12	Item Update function called	{"X-Request-ID": "deb42fa2-a145-43ad-88a0-70ebbfe72384", "X-Username": "ekreke34555"}
+2024-04-17 22:33:03.036	info	store/items.go:288	update item deadline failed ... 
+2024-04-17 22:33:03.036	info	store/items.go:289	1970-01-01 08:00:00 +0800 CST
+2024-04-17 22:33:03.037	error	item/update.go:30	Item Biz Update Failed
+2024-04-17 22:33:03.038	error	item/update.go:22	Item update failed	{"X-Request-ID": "deb42fa2-a145-43ad-88a0-70ebbfe72384", "X-Username": "ekreke34555", "the err is :": "Error 1292 (22007): Incorrect datetime value: '1970-01-01 08:00:00' for column 'deadline' at row 1"}
+2024-04-17 22:33:33.602	info	item/update.go:12	Item Update function called	{"X-Request-ID": "a82b78f1-a5d1-4288-a064-97c0e30d652c", "X-Username": "ekreke34555"}
+2024-04-17 22:33:33.628	info	store/items.go:288	update item deadline failed ... 
+2024-04-17 22:33:33.628	info	store/items.go:289	1970-01-01 08:00:00 +0800 CST
+2024-04-17 22:33:33.628	error	item/update.go:30	Item Biz Update Failed
+2024-04-17 22:33:33.629	error	item/update.go:22	Item update failed	{"X-Request-ID": "a82b78f1-a5d1-4288-a064-97c0e30d652c", "X-Username": "ekreke34555", "the err is :": "Error 1292 (22007): Incorrect datetime value: '1970-01-01 08:00:00' for column 'deadline' at row 1"}
+2024-04-17 22:34:18.270	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-17 22:34:18.270	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-17 22:34:18.272	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-17 22:34:38.947	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-17 22:34:41.578	info	item/update.go:12	Item Update function called	{"X-Request-ID": "800481ac-59b7-4a24-ba21-1697dccb35a7", "X-Username": "ekreke34555"}
+2024-04-17 22:35:13.195	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-17 22:35:13.196	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-17 22:35:13.198	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-17 22:35:23.530	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-17 22:35:25.664	info	item/update.go:12	Item Update function called	{"X-Request-ID": "43432f28-c4b4-42fe-8e53-db75081c2749", "X-Username": "ekreke34555"}
+2024-04-17 22:35:39.723	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-17 22:35:39.724	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-17 22:35:39.725	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-17 22:35:52.530	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-17 22:35:58.241	info	item/update.go:12	Item Update function called	{"X-Request-ID": "ca779320-3a82-44c6-ba3d-cfeb243e7c34", "X-Username": "ekreke34555"}
+2024-04-17 22:36:19.532	info	item/update.go:12	Item Update function called	{"X-Request-ID": "68863f45-db5b-418c-8623-c65cf44a9a5e", "X-Username": "ekreke34555"}
+2024-04-17 22:36:19.537	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-17 22:36:19.538	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-17 22:36:19.537	info	store/items.go:311	it.myday & 
+2024-04-18 21:35:23.431	info	user/myday.go:12	Myday function called	{"X-Request-ID": "c076ee5e-b7d1-408a-97a9-d46f22b3e9a8", "X-Username": "ekreke34555"}
+2024-04-18 21:36:31.778	info	user/myday.go:12	Myday function called	{"X-Request-ID": "286afbdf-fc0b-4dec-a899-8d17cfb9e110", "X-Username": "ekreke34555"}
+2024-04-18 21:37:02.005	info	user/myday.go:12	Myday function called	{"X-Request-ID": "ee2b5443-5b6d-472c-a16a-059afda4981f", "X-Username": "ekreke34555"}
+2024-04-18 21:37:16.677	info	user/myday.go:12	Myday function called	{"X-Request-ID": "cea12c1e-18c8-4a18-be97-fea20fc5599c", "X-Username": "ekreke34555"}
+2024-04-18 21:37:44.658	info	user/myday.go:12	Myday function called	{"X-Request-ID": "4f1c07cb-c243-4a0d-916a-6002a9dd6de7", "X-Username": "ekreke34555"}
+2024-04-18 21:41:02.310	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 21:41:02.312	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-18 21:41:02.313	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 21:41:19.064	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 21:41:27.083	info	user/myday.go:12	Myday function called	{"X-Request-ID": "3f73fed6-6bd5-44b9-9267-b744913c85dd", "X-Username": "ekreke34555"}
+2024-04-18 21:41:27.086	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 21:41:27.087	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 21:41:27.086	info	store/user.go:214	pagesize:
+2024-04-18 21:42:41.620	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 21:42:41.620	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-18 21:42:41.621	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 21:43:37.682	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 21:43:43.047	info	user/myday.go:12	Myday function called	{"X-Request-ID": "946d6218-bb38-4cc7-82d1-85c5fdaab595", "X-Username": "ekreke34555"}
+2024-04-18 21:43:43.048	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjoxMCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 21:43:43.048	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 21:43:43.054	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 21:43:43.054	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 21:43:43.054	info	store/user.go:214	pagesize:
+2024-04-18 21:47:49.832	info	user/register.go:19	Register function called	{"X-Request-ID": "a569386a-a51e-4723-b5e2-9f6dc5e22b35"}
+2024-04-18 21:48:03.639	info	user/login.go:12	Login function called	{"X-Request-ID": "beab137f-9f75-4e5c-a433-3eaeae22ac02"}
+2024-04-18 21:49:31.130	info	item/create.go:12	Item create function called	{"X-Request-ID": "8f90a7e0-953b-4bd4-8855-e40bffe76ed4", "X-Username": "laika111"}
+2024-04-18 21:50:16.882	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 21:50:16.882	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 21:50:16.883	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 21:51:29.836	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 21:51:37.226	info	user/register.go:19	Register function called	{"X-Request-ID": "e1d43ed8-4808-4012-a45c-ad73abb429e8"}
+2024-04-18 21:51:49.880	info	item/create.go:12	Item create function called	{"X-Request-ID": "3ced7043-a3dd-4df9-aab8-c512ac7f6708", "X-Username": "testMyday"}
+2024-04-18 21:51:55.559	info	item/create.go:12	Item create function called	{"X-Request-ID": "a707a7bc-bef4-41bb-a748-6d430d937d41", "X-Username": "testMyday"}
+2024-04-18 21:52:00.867	info	item/create.go:12	Item create function called	{"X-Request-ID": "48c66a81-91e7-4a83-851e-fa6dba15d669", "X-Username": "testMyday"}
+2024-04-18 21:52:05.569	info	item/create.go:12	Item create function called	{"X-Request-ID": "8daa3861-6597-4a63-8dc7-5a6cfc3f78e2", "X-Username": "testMyday"}
+2024-04-18 21:52:10.770	info	item/create.go:12	Item create function called	{"X-Request-ID": "88c6b33a-64f7-439e-9db8-ae7e03a1213e", "X-Username": "testMyday"}
+2024-04-18 21:52:15.256	info	item/create.go:12	Item create function called	{"X-Request-ID": "4b166d75-234a-4b67-b3fe-f07472f4ac72", "X-Username": "testMyday"}
+2024-04-18 21:52:20.351	info	item/create.go:12	Item create function called	{"X-Request-ID": "23039725-aed3-4f8d-9738-b12cb017ad53", "X-Username": "testMyday"}
+2024-04-18 21:52:24.870	info	item/create.go:12	Item create function called	{"X-Request-ID": "c01b9a88-3e17-4281-9f95-818eaa711cec", "X-Username": "testMyday"}
+2024-04-18 21:52:29.163	info	item/create.go:12	Item create function called	{"X-Request-ID": "4fb7a151-3bb3-4dd2-820d-6c8bb2e7d765", "X-Username": "testMyday"}
+2024-04-18 21:52:35.005	info	item/create.go:12	Item create function called	{"X-Request-ID": "476b3689-1191-4424-b5e5-7b7af47ecc0a", "X-Username": "testMyday"}
+2024-04-18 21:52:39.312	info	item/create.go:12	Item create function called	{"X-Request-ID": "72da581d-4686-4b44-84b4-db0311b91c64", "X-Username": "testMyday"}
+2024-04-18 21:53:14.335	info	user/myday.go:12	Myday function called	{"X-Request-ID": "99c63b7a-d0dd-4656-a663-2866aaa20c9e", "X-Username": "ekreke34555"}
+2024-04-18 21:53:14.336	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":""}}
+2024-04-18 21:53:14.336	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 21:53:14.339	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 21:53:14.339	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 10, "value": "next_id:"}]}
+2024-04-18 21:53:14.339	info	store/user.go:214	pagesize:
+2024-04-18 21:53:23.602	info	user/myday.go:12	Myday function called	{"X-Request-ID": "9dc527fa-1b27-4c25-8ff8-21b6e86738e7", "X-Username": "testMyday"}
+2024-04-18 21:53:23.602	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":""}}
+2024-04-18 21:53:23.602	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 21:53:23.604	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 21:53:23.605	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 10, "value": "next_id:"}]}
+2024-04-18 21:53:23.604	info	store/user.go:214	pagesize:
+2024-04-18 21:53:35.549	info	user/myday.go:12	Myday function called	{"X-Request-ID": "0d74218b-0083-4146-b887-72365a3621c2", "X-Username": "testMyday"}
+2024-04-18 21:53:35.550	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 21:53:35.550	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 21:53:35.553	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 21:53:35.553	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 21:53:35.553	info	store/user.go:214	pagesize:
+2024-04-18 21:53:35.554	info	user/myday.go:33	LoadMydayItems	{"cursor": "eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0", "items": [], "npage": {"next_id":0,"page_size":0}}
+2024-04-18 21:54:49.657	info	user/items.go:12	Items function called	{"X-Request-ID": "043b186d-d683-4af3-a80a-6b599c5ebd2d", "X-Username": "testMyday"}
+2024-04-18 21:57:02.781	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 21:57:02.783	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 21:57:02.788	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 21:57:11.454	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 21:57:16.855	info	user/items.go:12	Items function called	{"X-Request-ID": "5207c29d-5c06-41c9-b9d4-6f8d662571b3", "X-Username": "testMyday"}
+2024-04-18 21:57:16.856	info	store/user.go:239	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-18 21:58:36.498	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 21:58:36.498	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-18 21:58:36.502	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 21:58:46.662	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 21:58:51.685	info	user/myday.go:12	Myday function called	{"X-Request-ID": "c0507157-8f95-4e5e-ae67-f1934cffd207", "X-Username": "testMyday"}
+2024-04-18 21:58:51.685	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 21:58:51.685	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 21:58:51.687	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 21:58:51.688	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 21:58:51.687	info	store/user.go:214	pagesize:
+2024-04-18 21:58:51.690	info	user/myday.go:33	pageinfo:	{"nextid:": 0, "pagesize": 0}
+2024-04-18 22:00:37.188	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:00:37.190	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-18 22:00:37.193	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:00:44.198	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:00:48.716	info	user/myday.go:12	Myday function called	{"X-Request-ID": "8590ff35-76fc-4f58-a25a-56575bc0b64c", "X-Username": "testMyday"}
+2024-04-18 22:00:48.716	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 22:00:48.716	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:00:48.717	info	user/myday.go:29	page after decode:	{"p info:": {"next_id":0,"page_size":0}}
+2024-04-18 22:00:48.720	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:00:48.720	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 22:00:48.720	info	store/user.go:214	pagesize:
+2024-04-18 22:00:48.722	info	user/myday.go:34	pageinfo:	{"nextid:": 0, "pagesize": 0}
+2024-04-18 22:02:08.101	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:02:08.103	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 22:02:08.107	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:02:17.034	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:02:21.506	info	user/myday.go:12	Myday function called	{"X-Request-ID": "dfa851ac-2eca-40bd-b6bd-3087a451bbc4", "X-Username": "testMyday"}
+2024-04-18 22:02:21.506	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 22:02:21.506	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:02:21.508	info	user/myday.go:29	c value is:	{"test c": "eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}
+2024-04-18 22:02:21.509	info	user/myday.go:31	page after decode:	{"p info:": {"next_id":0,"page_size":0}}
+2024-04-18 22:02:21.513	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:02:21.513	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 22:02:21.513	info	store/user.go:214	pagesize:
+2024-04-18 22:02:21.519	info	user/myday.go:36	pageinfo:	{"nextid:": 0, "pagesize": 0}
+2024-04-18 22:03:20.229	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:03:20.230	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 22:03:20.232	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:03:28.885	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:03:33.215	info	user/myday.go:12	Myday function called	{"X-Request-ID": "625f3d59-5b30-421e-aa09-dfc2cae16440", "X-Username": "testMyday"}
+2024-04-18 22:03:33.216	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 22:03:33.216	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:03:33.217	info	user/myday.go:29	c value is:	{"test c": "eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}
+2024-04-18 22:03:33.217	info	user/myday.go:31	p value is:	{"test p": {"next_id":0,"page_size":0}}
+2024-04-18 22:03:33.218	info	user/myday.go:33	page after decode:	{"p info:": {"next_id":0,"page_size":0}}
+2024-04-18 22:03:33.220	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:03:33.221	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 22:03:33.220	info	store/user.go:214	pagesize:
+2024-04-18 22:03:33.222	info	user/myday.go:38	pageinfo:	{"nextid:": 0, "pagesize": 0}
+2024-04-18 22:06:12.305	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:06:12.307	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 22:06:12.312	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:06:24.923	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:06:34.172	info	user/myday.go:12	Myday function called	{"X-Request-ID": "4f705507-eb3c-435a-aa83-2bcf60e63442", "X-Username": "testMyday"}
+2024-04-18 22:06:34.172	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 22:06:34.172	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:06:34.173	info	user/myday.go:29	c value is:	{"test c": "eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}
+2024-04-18 22:06:34.176	info	user/myday.go:31	p value is:	{"test p": {"next_id":0,"page_size":0}}
+2024-04-18 22:06:34.176	info	user/myday.go:33	page after decode:	{"p info:": {"next_id":0,"page_size":0}}
+2024-04-18 22:06:34.180	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:06:34.181	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 22:06:34.180	info	store/user.go:214	pagesize:
+2024-04-18 22:06:34.185	info	user/myday.go:38	pageinfo:	{"nextid:": 0, "pagesize": 0}
+2024-04-18 22:08:29.834	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:08:29.834	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 22:08:29.835	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:08:35.507	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:08:40.448	info	user/myday.go:12	Myday function called	{"X-Request-ID": "7a6238c4-ed39-4639-997a-a795c5a02f01", "X-Username": "testMyday"}
+2024-04-18 22:08:40.448	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":"eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}}
+2024-04-18 22:08:40.448	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:08:40.449	info	user/myday.go:29	c value is:	{"test c": "eyJuZXh0X2lkIjo1NCwicGFnZV9zaXplIjoxMH0"}
+2024-04-18 22:08:40.449	info	user/myday.go:31	p value is:	{"test p": {"next_id":0,"page_size":0}}
+2024-04-18 22:08:40.449	info	user/myday.go:33	page after decode:	{"p info:": {"next_id":0,"page_size":0}}
+2024-04-18 22:08:40.452	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:08:40.452	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "next_id:"}]}
+2024-04-18 22:08:40.452	info	store/user.go:214	pagesize:
+2024-04-18 22:08:40.456	info	user/myday.go:38	pageinfo:	{"nextid:": 0, "pagesize": 0}
+2024-04-18 22:08:47.257	info	user/myday.go:12	Myday function called	{"X-Request-ID": "e4be045b-12cd-4bdb-99f2-8e65073ebb1c", "X-Username": "testMyday"}
+2024-04-18 22:08:47.257	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":""}}
+2024-04-18 22:08:47.257	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:08:47.261	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:08:47.262	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-18 22:08:47.261	info	store/user.go:214	pagesize:
+2024-04-18 22:10:28.695	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:10:28.698	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-18 22:10:28.699	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:10:37.010	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:10:43.089	info	user/myday.go:12	Myday function called	{"X-Request-ID": "4af5fceb-2cb2-43b8-9002-c398c693f421", "X-Username": "testMyday"}
+2024-04-18 22:10:43.090	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":""}}
+2024-04-18 22:10:43.090	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:10:43.094	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:10:43.094	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-18 22:10:43.094	info	store/user.go:214	pagesize:
+2024-04-18 22:10:43.096	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":45,"item_name":"测试一下我的一天1","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:51:50+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":46,"item_name":"测试一下我的一天2","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:51:56+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":47,"item_name":"测试一下我的一天3","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:01+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":48,"item_name":"测试一下我的一天4","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:06+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":49,"item_name":"测试一下我的一天5","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:11+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":50,"item_name":"测试一下我的一天6","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:15+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":51,"item_name":"测试一下我的一天7","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:20+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":52,"item_name":"测试一下我的一天8","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:25+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":53,"item_name":"测试一下我的一天9","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:29+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":54,"item_name":"测试一下我的一天10","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:35+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":55,"item_name":"测试一下我的一天11","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":0,"created_time":"2024-04-18T21:52:39+08:00","node":1,"checkPoint":0,"collection_id":1}]}
+2024-04-18 22:10:43.096	info	store/user.go:231	items
+2024-04-18 22:16:03.525	info	user/myitems.go:12	MyItems function called	{"X-Request-ID": "44ce8641-ea22-4c53-a688-94c2c40ebf83", "X-Username": "ekreke34555"}
+2024-04-18 22:17:45.443	info	user/myitems.go:12	MyItems function called	{"X-Request-ID": "61d960a4-9ff8-4a35-975b-3b38d92a3d0b", "X-Username": "ekreke34555"}
+2024-04-18 22:18:15.087	info	user/myday.go:12	Myday function called	{"X-Request-ID": "16b3aeb7-f2aa-49ed-a1c1-41241a35de87", "X-Username": "testMyday"}
+2024-04-18 22:18:15.087	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":""}}
+2024-04-18 22:18:15.087	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:18:15.090	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:18:15.090	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-18 22:18:15.090	info	store/user.go:214	pagesize:
+2024-04-18 22:18:15.091	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":45,"item_name":"测试一下我的一天1","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:51:50+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":46,"item_name":"测试一下我的一天2","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:51:56+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":47,"item_name":"测试一下我的一天3","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:01+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":48,"item_name":"测试一下我的一天4","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:06+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":49,"item_name":"测试一下我的一天5","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:11+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":50,"item_name":"测试一下我的一天6","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:15+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":51,"item_name":"测试一下我的一天7","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:20+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":52,"item_name":"测试一下我的一天8","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:25+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":53,"item_name":"测试一下我的一天9","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:29+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":54,"item_name":"测试一下我的一天10","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:35+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":55,"item_name":"测试一下我的一天11","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:39+08:00","node":1,"checkPoint":0,"collection_id":1}]}
+2024-04-18 22:18:15.091	info	store/user.go:231	items
+2024-04-18 22:19:19.978	info	user/myday.go:12	Myday function called	{"X-Request-ID": "c1d25715-e31e-4336-9dad-3d21aa920d9f", "X-Username": "testMyday"}
+2024-04-18 22:19:19.979	error	log/log.go:120	Ignored key without a value.	{"ignored": {"Pagination":""}}
+2024-04-18 22:19:19.979	info	user/myday.go:18	Myday Request: %+v
+2024-04-18 22:19:19.981	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:19:19.981	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-18 22:19:19.981	info	store/user.go:214	pagesize:
+2024-04-18 22:19:19.984	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":45,"item_name":"测试一下我的一天1","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:51:50+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":46,"item_name":"测试一下我的一天2","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:51:56+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":47,"item_name":"测试一下我的一天3","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:01+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":48,"item_name":"测试一下我的一天4","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:06+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":49,"item_name":"测试一下我的一天5","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:11+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":50,"item_name":"测试一下我的一天6","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:15+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":51,"item_name":"测试一下我的一天7","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:20+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":52,"item_name":"测试一下我的一天8","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:25+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":53,"item_name":"测试一下我的一天9","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:29+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":54,"item_name":"测试一下我的一天10","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:35+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":55,"item_name":"测试一下我的一天11","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-18T21:52:39+08:00","node":1,"checkPoint":0,"collection_id":1}]}
+2024-04-18 22:19:19.984	info	store/user.go:231	items
+2024-04-18 22:21:17.559	info	item/update.go:12	Item Update function called	{"X-Request-ID": "cdb951a6-dc0e-4f2b-b3d8-b6fdaa5c6f71", "X-Username": "ekreke34555"}
+2024-04-18 22:21:17.562	error	log/log.go:120	Ignored key without a value.	{"ignored": 1}
+2024-04-18 22:21:17.563	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-18 22:21:17.562	info	store/items.go:311	it.myday & 
+2024-04-18 22:21:58.932	info	item/update.go:12	Item Update function called	{"X-Request-ID": "e052cdd0-1194-493a-b1af-e8d8a8350db3", "X-Username": "testMyday"}
+2024-04-18 22:21:58.939	error	log/log.go:120	Ignored key without a value.	{"ignored": 1}
+2024-04-18 22:21:58.939	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
+2024-04-18 22:21:58.939	info	store/items.go:311	it.myday & 
+2024-04-18 22:22:33.084	info	item/update.go:12	Item Update function called	{"X-Request-ID": "42407d7a-7a01-439b-8dbd-06ca8c60e4f7", "X-Username": "testMyday"}
+2024-04-18 22:22:33.097	error	log/log.go:120	Ignored key without a value.	{"ignored": 1}
+2024-04-18 22:22:33.098	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
+2024-04-18 22:22:33.097	info	store/items.go:311	it.myday & 
+2024-04-18 22:35:00.258	info	user/important.go:12	Important function called	{"X-Request-ID": "d49006a7-d866-48a1-83de-93fb0ca2bdc9", "X-Username": "testMyday"}
+2024-04-18 22:36:57.541	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:36:57.548	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 22:36:57.549	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:37:06.019	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:39:39.677	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:39:39.678	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-18 22:39:39.679	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:39:48.194	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:40:02.300	info	user/important.go:12	Important function called	{"X-Request-ID": "f1c48cc4-c537-4201-90e5-38a0dad3a4c0", "X-Username": "testMyday"}
+2024-04-18 22:42:11.465	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:42:11.466	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-18 22:42:11.468	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:42:19.808	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:42:24.680	info	user/important.go:12	Important function called	{"X-Request-ID": "c5f6fc2f-f111-4927-90c3-d0af82edbcaf", "X-Username": "testMyday"}
+2024-04-18 22:43:14.499	info	user/important.go:12	Important function called	{"X-Request-ID": "049f555d-1bb0-4607-9ff8-885f328a328a", "X-Username": "testMyday"}
+2024-04-18 22:43:29.841	info	user/important.go:12	Important function called	{"X-Request-ID": "d199711c-ae8a-4e01-9529-8cbd6424e1b4", "X-Username": "testMyday"}
+2024-04-18 22:44:36.114	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "e61ce10b-ba94-4fab-a3a0-2ea09eda4866", "X-Username": "ekreke34555"}
+2024-04-18 22:46:45.748	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-18 22:46:45.749	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-18 22:46:45.749	info	mytodolist/mytodolist.go:96	Server exited
