@@ -30,3 +30,5 @@
 2024-04-20 20:03:23.728	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-04-20 20:03:23.729	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 28}
 2024-04-20 20:03:23.730	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 20:05:11.951	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 20:05:26.604	info	project/queryallproject.go:12	query all project function called	{"X-Request-ID": "343f09d3-437b-45d1-b3a3-5e4bc038a0a5", "X-Username": "ekreke34555"}
