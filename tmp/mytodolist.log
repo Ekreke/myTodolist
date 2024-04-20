@@ -423,3 +423,62 @@
 2024-04-20 15:12:51.464	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-04-20 15:12:51.465	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 11}
 2024-04-20 15:12:51.467	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 15:57:18.638	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 15:57:18.640	fatal	mytodolist/mytodolist.go:108	listen tcp :8080: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
+github.com/ekreke/myTodolist/internal/mytodolist.startInsecureServer.func1
+	C:/Golang/myTodolist/internal/mytodolist/mytodolist.go:108
+2024-04-20 15:57:51.039	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 15:57:51.042	fatal	mytodolist/mytodolist.go:108	listen tcp :8080: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
+github.com/ekreke/myTodolist/internal/mytodolist.startInsecureServer.func1
+	C:/Golang/myTodolist/internal/mytodolist/mytodolist.go:108
+2024-04-20 16:00:24.016	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 16:00:24.018	fatal	mytodolist/mytodolist.go:108	listen tcp :8080: bind: An attempt was made to access a socket in a way forbidden by its access permissions.
+github.com/ekreke/myTodolist/internal/mytodolist.startInsecureServer.func1
+	C:/Golang/myTodolist/internal/mytodolist/mytodolist.go:108
+2024-04-20 16:03:58.472	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 16:04:02.788	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 16:04:02.788	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-20 16:04:02.789	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 16:04:08.193	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 16:36:07.097	info	project/info.go:12	project info function called	{"X-Request-ID": "61acf346-e156-4880-bca7-8c92b59f5b58", "X-Username": "ekreke34555"}
+2024-04-20 16:50:39.216	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 16:50:39.218	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-20 16:50:39.219	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 18:29:55.514	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 18:30:30.912	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "25223f35-f005-4248-ad8e-f35f2bbe9bee", "X-Username": "ekreke34555"}
+2024-04-20 18:34:40.654	info	project/addnode.go:13	project add node function called	{"X-Request-ID": "2b7c8caf-f135-49fc-a791-c18b091f6db5", "X-Username": "ekreke34555"}
+2024-04-20 18:36:05.883	info	user/nodes.go:12	Nodes function called	{"X-Request-ID": "64cbb0d9-431e-45f2-8490-fec3f2e64821", "X-Username": "ekreke34555"}
+2024-04-20 18:36:26.363	info	user/nodes.go:12	Nodes function called	{"X-Request-ID": "3d9dd434-3184-4466-ac64-271aa09c152f", "X-Username": "ekreke34555"}
+2024-04-20 18:37:31.818	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 18:37:31.818	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 10}
+2024-04-20 18:37:31.819	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 18:37:36.601	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 18:37:43.600	info	user/nodes.go:12	Nodes function called	{"X-Request-ID": "c9d4b061-3bb2-4c6a-ba59-514f6e47e0f3", "X-Username": "ekreke34555"}
+2024-04-20 18:37:49.486	info	user/nodes.go:12	Nodes function called	{"X-Request-ID": "92ba0d59-97a2-4279-b8bb-7d1685f9d727", "X-Username": "ekreke34555"}
+2024-04-20 18:41:00.156	info	user/register.go:19	Register function called	{"X-Request-ID": "7059751c-e472-4329-a6b7-624fbcb52a3f"}
+2024-04-20 18:41:02.700	info	user/register.go:19	Register function called	{"X-Request-ID": "d5b6d4b2-8aad-4ba2-b3e1-ea078e96fd23"}
+2024-04-20 18:41:10.598	info	user/register.go:19	Register function called	{"X-Request-ID": "c9cd7a53-ae22-4c21-94eb-4dcda690d68b"}
+2024-04-20 18:42:18.832	info	project/join.go:12	project join function called	{"X-Request-ID": "a4937ce5-7221-4ad3-a5db-7879475dfd76", "X-Username": "1"}
+2024-04-20 18:42:18.840	error	store/project.go:433	user not in this project
+2024-04-20 18:42:29.693	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "2a62f2a2-04f6-4d31-9380-df603d2f725b", "X-Username": "1"}
+2024-04-20 18:42:42.624	info	project/quit.go:13	project quit function called	{"X-Request-ID": "8237cb28-1dbf-41c3-a518-8548b6131048", "X-Username": "1"}
+2024-04-20 18:42:48.340	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "155c8990-4d82-4101-8340-4c8fce57653b", "X-Username": "1"}
+2024-04-20 18:42:52.257	info	project/join.go:12	project join function called	{"X-Request-ID": "6933e70a-671c-47ae-a991-344fcfb9e6b3", "X-Username": "1"}
+2024-04-20 18:42:52.261	error	store/project.go:433	user not in this project
+2024-04-20 18:42:59.310	info	project/icreated.go:12	project list function called	{"X-Request-ID": "cdcbe2fd-7db2-4e33-bb93-01094476e60f", "X-Username": "ekreke34555"}
+2024-04-20 18:43:03.239	info	project/icreated.go:12	project list function called	{"X-Request-ID": "0aaa2770-cbe1-4176-86dc-956ab5f7c74d", "X-Username": "1"}
+2024-04-20 18:43:14.912	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "fa5e15d1-15dc-4cc8-a8c4-6a1eda4f6b44", "X-Username": "1"}
+2024-04-20 18:46:21.828	info	project/create.go:13	project create function called	{"X-Request-ID": "2ae40397-22df-4747-8e4c-197750b819c1", "X-Username": "123"}
+2024-04-20 18:47:30.021	info	project/create.go:13	project create function called	{"X-Request-ID": "d35069dc-213d-40e8-b47a-ada250ac37b5", "X-Username": "1"}
+2024-04-20 18:55:44.529	info	project/nodes.go:12	project nodes function called	{"X-Request-ID": "9da83940-c377-4fe1-9ddd-04b7da3dc71a", "X-Username": "ekreke34555"}
+2024-04-20 18:57:41.527	info	project/create.go:13	project create function called	{"X-Request-ID": "7b7a173f-1fa5-42c0-9133-1d59d427c035", "X-Username": "123"}
+2024-04-20 18:58:23.978	info	project/create.go:13	project create function called	{"X-Request-ID": "b02ae35d-e92e-4291-b2cc-f30e179ba457", "X-Username": "123"}
+2024-04-20 18:59:43.142	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "3834098f-ee6e-4733-89b8-fd70cee12588", "X-Username": "1"}
+2024-04-20 19:02:53.003	info	project/create.go:13	project create function called	{"X-Request-ID": "e9f4e40c-5bc7-4bad-bb06-0db57970457b", "X-Username": "123"}
+2024-04-20 19:04:25.733	info	project/create.go:13	project create function called	{"X-Request-ID": "37704255-8977-4cff-bd6f-47db57d6e662", "X-Username": "123"}
+2024-04-20 19:05:10.270	info	project/create.go:13	project create function called	{"X-Request-ID": "95b8ca30-bf05-42be-b88b-2f1cbc16978d", "X-Username": "ekreke34555"}
+2024-04-20 19:05:34.644	info	project/create.go:13	project create function called	{"X-Request-ID": "8ce9ccbb-7515-46cc-84df-1fc52f0a6234", "X-Username": "ekreke34555"}
+2024-04-20 19:05:46.765	info	project/create.go:13	project create function called	{"X-Request-ID": "e5ea50c7-e688-41df-a081-2d87f02d2c09", "X-Username": "ekreke34555"}
+2024-04-20 19:05:57.855	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 19:05:57.855	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 10}
+2024-04-20 19:05:57.855	info	mytodolist/mytodolist.go:96	Server exited

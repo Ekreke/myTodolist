@@ -1,6 +1,7 @@
 package store
 
 import (
+	"errors"
 	"strconv"
 	"time"
 
@@ -59,8 +60,109 @@ func (ps *projectStore) Nodes(projectid string, userid int) (items *[]model.Item
 
 // AddNode implements ProjectStore.
 func (ps *projectStore) AddNode(projectid string, nodeid string, userid int64) (affectedRows int, err error) {
+	// 一坨屎的转换int , 结构问题
+	pid, _ := strconv.Atoi(projectid)
+	// actually item_id
+	nid, _ := strconv.Atoi(nodeid)
+
+	// check if the user is project admin user
+	userIsAdmin, err := ps.checkUserIfAdmin(pid, nid)
+	if !userIsAdmin && err != nil {
+		log.Infow("user is not admin")
+		return 0, errors.New("user is not admin")
+	}
+
 	// set item's column node = true
 	tx := ps.db.Begin()
+
+	// 根据adminid获取adminUserInfo信息
+	adminUserInfo := model.Users{}
+	err = tx.Debug().Where("id = ?", userid).Find(&adminUserInfo).Error
+	if err != nil {
+		log.Infow("error", err)
+		return 0, err
+	}
+
+	// 获取distributionItem的相关信息
+	distributionItem := model.Items{}
+	err = tx.Debug().Where("id = ?", nodeid).Find(&distributionItem).Error
+	if err != nil {
+		log.Infow("error", err)
+		return 0, err
+	}
+
+	// 查询所有在project里面的user
+
+	usersJoinedThisProject, err := ps.GetProjectJoinedUserinfoByProjectId(int64(pid))
+	if err != nil {
+		log.Infow("GetProjectJoinedUserinfoByProjectId failed", "reason:", err)
+		return 0, err
+	}
+	// 组装任务
+	subItem := model.Items{
+		ItemName:    distributionItem.ItemName,
+		Description: distributionItem.Description,
+		ProjectId:   int64(pid),
+		Deadline:    distributionItem.Deadline,
+		Important:   0,
+		Done:        0,
+		Myday:       0,
+		CreatedTime: time.Now(),
+		Node:        1,
+		Checkpoint:  1,
+	}
+
+	// 下发任务
+	itemDB := newItems(ps.db)
+	//被下发的用户的itemid集合
+	subItemIds := []int{}
+	for _, userInProject := range usersJoinedThisProject {
+		// 创建任务
+		_, err = itemDB.Create(&subItem, userInProject.Username)
+		if err != nil {
+			tx.Rollback()
+			log.Infow("下发任务失败")
+			return int(ps.db.RowsAffected), err
+		}
+		subItemIds = append(subItemIds, int(subItem.ID))
+
+		// // get item id by item name and userid
+		// // get all items by user id
+
+		// item_users := &model.ItemsUsers{}
+		// err := tx.Debug().Where("user_id =  ?").Find(item_users).Error
+		// if err!= nil {
+		// 	tx.Rollback()
+		// 	log.Infow("获取用户信息失败")
+		// 	return int(ps.db.RowsAffected), err
+		// }
+		// // get item ids
+		// userItemIds := []int{}
+		// for _,v := range item_users{
+		// 	userItemIds = append(userItemIds, int(item_users.ItemId))
+		// }
+
+		//插入projectNodes
+		err = tx.Debug().Model(&model.ProjectsNodes{}).Create(&model.ProjectsNodes{ProjectId: int64(pid), ItemId: int64(subItem.ID), UserId: userInProject.ID}).Error
+		if err != nil {
+			tx.Rollback()
+			return int(ps.db.RowsAffected), err
+		}
+
+	}
+
+	for _, subItemId := range subItemIds {
+		//插入projectNodes
+		err = tx.Debug().Model(&model.ProjectsNodes{}).Create(&model.ProjectsNodes{ProjectId: int64(pid), ItemId: int64(subItemId), UserId: userid}).Error
+		if err != nil {
+			tx.Rollback()
+			return int(ps.db.RowsAffected), err
+		}
+
+	}
+
+	// admin nodes 更新的一些方法
+
 	err = tx.Debug().Model(&model.Items{}).Where("id = ?", nodeid).Update("node", 1).Error
 	if err != nil {
 		tx.Rollback()
@@ -73,8 +175,7 @@ func (ps *projectStore) AddNode(projectid string, nodeid string, userid int64) (
 	}
 	// add item to projects nodes
 	// FIXME: err checking
-	pid, _ := strconv.Atoi(projectid)
-	nid, _ := strconv.Atoi(nodeid)
+
 	err = tx.Debug().Model(&model.ProjectsNodes{}).Create(&model.ProjectsNodes{ProjectId: int64(pid), ItemId: int64(nid), UserId: userid}).Error
 	if err != nil {
 		tx.Rollback()
@@ -190,6 +291,12 @@ func (ps *projectStore) GetAllProjectsICreated(userid int64) (projects []model.P
 		tx.Rollback()
 		return nil, err
 	}
+
+	projectsIdsIJoined := []int{}
+	for _, pr := range *prs {
+		projectsIdsIJoined = append(projectsIdsIJoined, int(pr.ID))
+	}
+
 	tx.Commit()
 	// return
 	return *prs, nil
@@ -398,5 +505,25 @@ func (ps *projectStore) GetProjectJoinedUserinfoByProjectId(projectid int64) (us
 		return nil, err
 	}
 	return users, nil
+
+}
+
+func (ps *projectStore) checkUserIfAdmin(projectId int, userId int) (result bool, err error) {
+	p := model.Projects{}
+	err = ps.db.Where("id = ?", projectId).Find(&p).Error
+	if err != nil {
+		return false, err
+	}
+	adminIdInt := int(p.AdminId)
+	userIsAdmin := adminIdInt == userId
+
+	if userIsAdmin {
+		return true, nil
+	}
+	return false, nil
+
+}
+
+func checkIfAdminOfProject() {
 
 }

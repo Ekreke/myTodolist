@@ -130,10 +130,10 @@ func installRouters(g *gin.Engine) error {
 		pg.GET("/icreated", pc.Icreated)
 		// add node to one project not add the item
 		pg.POST("/:projectid/node/:nodeid", pc.AddNode)
-		// delete a node from one project not delete the item itself
-		pg.DELETE("/:projectid/node/:nodeid", pc.DeleteNode)
-		// update node info
-		pg.PUT("/:projectid/node/:nodeid", pc.UpdateNode)
+		// // delete a node from one project not delete the item itself
+		// pg.DELETE("/:projectid/node/:nodeid", pc.DeleteNode)
+		// // update node info
+		// pg.PUT("/:projectid/node/:nodeid", pc.UpdateNode)
 		// get node info
 		pg.GET("/:projectid/node/:nodeid", pc.NodeInfo)
 		// get nodes from project

@@ -12,7 +12,7 @@ func (b *userBiz) LoadNodes(ctx context.Context, req *v1.CommonRequestWizPaginat
 	cursor := req.Pagination
 	// if the cursor is nil , it means it's the first request ;
 	if cursor == "" {
-		items, npage, err := b.ds.Users().LoadNodes(0, 10, username)
+		items, npage, err := b.ds.Users().LoadNodes(0, 50, username)
 		if err != nil {
 			return nil, errno.ErrLoadNodesFailed
 		}
