@@ -24,6 +24,7 @@ type ProjectInfoRequest struct {
 
 type ProjectInfoResponse struct {
 	Projects model.Projects `json:"projects"`
+	Users    []model.Users  `json:"users"`
 }
 
 type ProjectCreateRequest struct {

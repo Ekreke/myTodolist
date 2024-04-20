@@ -98,7 +98,7 @@ func (pb *projectBiz) AddNode(projectid string, nodeid string, userid int64) (*v
 	if err != nil {
 		return nil, err
 	}
-	return &v1.CommonResponseWizMsg{"success"}, nil
+	return &v1.CommonResponseWizMsg{Msg: "success"}, nil
 }
 
 // Icreated implements ProjectBiz.

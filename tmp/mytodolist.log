@@ -296,3 +296,130 @@
 2024-04-18 22:46:45.748	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-04-18 22:46:45.749	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
 2024-04-18 22:46:45.749	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-18 22:48:32.182	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-18 22:50:08.204	info	item/update.go:12	Item Update function called	{"X-Request-ID": "5cf87d79-8433-47b1-88bf-08ced1987d42", "X-Username": "testMyday"}
+2024-04-18 22:50:08.210	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:50:08.210	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-18 22:50:08.210	info	store/items.go:311	it.myday & 
+2024-04-18 22:50:52.669	info	item/update.go:12	Item Update function called	{"X-Request-ID": "22340a2b-763f-41fc-bf4b-c1542a91baf5", "X-Username": "testMyday"}
+2024-04-18 22:50:52.675	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:50:52.675	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-18 22:50:52.675	info	store/items.go:311	it.myday & 
+2024-04-18 22:51:35.283	info	item/update.go:12	Item Update function called	{"X-Request-ID": "c902981e-3637-4f60-841e-6ad6a7dd8c7d", "X-Username": "testMyday"}
+2024-04-18 22:51:35.286	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-18 22:51:35.287	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-18 22:51:35.286	info	store/items.go:311	it.myday & 
+2024-04-18 22:54:24.031	info	collection/create.go:12	collection create function called	{"X-Request-ID": "fa6b1409-3ff7-478f-b47a-684e18bd8a48", "X-Username": "testMyday"}
+2024-04-18 22:54:24.032	debug	collection/create.go:14	the username is:	{"username:": "testMyday"}
+2024-04-18 22:54:46.063	info	collection/create.go:12	collection create function called	{"X-Request-ID": "8263910a-cc71-4926-998f-022927a229a6", "X-Username": "ekreke34555"}
+2024-04-18 22:54:46.063	debug	collection/create.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-18 22:55:27.284	info	collection/create.go:12	collection create function called	{"X-Request-ID": "185fdca4-57a6-418e-a22f-e1c93b8275f3", "X-Username": "testMyday"}
+2024-04-18 22:55:27.285	debug	collection/create.go:14	the username is:	{"username:": "testMyday"}
+2024-04-18 22:55:56.592	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "1a84c298-5dd5-49b4-bdc2-de90994f1db9", "X-Username": "testMyday"}
+2024-04-18 22:56:27.240	info	collection/create.go:12	collection create function called	{"X-Request-ID": "16278c53-421a-42f1-b982-fd809d073b9b", "X-Username": "testMyday"}
+2024-04-18 22:56:27.241	debug	collection/create.go:14	the username is:	{"username:": "testMyday"}
+2024-04-18 22:56:32.431	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "ca60a9f1-9fe0-409b-aea0-0f2a41fefe8f", "X-Username": "testMyday"}
+2024-04-19 00:39:21.491	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-19 00:39:21.492	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-19 00:39:21.494	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-19 00:39:22.878	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-19 00:41:55.865	info	collection/update.go:12	collection Update function called	{"X-Request-ID": "7d63c1ba-1ff8-4b01-af9e-bd92536858d0", "X-Username": "ekreke34555"}
+2024-04-19 00:41:55.865	debug	collection/update.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:42:33.987	info	collection/update.go:12	collection Update function called	{"X-Request-ID": "4ae9deb0-b7bb-42cd-8d6f-749a6c0fa495", "X-Username": "ekreke34555"}
+2024-04-19 00:42:33.987	debug	collection/update.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:43:24.379	info	collection/additem.go:12	additem function called	{"X-Request-ID": "93e874f2-799e-49e0-a14c-e1a0c3e78be5", "X-Username": "ekreke34555"}
+2024-04-19 00:43:24.380	debug	collection/additem.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:43:29.592	info	collection/additem.go:12	additem function called	{"X-Request-ID": "012e51ac-3aa3-463d-8af1-b61f314b0352", "X-Username": "ekreke34555"}
+2024-04-19 00:43:29.592	debug	collection/additem.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:43:35.494	info	collection/additem.go:12	additem function called	{"X-Request-ID": "f5b01da2-354e-4f0f-a6bb-87286bd8930e", "X-Username": "ekreke34555"}
+2024-04-19 00:43:35.495	debug	collection/additem.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:43:53.795	info	collection/loaditems.go:12	collection's loaditems function called	{"X-Request-ID": "78427230-5b94-4397-aeca-45b2c892948b", "X-Username": "ekreke34555"}
+2024-04-19 00:43:53.796	debug	collection/loaditems.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:45:26.707	info	collection/deleteitem.go:12	delete item function called	{"X-Request-ID": "9da83d00-d6fc-4f5d-96ea-87ab6840690a", "X-Username": "ekreke34555"}
+2024-04-19 00:45:26.707	debug	collection/deleteitem.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:45:31.287	info	collection/loaditems.go:12	collection's loaditems function called	{"X-Request-ID": "c6dd26cd-aa36-42ec-b318-293e5ee422e7", "X-Username": "ekreke34555"}
+2024-04-19 00:45:31.288	debug	collection/loaditems.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:45:36.825	info	collection/loaditems.go:12	collection's loaditems function called	{"X-Request-ID": "36c71c67-b285-40eb-9e74-82a75bb9e72e", "X-Username": "ekreke34555"}
+2024-04-19 00:45:36.826	debug	collection/loaditems.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:45:50.213	info	collection/deleteitem.go:12	delete item function called	{"X-Request-ID": "a859e9f3-2897-4d3d-b2eb-a567e0bcc22a", "X-Username": "ekreke34555"}
+2024-04-19 00:45:50.213	debug	collection/deleteitem.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:46:04.485	info	collection/loaditems.go:12	collection's loaditems function called	{"X-Request-ID": "d58a896d-84a4-4677-ab4c-f6814cf58274", "X-Username": "ekreke34555"}
+2024-04-19 00:46:04.486	debug	collection/loaditems.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:46:19.068	info	collection/deleteitem.go:12	delete item function called	{"X-Request-ID": "bb4ca535-c2c8-4ace-970d-1c147802a679", "X-Username": "ekreke34555"}
+2024-04-19 00:46:19.069	debug	collection/deleteitem.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:46:38.225	info	collection/deleteitem.go:12	delete item function called	{"X-Request-ID": "467b4e65-c72c-463b-b36a-8b563bacc6ae", "X-Username": "ekreke34555"}
+2024-04-19 00:46:38.226	debug	collection/deleteitem.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:46:44.975	info	collection/loaditems.go:12	collection's loaditems function called	{"X-Request-ID": "020724d2-6e29-4a76-b664-e15ae6722641", "X-Username": "ekreke34555"}
+2024-04-19 00:46:44.975	debug	collection/loaditems.go:14	the username is:	{"username:": "ekreke34555"}
+2024-04-19 00:51:07.822	info	store/store.go:63	get userid from username failed
+2024-04-19 00:51:30.315	info	project/create.go:13	project create function called	{"X-Request-ID": "e7fec89f-6541-483c-bf38-e05defe3b77d", "X-Username": "ekreke34555"}
+2024-04-19 00:52:19.992	info	project/create.go:13	project create function called	{"X-Request-ID": "201df3ea-9920-40de-b55c-781d94e576c5", "X-Username": "ekreke34555"}
+2024-04-19 08:56:46.522	info	item/update.go:12	Item Update function called	{"X-Request-ID": "279d1b8e-2c7d-40b9-9f8f-18cbf931005b", "X-Username": "ekreke34555"}
+2024-04-19 08:56:46.751	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-19 08:56:46.751	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-19 08:56:46.750	info	store/items.go:311	it.myday & 
+2024-04-19 08:57:21.420	info	item/setdone.go:12	Item function setdone called	{"X-Request-ID": "6c9b6793-8e4f-4bd5-b85b-efb8e2e98941", "X-Username": "ekreke34555"}
+2024-04-19 22:59:33.233	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-19 22:59:33.235	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 22}
+2024-04-19 22:59:33.241	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-19 23:00:53.445	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-19 23:00:56.592	info	project/create.go:13	project create function called	{"X-Request-ID": "21ae761b-6fd5-4f26-bdac-091ccd8a3cbf", "X-Username": "ekreke34555"}
+2024-04-19 23:01:26.459	info	project/create.go:13	project create function called	{"X-Request-ID": "85115390-c7b7-4e6d-8c2f-6f9fb899ee2e", "X-Username": "ekreke34555"}
+2024-04-19 23:04:07.405	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-19 23:04:07.406	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 12}
+2024-04-19 23:04:07.407	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-19 23:04:08.217	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-19 23:04:42.613	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-19 23:04:42.613	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-19 23:04:42.613	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-19 23:04:59.272	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-19 23:05:02.525	info	project/create.go:13	project create function called	{"X-Request-ID": "42cf1c80-2291-4ca8-bd48-18ee2ff5b846", "X-Username": "ekreke34555"}
+2024-04-19 23:05:52.425	info	project/create.go:13	project create function called	{"X-Request-ID": "bbb37d3b-2f5b-4296-a05f-8b9b934331a3", "X-Username": "ekreke34555"}
+2024-04-19 23:07:17.642	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "7976a01a-36bc-44e4-9fa4-7f5eb0a14823", "X-Username": "ekreke34555"}
+2024-04-19 23:29:35.084	info	project/info.go:12	project info function called	{"X-Request-ID": "1be7602c-7d60-447c-bd2b-44fc2e2585de", "X-Username": "ekreke34555"}
+2024-04-19 23:36:29.250	info	project/join.go:12	project join function called	{"X-Request-ID": "44f80533-338a-4d3f-9c71-628ee88185b7", "X-Username": "ekreke34555"}
+2024-04-19 23:36:29.252	error	store/project.go:299	check project if exist error
+2024-04-19 23:36:51.579	info	project/join.go:12	project join function called	{"X-Request-ID": "ebcd11f7-c6b5-4297-8d97-5c5b80fe351f", "X-Username": "ekreke34555"}
+2024-04-19 23:37:15.596	info	project/join.go:12	project join function called	{"X-Request-ID": "8a152508-7a43-41d6-8c50-c21889da2b78", "X-Username": "testMyday"}
+2024-04-19 23:37:15.600	error	store/project.go:329	user not in this project
+2024-04-19 23:37:35.949	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "3b05cd39-3532-4923-898c-b68891889a8f", "X-Username": "testMyday"}
+2024-04-19 23:38:58.879	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "c1fcffa5-b2cc-4266-9e27-be8248ec7c60", "X-Username": "testMyday"}
+2024-04-19 23:39:00.499	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "9b2bf6fd-cc29-4fa1-9340-caef1736893c", "X-Username": "testMyday"}
+2024-04-19 23:39:39.293	info	project/quit.go:13	project quit function called	{"X-Request-ID": "98f06d9a-9e73-4caa-9f36-7faad41bcf0e", "X-Username": "testMyday"}
+2024-04-19 23:39:50.468	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "3f5f6a16-ffd0-441a-9e8c-21c85a674429", "X-Username": "testMyday"}
+2024-04-19 23:40:00.567	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "b7c05c2e-a982-4434-94fa-3a18c298328f", "X-Username": "123"}
+2024-04-19 23:40:03.858	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "0dcad9ec-8b49-497d-a8bf-71af3e9d2df2", "X-Username": "testMyday"}
+2024-04-20 04:35:37.322	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 10:49:39.998	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 10:52:42.349	info	project/delete.go:12	project delete function called	{"X-Request-ID": "b9fdb6e8-62da-4530-b662-15b2bca22f69", "X-Username": "testMyday"}
+2024-04-20 10:52:56.196	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "c5edf592-9041-4804-bbd2-f402a438c72f", "X-Username": "testMyday"}
+2024-04-20 10:53:30.497	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "90b55abf-a9e6-426d-bb57-0ff208cc089d", "X-Username": "ekreke34555"}
+2024-04-20 10:57:12.627	info	project/delete.go:12	project delete function called	{"X-Request-ID": "abc83f8c-6530-4fb4-82f6-6006e9d1f10f", "X-Username": "testMyday"}
+2024-04-20 10:57:15.014	info	project/delete.go:12	project delete function called	{"X-Request-ID": "570cde0f-5f80-4455-8c44-a1be178595cf", "X-Username": "testMyday"}
+2024-04-20 11:04:04.933	info	project/update.go:15	project update function called	{"X-Request-ID": "0f2d5513-a157-4b48-98a4-037c7c415d1b", "X-Username": "testMyday"}
+2024-04-20 11:04:25.800	info	project/update.go:15	project update function called	{"X-Request-ID": "dff5e59d-7ed9-439d-94da-5bc50fd08d49", "X-Username": "testMyday"}
+2024-04-20 11:04:41.682	info	project/update.go:15	project update function called	{"X-Request-ID": "2659e806-0ec0-49d2-864c-ca2a94fb590e", "X-Username": "testMyday"}
+2024-04-20 11:05:17.148	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 11:05:17.152	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-20 11:05:17.162	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 11:05:31.959	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 11:05:34.835	info	project/update.go:15	project update function called	{"X-Request-ID": "1e48206d-a226-43cf-b5dd-b3ba79b552d4", "X-Username": "testMyday"}
+2024-04-20 11:06:07.441	info	project/update.go:15	project update function called	{"X-Request-ID": "63898ad5-afa6-4066-a40b-dd7b1840186c", "X-Username": "testMyday"}
+2024-04-20 11:07:38.030	info	project/icreated.go:12	project list function called	{"X-Request-ID": "7ad84446-cddf-4666-91fe-88261ef48b78", "X-Username": "ekreke34555"}
+2024-04-20 14:30:48.243	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 14:30:48.244	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-20 14:30:48.245	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 14:33:54.064	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 14:33:57.316	info	project/info.go:12	project info function called	{"X-Request-ID": "0db61b10-dd18-4a54-9425-42de74c0c454", "X-Username": "ekreke34555"}
+2024-04-20 14:34:11.647	info	project/info.go:12	project info function called	{"X-Request-ID": "01fd454a-46ed-4ab3-8036-7df1241080e0", "X-Username": "ekreke34555"}
+2024-04-20 14:51:53.360	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 14:51:53.360	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-20 14:51:53.361	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 14:52:02.840	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 14:52:08.916	info	project/info.go:12	project info function called	{"X-Request-ID": "d8f6ddd6-7862-48ec-a555-5870823243c8", "X-Username": "ekreke34555"}
+2024-04-20 14:52:31.072	info	project/join.go:12	project join function called	{"X-Request-ID": "aafbade3-6b9b-46ef-8126-82e749941c7a", "X-Username": "testMyday"}
+2024-04-20 14:52:31.075	error	store/project.go:332	user not in this project
+2024-04-20 14:52:37.809	info	project/info.go:12	project info function called	{"X-Request-ID": "a9f21ad2-569e-45fb-b403-03ae65b02cd5", "X-Username": "ekreke34555"}
+2024-04-20 15:12:51.464	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-20 15:12:51.465	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 11}
+2024-04-20 15:12:51.467	info	mytodolist/mytodolist.go:96	Server exited

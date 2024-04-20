@@ -8,6 +8,10 @@ func (pb *projectBiz) Info(projectid int64) (*v1.ProjectInfoResponse, error) {
 	if err != nil {
 		return nil, err
 	}
-	r := &v1.ProjectInfoResponse{Projects: resp}
+	userInfos, err := pb.ds.Projects().GetProjectJoinedUserinfoByProjectId(projectid)
+	if err != nil {
+		return nil, err
+	}
+	r := &v1.ProjectInfoResponse{Projects: resp, Users: userInfos}
 	return r, nil
 }

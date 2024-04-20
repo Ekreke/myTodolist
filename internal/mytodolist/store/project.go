@@ -26,6 +26,7 @@ type ProjectStore interface {
 	UpdateNode(projectid string, nodeid string, userid int, item *model.Items) (affectedRows int, err error)
 	NodeInfo(projectid string, nodeid string, userid int) (item *model.Items, err error)
 	Nodes(projectid string, userid int) (items *[]model.Items, err error)
+	GetProjectJoinedUserinfoByProjectId(projectid int64) (usersInfo []model.Users, err error)
 }
 
 type projectStore struct {
@@ -100,11 +101,14 @@ func (ps *projectStore) CreateProject(project *model.Projects, userid int64) (af
 		tx.Rollback()
 		return int(ps.db.RowsAffected), err
 	}
+	tx.Commit()
 	return int(ps.db.RowsAffected), nil
 }
 
 // DeleteProject implements ProjectStore.
 func (ps *projectStore) DeleteProject(projectid string, userid int64) (affectedRows int, err error) {
+	// select admin id
+
 	tx := ps.db.Begin()
 	//delete projects
 	pid, err := strconv.Atoi(projectid)
@@ -240,7 +244,7 @@ func (ps *projectStore) UpdateProjectInfo(id int, description string, endtime in
 		return int(ps.db.RowsAffected), err
 	}
 	p.Description = description
-	p.EndTime = time.Unix(0, endtime)
+	p.EndTime = time.Now()
 	p.Name = name
 	err = ps.db.Debug().Where("id = ?", id).Save(&p).Error
 	if err != nil {
@@ -373,4 +377,26 @@ func getProjectInfoById(tx *gorm.DB, projectid int64) (project model.Projects, e
 		return *p, err
 	}
 	return *p, nil
+}
+
+func (ps *projectStore) GetProjectJoinedUserinfoByProjectId(projectid int64) (usersInfo []model.Users, err error) {
+	// 从project和user的联合表中获取userids
+	pus := []model.ProjectsUsers{}
+	tx := ps.db.Debug().Begin()
+	if err := tx.Where("projects_id = ?", projectid).Find(&pus).Error; err != nil {
+		return usersInfo, err
+	}
+	// 填充ids
+	userIds := []int64{}
+	for _, u := range pus {
+		userIds = append(userIds, u.UsersId)
+	}
+
+	users := []model.Users{}
+	err = tx.Where("id in (?)", userIds).Find(&users).Error
+	if err != nil {
+		return nil, err
+	}
+	return users, nil
+
 }
