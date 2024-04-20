@@ -482,3 +482,5 @@ github.com/ekreke/myTodolist/internal/mytodolist.startInsecureServer.func1
 2024-04-20 19:05:57.855	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-04-20 19:05:57.855	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 10}
 2024-04-20 19:05:57.855	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-20 19:06:31.899	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-20 19:06:59.566	info	project/icreated.go:12	project list function called	{"X-Request-ID": "414ad31d-8af3-4881-bb4c-a1e923d35b23", "X-Username": "ekreke34555"}
