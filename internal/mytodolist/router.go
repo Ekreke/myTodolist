@@ -121,6 +121,7 @@ func installRouters(g *gin.Engine) error {
 		// FIXME: invalid columen nodeid
 		// create a project
 		pg.POST("", pc.Create)
+		pg.GET("/queryAll", pc.Queryallproject)
 
 		// delete a project by project id
 		pg.DELETE(":projectid", pc.Delete)

@@ -28,10 +28,23 @@ type ProjectStore interface {
 	NodeInfo(projectid string, nodeid string, userid int) (item *model.Items, err error)
 	Nodes(projectid string, userid int) (items *[]model.Items, err error)
 	GetProjectJoinedUserinfoByProjectId(projectid int64) (usersInfo []model.Users, err error)
+	QueryAllProject(userid int64) (projects []model.Projects, err error)
 }
 
 type projectStore struct {
 	db *gorm.DB
+}
+
+// QueryAllProject implements ProjectStore.
+func (ps *projectStore) QueryAllProject(userid int64) (projects []model.Projects, err error) {
+	prs := &[]model.Projects{}
+	err = ps.db.Debug().Find(prs).Error
+	if err != nil {
+		log.Infow("get all projects failed", "err is:", err)
+		return nil, err
+	}
+	return *prs, nil
+
 }
 
 // Nodes implements ProjectStore.
@@ -286,16 +299,16 @@ func (ps *projectStore) GetAllProjectsICreated(userid int64) (projects []model.P
 	}
 
 	prs := &[]model.Projects{}
-	err = tx.Where("id in ?", ids).Find(&prs).Error
+	err = tx.Where("id in ? and admin_id = ? ", ids, userid).Find(&prs).Error
 	if err != nil {
 		tx.Rollback()
 		return nil, err
 	}
 
-	projectsIdsIJoined := []int{}
-	for _, pr := range *prs {
-		projectsIdsIJoined = append(projectsIdsIJoined, int(pr.ID))
-	}
+	// projectsIdsIJoined := []int{}
+	// for _, pr := range *prs {
+	// 	projectsIdsIJoined = append(projectsIdsIJoined, int(pr.ID))
+	// }
 
 	tx.Commit()
 	// return

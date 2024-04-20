@@ -67,3 +67,7 @@ type ProjectNodeInfoResponse struct {
 type ProjectNodes struct {
 	Nodes []model.Items `json:"nodes"`
 }
+
+type AllProjectsResponse struct {
+	Projects []model.Projects `json:"projects"`
+}

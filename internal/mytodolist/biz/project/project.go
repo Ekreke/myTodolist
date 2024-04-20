@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/ekreke/myTodolist/internal/mytodolist/store"
+	"github.com/ekreke/myTodolist/internal/pkg/log"
 	"github.com/ekreke/myTodolist/internal/pkg/model"
 	v1 "github.com/ekreke/myTodolist/pkg/api/mytodolist"
 )
@@ -26,10 +27,24 @@ type ProjectBiz interface {
 	UpdateNode(projectid string, nodeid string, userid int, item *model.Items) (*v1.CommonResponseWizMsg, error)
 	NodeInfo(projectid string, nodeid string, userid int) (*v1.ProjectNodeInfoResponse, error)
 	Nodes(projectid string, userid int) (*v1.ProjectNodes, error)
+	QueryAllProject(userid int64) (*v1.AllProjectsResponse, error)
 }
 
 type projectBiz struct {
 	ds store.Istore
+}
+
+// QueryAllProject implements ProjectBiz.
+func (pb *projectBiz) QueryAllProject(userid int64) (*v1.AllProjectsResponse, error) {
+	resp, err := pb.ds.Projects().QueryAllProject(userid)
+	if err != nil {
+		log.Infow("query all project err", "err is :", err)
+		return nil, err
+	}
+	re := &v1.AllProjectsResponse{
+		Projects: resp,
+	}
+	return re, nil
 }
 
 // Nodes implements ProjectBiz.

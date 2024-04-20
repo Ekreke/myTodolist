@@ -29,6 +29,7 @@ type IProjectController interface {
 	// node info controller
 	NodeInfo(ctx *gin.Context)
 	Nodes(ctx *gin.Context)
+	Queryallproject(ctx *gin.Context)
 }
 
 var _ IProjectController = (*ProjectController)(nil)
