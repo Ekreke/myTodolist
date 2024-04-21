@@ -14,12 +14,14 @@ func (ctrl *UserController) Updatepwd(c *gin.Context) {
 	err := c.ShouldBind(&r)
 	if err != nil {
 		core.WriteResponse(c, errno.ErrBind, nil)
+		return
 	}
 	username := c.GetString("X-Username")
 	resp, err := ctrl.b.Users().UpdatePwd(c, username, r.Prepwd, r.Newpwd)
 	if err != nil {
 		log.C(c).Infow("controlle update pwd run failed")
 		core.WriteResponse(c, err, nil)
+		return
 	}
 	core.WriteResponse(c, nil, resp)
 

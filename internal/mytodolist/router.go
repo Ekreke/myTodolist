@@ -110,7 +110,7 @@ func installRouters(g *gin.Engine) error {
 	{
 		pg.Use(middleware.Authn())
 		// user join a project -> request with join code
-		pg.POST("/join", pc.Join)
+		pg.GET("/join", pc.Join)
 		// list projects belong to me
 		pg.GET("/my", pc.Myprojects)
 		// quit a project

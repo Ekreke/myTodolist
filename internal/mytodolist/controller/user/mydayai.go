@@ -14,6 +14,6 @@ func (ctrl *UserController) MydayAi(c *gin.Context) {
 	resp, err := ctrl.b.Users().LoadMydayAI(c, username)
 	if err != nil {
 		core.WriteResponse(c, errno.ErrLoadMydayItemFailed, nil)
-		core.WriteResponse(c, nil, resp)
 	}
+	core.WriteResponse(c, nil, resp)
 }
