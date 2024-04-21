@@ -210,3 +210,18 @@
 2024-04-21 10:12:34.227	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-04-21 10:12:34.233	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
 2024-04-21 10:12:34.234	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-21 10:12:42.178	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-21 10:12:47.412	info	project/join.go:13	project join function called	{"X-Request-ID": "6c0f3778-3ca5-4d94-82e2-b4e95d6f2ceb", "X-Username": "ekreke3455566"}
+2024-04-21 10:12:47.412	info	project/join.go:19	项目id和密码	{"value:": ""}
+2024-04-21 10:12:47.413	info	project/join.go:23	绑定projectid和pwd的时候出错
+2024-04-21 10:13:21.648	info	project/join.go:13	project join function called	{"X-Request-ID": "0e7a80e7-0e52-4205-9b91-92f779808177", "X-Username": "ekreke3455566"}
+2024-04-21 10:13:21.648	info	project/join.go:19	项目id和密码	{"value:": "8"}
+2024-04-21 10:13:21.651	error	store/project.go:422	check project if exist error
+2024-04-21 10:13:53.663	info	project/join.go:13	project join function called	{"X-Request-ID": "6a726ef6-19c1-4e93-8295-91bf925c74ae", "X-Username": "ekreke3455566"}
+2024-04-21 10:13:53.664	info	project/join.go:19	项目id和密码	{"value:": "3"}
+2024-04-21 10:13:53.667	error	store/project.go:452	user not in this project
+2024-04-21 10:14:41.852	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "d9126d10-22d5-4df6-9eef-7652b5fbafc7", "X-Username": "ai-test"}
+2024-04-21 10:15:27.522	info	project/join.go:13	project join function called	{"X-Request-ID": "c62743e2-648f-4976-a53a-7bdb35c2460c", "X-Username": "ai-test"}
+2024-04-21 10:15:27.523	info	project/join.go:19	项目id和密码	{"value:": "14"}
+2024-04-21 10:15:27.526	error	store/project.go:452	user not in this project
+2024-04-21 10:15:43.289	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "1c6837e4-430c-40d1-bdcb-a5666a99dc54", "X-Username": "ai-test"}
