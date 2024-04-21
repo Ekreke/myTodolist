@@ -237,3 +237,5 @@
 2024-04-21 10:49:57.842	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-04-21 10:49:57.843	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
 2024-04-21 10:49:57.844	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-21 10:50:05.892	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-21 10:51:09.949	info	user/info.go:10	Info function called	{"X-Request-ID": "37a54b00-b4d9-4375-ab36-c77d705e0f51", "X-Username": "ekreke34555"}
