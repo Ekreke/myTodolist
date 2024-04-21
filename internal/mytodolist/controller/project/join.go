@@ -14,8 +14,9 @@ func (pc *ProjectController) Join(ctx *gin.Context) {
 	userid := ctx.GetInt("X-UserID")
 	// var r *v1.JoinProjectRequest
 
-	projectId := ctx.Query("projectid")
-	pwd := ctx.Query("pwd")
+	projectId := ctx.Param("projectid")
+	pwd := ctx.Param("pwd")
+
 	log.Infow("项目id和密码", "value:", projectId)
 	intProjectId, err := strconv.Atoi(projectId)
 

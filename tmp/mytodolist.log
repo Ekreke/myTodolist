@@ -1,2 +1,13 @@
 2024-04-21 19:54:54.305	info	store/store.go:63	get userid from username failed
 2024-04-21 19:59:55.490	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "44e0ded0-6a21-451b-baaf-f8699dc433c5", "X-Username": "devtest"}
+2024-04-21 21:18:19.217	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-21 21:18:19.239	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 7}
+2024-04-21 21:18:19.329	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-21 21:26:23.776	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-21 21:27:14.248	info	store/store.go:63	get userid from username failed
+2024-04-21 21:27:25.910	info	project/join.go:13	project join function called	{"X-Request-ID": "848ddecd-bed0-406e-b694-0df25c33589a", "X-Username": "csbintest"}
+2024-04-21 21:27:25.910	info	project/join.go:19	项目id和密码	{"value:": ""}
+2024-04-21 21:27:25.910	info	project/join.go:23	绑定projectid和pwd的时候出错
+2024-04-21 21:31:16.580	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-21 21:31:16.581	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-21 21:31:16.581	info	mytodolist/mytodolist.go:96	Server exited
