@@ -11,3 +11,10 @@
 2024-04-21 21:31:16.580	info	mytodolist/mytodolist.go:84	Shutting down server...
 2024-04-21 21:31:16.581	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
 2024-04-21 21:31:16.581	info	mytodolist/mytodolist.go:96	Server exited
+2024-04-21 21:31:22.778	info	mytodolist/mytodolist.go:105	start to listening the incoming requests on http address	{"addr": ":8080"}
+2024-04-21 21:33:34.053	info	project/join.go:13	project join function called	{"X-Request-ID": "8d71814b-c2ee-4ed3-b9d6-95e964c59e20", "X-Username": "ekreke3455566"}
+2024-04-21 21:33:34.053	info	project/join.go:20	项目id和密码	{"value:": "121"}
+2024-04-21 21:33:34.054	error	store/project.go:422	check project if exist error
+2024-04-21 21:34:02.362	info	project/join.go:13	project join function called	{"X-Request-ID": "baaa66a4-a5fe-4b5e-857c-2b1842de07c1", "X-Username": "ekreke3455566"}
+2024-04-21 21:34:02.362	info	project/join.go:20	项目id和密码	{"value:": "17"}
+2024-04-21 21:34:02.365	error	store/project.go:452	user not in this project
