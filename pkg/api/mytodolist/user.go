@@ -33,6 +33,7 @@ type RegisterResponse struct {
 }
 
 type InfoResponse struct {
+	Id         int64     `json:"id"`
 	Username   string    `json:"username"`
 	Bio        string    `json:"bio"`
 	Link       string    `json:"link"`

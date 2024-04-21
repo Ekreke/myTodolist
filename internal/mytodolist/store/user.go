@@ -58,6 +58,7 @@ func (u *users) GetInfo(username string) (*v1.InfoResponse, error) {
 		return nil, err
 	}
 	resp := &v1.InfoResponse{
+		Id:         user.ID,
 		Username:   user.Username,
 		Bio:        user.Bio,
 		Link:       user.Link,

@@ -225,3 +225,15 @@
 2024-04-21 10:15:27.523	info	project/join.go:19	项目id和密码	{"value:": "14"}
 2024-04-21 10:15:27.526	error	store/project.go:452	user not in this project
 2024-04-21 10:15:43.289	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "1c6837e4-430c-40d1-bdcb-a5666a99dc54", "X-Username": "ai-test"}
+2024-04-21 10:19:08.333	info	user/mydayai.go:12	MydayAi function called	{"X-Request-ID": "ff17257c-1eb0-41e2-88e3-f456a0c1bc26", "X-Username": "ai-test"}
+2024-04-21 10:19:08.336	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-21 10:19:08.336	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-21 10:19:08.335	info	store/user.go:217	pagesize:
+2024-04-21 10:19:08.338	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":63,"item_name":"完成公司周报","description":"公司每周需要填写周报","project_id":1,"deadline":"2024-04-20T20:22:10+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-20T21:00:16+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":64,"item_name":"完成下发待办事项接口开发工作","description":"完成下发待办事项接口开发工作，这是myTodolist平台中非常重要的一个功能，但是仍然存在问题，下发完成后查询记录会发现查出来相同的数据，这和后端接口的设计规则有关，需要明天有空进行修改","project_id":1,"deadline":"2024-04-20T20:22:10+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-20T21:02:40+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":65,"item_name":"菜品模块开发输入框校验问题","description":"菜品模块开发输入框需要进行校验，但是校验正则表达式还是存在问题","project_id":1,"deadline":"2024-04-20T20:22:10+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-20T21:03:37+08:00","node":1,"checkPoint":0,"collection_id":1}]}
+2024-04-21 10:19:08.337	info	store/user.go:234	items
+2024-04-21 10:21:05.582	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "c565e0e8-3b2f-43d1-ae1b-0fa594d505a8", "X-Username": "ai-test"}
+2024-04-21 10:21:11.265	info	project/icreated.go:12	project list function called	{"X-Request-ID": "ced22543-0429-42e0-a5ed-493d1d073949", "X-Username": "ekreke34555"}
+2024-04-21 10:37:57.899	info	user/info.go:10	Info function called	{"X-Request-ID": "73c10da3-3e19-4fb9-a062-8441f789829e", "X-Username": "ekreke34555"}
+2024-04-21 10:49:57.842	info	mytodolist/mytodolist.go:84	Shutting down server...
+2024-04-21 10:49:57.843	info	mytodolist/mytodolist.go:87	Waiting for all goroutines to finish;	{"the gotroutine number is:": 8}
+2024-04-21 10:49:57.844	info	mytodolist/mytodolist.go:96	Server exited
