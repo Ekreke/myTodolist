@@ -1,1 +1,2 @@
 2024-04-21 19:54:54.305	info	store/store.go:63	get userid from username failed
+2024-04-21 19:59:55.490	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "44e0ded0-6a21-451b-baaf-f8699dc433c5", "X-Username": "devtest"}
