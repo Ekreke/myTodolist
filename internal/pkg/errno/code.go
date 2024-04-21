@@ -22,4 +22,6 @@ var (
 
 	// ErrUnauthorized 表示请求没有被授权.
 	ErrUnauthorized = &Errno{HTTP: 401, Code: "AuthFailure.Unauthorized", Message: "Unauthorized."}
+
+	ErrPwdEquals = &Errno{HTTP: 401, Code: "pwd update failue", Message: "previous password eauqls new password!."}
 )

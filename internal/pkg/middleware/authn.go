@@ -22,6 +22,7 @@ func Authn() gin.HandlerFunc {
 		// TODO: delete
 		_, err := token.Parse(t, token.K)
 		if err != nil {
+
 			core.WriteResponse(c, errno.ErrTokenInvalid, nil)
 			c.Abort()
 			return

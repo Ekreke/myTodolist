@@ -32,6 +32,7 @@ func (i *items) Create(it *model.Items, username string) (resp *v1.CommonRespons
 	err = i.db.Debug().Table("users").Select("id").Where("username = ?", username).First(&tmpu).Error
 	if err != nil {
 		log.Fatalw("get userid from username failed")
+		return nil, err
 	}
 	// it.Deadline = time.Now()
 	// insert into projects nodes

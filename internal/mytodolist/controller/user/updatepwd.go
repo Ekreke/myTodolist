@@ -16,6 +16,12 @@ func (ctrl *UserController) Updatepwd(c *gin.Context) {
 		core.WriteResponse(c, errno.ErrBind, nil)
 		return
 	}
+	if r.Prepwd == r.Newpwd {
+		log.C(c).Infow("previous password eauqls new password!")
+		core.WriteResponse(c, errno.ErrPwdEquals, nil)
+		return
+	}
+
 	username := c.GetString("X-Username")
 	resp, err := ctrl.b.Users().UpdatePwd(c, username, r.Prepwd, r.Newpwd)
 	if err != nil {

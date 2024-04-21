@@ -20,7 +20,7 @@ func (ctrl *ItemController) Create(ctx *gin.Context) {
 	}
 	resp, err := ctrl.b.Items().Create(&r, username)
 	if err != nil {
-		core.WriteResponse(ctx, errno.ErrCreatItemsFailed, nil)
+		core.WriteResponse(ctx, err, nil)
 		return
 	}
 	core.WriteResponse(ctx, nil, resp)
