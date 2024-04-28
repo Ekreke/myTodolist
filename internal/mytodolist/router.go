@@ -87,7 +87,7 @@ func installRouters(g *gin.Engine) error {
 		// record limit
 		ug.GET("/nodes", uc.Nodes)
 
-		ug.GET("/important/ai", uc.MydayAi)
+		ug.GET("/important/ai", uc.ImportantAI)
 		// get log of myday
 		// get advice of important
 	}
