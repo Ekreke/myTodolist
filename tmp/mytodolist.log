@@ -2881,3 +2881,309 @@
 2024-04-29 02:43:23.812	debug	collection/loaditems.go:14	the username is:	{"username:": "ekreke34555"}
 2024-04-29 02:43:24.444	info	user/items.go:12	Items function called	{"X-Request-ID": "b0691472-bdb6-490a-b0fd-02c1802c873f", "X-Username": "ekreke34555"}
 2024-04-29 02:43:24.445	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:26:33.251	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "9441d138-584a-4bbc-830c-a3b2471532f7", "X-Username": "name"}
+2024-04-29 07:26:34.042	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "94fbe58d-99d1-477a-9dcc-c86dca0dbcfc", "X-Username": "name"}
+2024-04-29 07:26:34.074	info	collection/loaditems.go:12	collection's loaditems function called	{"X-Request-ID": "03b6adf9-58b8-450d-a729-212ba9e3a4b9", "X-Username": "name"}
+2024-04-29 07:26:34.074	debug	collection/loaditems.go:14	the username is:	{"username:": "name"}
+2024-04-29 07:26:37.298	info	user/items.go:12	Items function called	{"X-Request-ID": "2e95ee66-d584-4fae-80f1-782e494e5d57", "X-Username": "name"}
+2024-04-29 07:26:37.299	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:26:39.217	info	user/important.go:12	Important function called	{"X-Request-ID": "4d11499d-0f54-41f8-80cc-2edbdbbe41f4", "X-Username": "name"}
+2024-04-29 07:26:42.047	info	user/items.go:12	Items function called	{"X-Request-ID": "7316ef23-f1c5-49a4-9457-aba61369899e", "X-Username": "ekreke34555"}
+2024-04-29 07:26:42.047	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:28:32.660	info	user/myday.go:12	Myday function called	{"X-Request-ID": "376902fe-6f20-4544-838c-8641a39be81e", "X-Username": "ekreke34555"}
+2024-04-29 07:28:32.662	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:28:32.663	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:28:32.662	info	store/user.go:218	pagesize:
+2024-04-29 07:28:32.665	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称测试","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1},{"id":40,"item_name":"创建测试待办事项","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-17T08:34:21+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":42,"item_name":"创建测试待办事项","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-17T18:26:46+08:00","node":1,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:28:32.665	info	store/user.go:235	items
+2024-04-29 07:28:44.338	info	user/important.go:12	Important function called	{"X-Request-ID": "b3570d1f-8c66-4222-935a-4a45e8e7dbe4", "X-Username": "ekreke34555"}
+2024-04-29 07:28:56.651	info	item/create.go:12	Item create function called	{"X-Request-ID": "fc8559b0-3605-4ad2-a24b-c436eb2044f9", "X-Username": "ekreke34555"}
+2024-04-29 07:29:00.872	info	user/important.go:12	Important function called	{"X-Request-ID": "81ff8429-a145-4a20-b158-0132a6c13fcc", "X-Username": "ekreke34555"}
+2024-04-29 07:29:07.530	info	user/myday.go:12	Myday function called	{"X-Request-ID": "06b0b547-3c55-4499-83f4-aa00ef2c3799", "X-Username": "ekreke34555"}
+2024-04-29 07:29:07.532	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:29:07.533	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:29:07.532	info	store/user.go:218	pagesize:
+2024-04-29 07:29:07.534	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称测试","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1},{"id":40,"item_name":"创建测试待办事项","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-17T08:34:21+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":42,"item_name":"创建测试待办事项","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-17T18:26:46+08:00","node":1,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:29:07.534	info	store/user.go:235	items
+2024-04-29 07:29:09.952	info	user/important.go:12	Important function called	{"X-Request-ID": "7432f376-a4f1-4593-baf6-3f88c06a8dd0", "X-Username": "ekreke34555"}
+2024-04-29 07:29:11.689	info	project/queryallproject.go:12	query all project function called	{"X-Request-ID": "08863876-dab9-4806-9eb7-188dbb491bbe", "X-Username": "ekreke34555"}
+2024-04-29 07:29:12.046	info	user/items.go:12	Items function called	{"X-Request-ID": "e1e6fa54-2a4e-4842-b537-bb72a9eda20f", "X-Username": "ekreke34555"}
+2024-04-29 07:29:12.047	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:29:19.075	info	user/important.go:12	Important function called	{"X-Request-ID": "7767d314-0df5-426f-877c-0ac0b2a96254", "X-Username": "ekreke34555"}
+2024-04-29 07:29:23.880	info	user/myday.go:12	Myday function called	{"X-Request-ID": "7f46fa29-c995-481c-8474-83c99a39b6bc", "X-Username": "ekreke34555"}
+2024-04-29 07:29:23.882	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:29:23.882	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:29:23.882	info	store/user.go:218	pagesize:
+2024-04-29 07:29:23.883	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称测试","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1},{"id":40,"item_name":"创建测试待办事项","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-17T08:34:21+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":42,"item_name":"创建测试待办事项","description":"描述一下","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-17T18:26:46+08:00","node":1,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:29:23.883	info	store/user.go:235	items
+2024-04-29 07:29:25.962	info	user/items.go:12	Items function called	{"X-Request-ID": "f01f6b4b-f28b-469e-b5bf-c7d6d2866720", "X-Username": "ekreke34555"}
+2024-04-29 07:29:25.962	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:29:38.103	info	item/create.go:12	Item create function called	{"X-Request-ID": "c8284160-cc7f-49ab-8898-fb9a71755ef7", "X-Username": "ekreke34555"}
+2024-04-29 07:29:40.959	info	user/items.go:12	Items function called	{"X-Request-ID": "92a9ce34-1867-4faa-b378-98fc3771971d", "X-Username": "ekreke34555"}
+2024-04-29 07:29:40.959	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:29:45.816	info	item/update.go:12	Item Update function called	{"X-Request-ID": "d3615630-b30e-453b-af66-e545a75cd126", "X-Username": "ekreke34555"}
+2024-04-29 07:29:45.821	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:29:45.821	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
+2024-04-29 07:29:45.820	info	store/items.go:312	it.myday & 
+2024-04-29 07:29:49.143	info	item/update.go:12	Item Update function called	{"X-Request-ID": "0a30f10a-c417-491c-bd73-884438886730", "X-Username": "ekreke34555"}
+2024-04-29 07:29:49.146	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:29:49.147	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
+2024-04-29 07:29:49.146	info	store/items.go:312	it.myday & 
+2024-04-29 07:29:51.493	info	item/update.go:12	Item Update function called	{"X-Request-ID": "5f8a6904-9e5c-497a-9998-bf150b637852", "X-Username": "ekreke34555"}
+2024-04-29 07:29:51.496	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:29:51.497	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
+2024-04-29 07:29:51.496	info	store/items.go:312	it.myday & 
+2024-04-29 07:29:52.467	info	item/update.go:12	Item Update function called	{"X-Request-ID": "d472e226-c853-4c99-b03c-bd77b1891ab7", "X-Username": "ekreke34555"}
+2024-04-29 07:29:52.470	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:29:52.470	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
+2024-04-29 07:29:52.470	info	store/items.go:312	it.myday & 
+2024-04-29 07:29:53.209	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "bfec40b0-e809-48c2-a9c2-2340a14bd537", "X-Username": "ekreke34555"}
+2024-04-29 07:29:54.443	info	item/update.go:12	Item Update function called	{"X-Request-ID": "5c825ada-08db-4e34-a90d-eaa32e115e51", "X-Username": "ekreke34555"}
+2024-04-29 07:29:54.445	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:29:54.445	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 0, "value": "preitem.myday"}]}
+2024-04-29 07:29:54.445	info	store/items.go:312	it.myday & 
+2024-04-29 07:29:57.612	info	user/items.go:12	Items function called	{"X-Request-ID": "f28f89ec-4828-4d74-b21f-906a5489e296", "X-Username": "ekreke34555"}
+2024-04-29 07:29:57.613	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:30:02.390	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "bd114770-b558-4133-94cd-85c78f220fe0", "X-Username": "ekreke34555"}
+2024-04-29 07:30:03.502	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "7fbf12de-097e-4e9d-9082-650a9e543082", "X-Username": "ekreke34555"}
+2024-04-29 07:30:05.148	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "9e80ea9a-9a37-41d4-a3bb-f78bb0b22965", "X-Username": "ekreke34555"}
+2024-04-29 07:30:06.404	info	user/items.go:12	Items function called	{"X-Request-ID": "038c7144-b2a5-41bb-9aff-425dbe5e0a61", "X-Username": "ekreke34555"}
+2024-04-29 07:30:06.404	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:30:10.008	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "0d3a3653-9e60-4f4d-9650-05010a261f94", "X-Username": "ekreke34555"}
+2024-04-29 07:30:13.995	info	item/delete.go:12	Item delete function called	{"X-Request-ID": "00b39c8f-a3f0-420d-bc1d-0f9279bb0d7a", "X-Username": "ekreke34555"}
+2024-04-29 07:30:15.301	info	user/items.go:12	Items function called	{"X-Request-ID": "994fad46-90cd-4719-982f-2934c0dd460c", "X-Username": "ekreke34555"}
+2024-04-29 07:30:15.301	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:30:18.658	info	user/myday.go:12	Myday function called	{"X-Request-ID": "d32e9138-3968-4a8f-a817-543131bc117d", "X-Username": "ekreke34555"}
+2024-04-29 07:30:18.660	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:30:18.660	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:30:18.660	info	store/user.go:218	pagesize:
+2024-04-29 07:30:18.662	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称测试","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:30:18.662	info	store/user.go:235	items
+2024-04-29 07:30:21.166	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "3d5d9a28-3e23-45dd-b310-c692dc7318e1", "X-Username": "ekreke34555"}
+2024-04-29 07:30:29.384	info	item/update.go:12	Item Update function called	{"X-Request-ID": "05859385-f49e-4296-af7e-66e44e47365a", "X-Username": "ekreke34555"}
+2024-04-29 07:30:29.387	error	log/log.go:120	Ignored key without a value.	{"ignored": 1}
+2024-04-29 07:30:29.388	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-29 07:30:29.387	info	store/items.go:312	it.myday & 
+2024-04-29 07:30:29.804	info	user/myday.go:12	Myday function called	{"X-Request-ID": "dc985ba1-f5b7-49b4-9474-a0b9c4b98b3e", "X-Username": "ekreke34555"}
+2024-04-29 07:30:29.806	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:30:29.806	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:30:29.806	info	store/user.go:218	pagesize:
+2024-04-29 07:30:29.808	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:30:29.808	info	store/user.go:235	items
+2024-04-29 07:30:37.598	info	user/important.go:12	Important function called	{"X-Request-ID": "d73a2209-52ce-4697-ada8-4dd31667e6cd", "X-Username": "ekreke34555"}
+2024-04-29 07:30:39.877	info	user/items.go:12	Items function called	{"X-Request-ID": "d8ff4a47-152f-4428-ad7b-ba18d4294c67", "X-Username": "ekreke34555"}
+2024-04-29 07:30:39.877	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:30:40.967	info	user/myday.go:12	Myday function called	{"X-Request-ID": "e32195b8-6438-4102-9127-2af02725d8be", "X-Username": "ekreke34555"}
+2024-04-29 07:30:40.968	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:30:40.969	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:30:40.968	info	store/user.go:218	pagesize:
+2024-04-29 07:30:40.970	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:30:40.970	info	store/user.go:235	items
+2024-04-29 07:30:42.596	info	user/items.go:12	Items function called	{"X-Request-ID": "7fa97f2b-d886-4ead-8c3f-7128733050ca", "X-Username": "ekreke34555"}
+2024-04-29 07:30:42.596	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:30:45.248	info	user/myday.go:12	Myday function called	{"X-Request-ID": "0d7fa4d3-7dd0-4881-82dc-e45a434791bb", "X-Username": "ekreke34555"}
+2024-04-29 07:30:45.251	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:30:45.251	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:30:45.251	info	store/user.go:218	pagesize:
+2024-04-29 07:30:45.252	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:30:45.252	info	store/user.go:235	items
+2024-04-29 07:30:48.124	info	user/items.go:12	Items function called	{"X-Request-ID": "c62ac9ae-d1ba-4739-be5b-18753ac24bbf", "X-Username": "ekreke34555"}
+2024-04-29 07:30:48.124	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:30:51.056	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "f6272012-3f67-4303-a409-49de1e33cba5", "X-Username": "ekreke34555"}
+2024-04-29 07:31:13.406	info	project/queryallproject.go:12	query all project function called	{"X-Request-ID": "aebc62d4-0a39-480f-a92f-35ab2fab9810", "X-Username": "ekreke34555"}
+2024-04-29 07:31:23.400	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "9b692723-12a4-4291-bcb5-672390c39c1b", "X-Username": "ekreke34555"}
+2024-04-29 07:31:23.946	info	user/myday.go:12	Myday function called	{"X-Request-ID": "f06994ff-8273-4d92-a76a-8034891ea169", "X-Username": "ekreke34555"}
+2024-04-29 07:31:23.949	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:31:23.950	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:31:23.949	info	store/user.go:218	pagesize:
+2024-04-29 07:31:23.951	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:31:23.951	info	store/user.go:235	items
+2024-04-29 07:31:23.953	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "e121c20c-ea15-4149-b57b-2de0895842fc", "X-Username": "ekreke34555"}
+2024-04-29 07:31:26.849	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "7da2e295-5849-4994-84ac-3b57e2d55c60", "X-Username": "ekreke34555"}
+2024-04-29 07:31:27.420	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "710de985-2963-4bfd-8841-026bdb655300", "X-Username": "ekreke34555"}
+2024-04-29 07:31:27.423	info	user/myday.go:12	Myday function called	{"X-Request-ID": "7da8a81b-1799-4d40-9193-70e6e36f7228", "X-Username": "ekreke34555"}
+2024-04-29 07:31:27.427	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:31:27.427	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:31:27.427	info	store/user.go:218	pagesize:
+2024-04-29 07:31:27.431	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:31:27.431	info	store/user.go:235	items
+2024-04-29 07:31:55.365	info	project/update.go:15	project update function called	{"X-Request-ID": "2b368644-bb23-4b73-a839-42f00dd63b97", "X-Username": "ekreke34555"}
+2024-04-29 07:31:55.386	info	user/myday.go:12	Myday function called	{"X-Request-ID": "90c78917-d699-4ea4-bdf2-2677bd801554", "X-Username": "ekreke34555"}
+2024-04-29 07:31:55.389	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "8f3eeef0-480f-46cd-ad43-2d7ae5892b02", "X-Username": "ekreke34555"}
+2024-04-29 07:31:55.390	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:31:55.390	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:31:55.390	info	store/user.go:218	pagesize:
+2024-04-29 07:31:55.392	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:31:55.392	info	store/user.go:235	items
+2024-04-29 07:31:55.727	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "adc557f6-0f51-48ee-9eb0-271a5457f606", "X-Username": "ekreke34555"}
+2024-04-29 07:31:55.731	info	user/myday.go:12	Myday function called	{"X-Request-ID": "4dd12ced-5b3d-44c3-8609-1ff0951c97e0", "X-Username": "ekreke34555"}
+2024-04-29 07:31:55.736	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:31:55.736	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:31:55.736	info	store/user.go:218	pagesize:
+2024-04-29 07:31:55.738	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:31:55.738	info	store/user.go:235	items
+2024-04-29 07:32:32.756	info	project/update.go:15	project update function called	{"X-Request-ID": "cd2230f6-940b-4a8b-bee5-3f927c69e4aa", "X-Username": "ekreke34555"}
+2024-04-29 07:32:32.775	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "38c04fee-8090-457b-8612-074a3f33c24d", "X-Username": "ekreke34555"}
+2024-04-29 07:32:32.778	info	user/myday.go:12	Myday function called	{"X-Request-ID": "0931f998-402f-479d-9d5d-255d714fe5cd", "X-Username": "ekreke34555"}
+2024-04-29 07:32:32.783	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:32:32.784	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:32:32.783	info	store/user.go:218	pagesize:
+2024-04-29 07:32:32.786	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:32:32.786	info	store/user.go:235	items
+2024-04-29 07:32:33.124	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "efed45ee-76b3-4367-b0d5-1b5253bdde46", "X-Username": "ekreke34555"}
+2024-04-29 07:32:33.124	info	user/myday.go:12	Myday function called	{"X-Request-ID": "c186e5bd-7445-425f-84ab-36be0d6896f3", "X-Username": "ekreke34555"}
+2024-04-29 07:32:33.128	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:32:33.129	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:32:33.128	info	store/user.go:218	pagesize:
+2024-04-29 07:32:33.132	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:32:33.132	info	store/user.go:235	items
+2024-04-29 07:32:38.887	info	project/update.go:15	project update function called	{"X-Request-ID": "37f07ea8-bbe1-41e0-94d0-d54f4361019c", "X-Username": "ekreke34555"}
+2024-04-29 07:32:38.909	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "67281148-ce6a-44fb-a6c1-300958d9b337", "X-Username": "ekreke34555"}
+2024-04-29 07:32:38.911	info	user/myday.go:12	Myday function called	{"X-Request-ID": "94eef498-30d2-46bf-86b1-d69a19d2677f", "X-Username": "ekreke34555"}
+2024-04-29 07:32:38.913	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:32:38.914	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:32:38.913	info	store/user.go:218	pagesize:
+2024-04-29 07:32:38.917	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:32:38.917	info	store/user.go:235	items
+2024-04-29 07:32:39.254	info	user/myday.go:12	Myday function called	{"X-Request-ID": "373058ec-27c3-40dd-857c-8fb9fe38d559", "X-Username": "ekreke34555"}
+2024-04-29 07:32:39.254	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "e8a305c9-e442-48f7-a79d-438c60b1b4db", "X-Username": "ekreke34555"}
+2024-04-29 07:32:39.256	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:32:39.257	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:32:39.256	info	store/user.go:218	pagesize:
+2024-04-29 07:32:39.260	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:32:39.260	info	store/user.go:235	items
+2024-04-29 07:32:52.552	info	project/update.go:15	project update function called	{"X-Request-ID": "7347a897-642c-4686-abad-09b43f1b7379", "X-Username": "ekreke34555"}
+2024-04-29 07:32:52.901	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "60a58498-9721-4563-8971-f613ed1749ce", "X-Username": "ekreke34555"}
+2024-04-29 07:32:52.904	info	user/myday.go:12	Myday function called	{"X-Request-ID": "892033a2-e691-4cb0-a299-a38c9606c7c6", "X-Username": "ekreke34555"}
+2024-04-29 07:32:52.909	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:32:52.911	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:32:52.909	info	store/user.go:218	pagesize:
+2024-04-29 07:32:52.913	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:32:52.913	info	store/user.go:235	items
+2024-04-29 07:33:01.849	info	project/update.go:15	project update function called	{"X-Request-ID": "d79efb65-ad5b-4554-a699-989c0c0f8b5e", "X-Username": "ekreke34555"}
+2024-04-29 07:33:02.208	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "bb167d3f-999a-4033-a26f-0b90a2441db9", "X-Username": "ekreke34555"}
+2024-04-29 07:33:02.211	info	user/myday.go:12	Myday function called	{"X-Request-ID": "357611cc-66bd-41da-8695-4d94096f459d", "X-Username": "ekreke34555"}
+2024-04-29 07:33:02.215	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:33:02.216	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:33:02.215	info	store/user.go:218	pagesize:
+2024-04-29 07:33:02.221	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:33:02.221	info	store/user.go:235	items
+2024-04-29 07:33:13.716	info	project/update.go:15	project update function called	{"X-Request-ID": "0f7ea742-c7f9-4312-868c-6b997776d911", "X-Username": "ekreke34555"}
+2024-04-29 07:33:14.083	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "bc16a13b-4ad4-4f8f-8e3b-a8d04b0374f9", "X-Username": "ekreke34555"}
+2024-04-29 07:33:14.086	info	user/myday.go:12	Myday function called	{"X-Request-ID": "7553212b-da8b-4478-958a-9f9b42c85967", "X-Username": "ekreke34555"}
+2024-04-29 07:33:14.089	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:33:14.089	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:33:14.089	info	store/user.go:218	pagesize:
+2024-04-29 07:33:14.094	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:33:14.094	info	store/user.go:235	items
+2024-04-29 07:33:46.289	info	user/myday.go:12	Myday function called	{"X-Request-ID": "d6193174-84e4-4417-9c3a-e9de92a633a4", "X-Username": "ekreke34555"}
+2024-04-29 07:33:46.290	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:33:46.290	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:33:46.290	info	store/user.go:218	pagesize:
+2024-04-29 07:33:46.292	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:33:46.292	info	store/user.go:235	items
+2024-04-29 07:34:51.774	info	user/login.go:12	Login function called	{"X-Request-ID": "01ec5596-c346-419a-aabd-7b65e354800f"}
+2024-04-29 07:34:51.789	info	user/info.go:10	Info function called	{"X-Request-ID": "226c808b-03a9-4bc0-b2ae-a9b65d6095c4", "X-Username": "ekreke34555"}
+2024-04-29 07:34:51.868	info	user/myday.go:12	Myday function called	{"X-Request-ID": "072925da-cd56-4130-bcf5-644ef843a6dd", "X-Username": "ekreke34555"}
+2024-04-29 07:34:51.870	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:34:51.871	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:34:51.870	info	store/user.go:218	pagesize:
+2024-04-29 07:34:51.873	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:34:51.873	info	store/user.go:235	items
+2024-04-29 07:34:55.121	info	user/info.go:10	Info function called	{"X-Request-ID": "bc6028d3-f5b7-43d0-b305-451ccf5ed2e2", "X-Username": "ekreke34555"}
+2024-04-29 07:35:01.365	info	user/updateinfo.go:13	UpdateInfo function called	{"X-Request-ID": "d27aec38-1f20-4984-ad7d-c989b11eaa42", "X-Username": "ekreke34555"}
+2024-04-29 07:35:17.680	info	user/login.go:12	Login function called	{"X-Request-ID": "8b91b841-089f-4a4c-954f-814e39c498a7"}
+2024-04-29 07:35:17.691	info	user/info.go:10	Info function called	{"X-Request-ID": "70b30edb-e1f4-43ad-bd88-6fb88746bdac", "X-Username": "ekreke34555"}
+2024-04-29 07:35:17.800	info	user/myday.go:12	Myday function called	{"X-Request-ID": "d3c9d949-ca87-4122-bd69-95fee1b36b38", "X-Username": "ekreke34555"}
+2024-04-29 07:35:17.803	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:17.803	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:17.803	info	store/user.go:218	pagesize:
+2024-04-29 07:35:17.804	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:17.804	info	store/user.go:235	items
+2024-04-29 07:35:22.056	info	item/setdone.go:12	Item function setdone called	{"X-Request-ID": "161be2d1-7082-44ab-9f4b-e9fbcd7f831c", "X-Username": "ekreke34555"}
+2024-04-29 07:35:22.618	info	user/myday.go:12	Myday function called	{"X-Request-ID": "1d49abe0-2a59-4a49-b429-4918d2bc30fc", "X-Username": "ekreke34555"}
+2024-04-29 07:35:22.631	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:22.631	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:22.631	info	store/user.go:218	pagesize:
+2024-04-29 07:35:22.634	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:22.634	info	store/user.go:235	items
+2024-04-29 07:35:24.707	info	item/setundone.go:11	Item setundone function called	{"X-Request-ID": "211f8d6c-5ba9-48db-91eb-d9aa3b2c3e9a", "X-Username": "ekreke34555"}
+2024-04-29 07:35:25.020	info	user/myday.go:12	Myday function called	{"X-Request-ID": "c9d4036b-4703-4994-a204-075ffac6980f", "X-Username": "ekreke34555"}
+2024-04-29 07:35:25.024	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:25.024	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:25.024	info	store/user.go:218	pagesize:
+2024-04-29 07:35:25.025	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:25.025	info	store/user.go:235	items
+2024-04-29 07:35:26.842	info	user/important.go:12	Important function called	{"X-Request-ID": "4a5484bd-f922-49d4-a067-51a92ec12549", "X-Username": "ekreke34555"}
+2024-04-29 07:35:28.035	info	user/myday.go:12	Myday function called	{"X-Request-ID": "78cc412b-d8c7-4d7f-a3e5-03e969d32db4", "X-Username": "ekreke34555"}
+2024-04-29 07:35:28.038	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:28.038	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:28.038	info	store/user.go:218	pagesize:
+2024-04-29 07:35:28.040	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:28.040	info	store/user.go:235	items
+2024-04-29 07:35:31.812	info	item/update.go:12	Item Update function called	{"X-Request-ID": "90ccd7c7-5842-4991-8cb5-118ae217854e", "X-Username": "ekreke34555"}
+2024-04-29 07:35:31.815	error	log/log.go:120	Ignored key without a value.	{"ignored": 1}
+2024-04-29 07:35:31.816	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 1, "value": "preitem.myday"}]}
+2024-04-29 07:35:31.815	info	store/items.go:312	it.myday & 
+2024-04-29 07:35:32.477	info	user/myday.go:12	Myday function called	{"X-Request-ID": "32ea41da-8490-4507-a9dd-f39e48e2e253", "X-Username": "ekreke34555"}
+2024-04-29 07:35:32.482	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:32.483	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:32.482	info	store/user.go:218	pagesize:
+2024-04-29 07:35:32.485	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:32.485	info	store/user.go:235	items
+2024-04-29 07:35:34.270	info	user/important.go:12	Important function called	{"X-Request-ID": "a85e6570-1945-4984-92e5-1fefd1d7d829", "X-Username": "ekreke34555"}
+2024-04-29 07:35:36.225	info	user/myday.go:12	Myday function called	{"X-Request-ID": "f79920c7-e7f3-4bd6-9c17-6872e36cd31e", "X-Username": "ekreke34555"}
+2024-04-29 07:35:36.228	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:36.228	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:36.228	info	store/user.go:218	pagesize:
+2024-04-29 07:35:36.229	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:36.229	info	store/user.go:235	items
+2024-04-29 07:35:36.839	info	user/important.go:12	Important function called	{"X-Request-ID": "db5153ad-46e9-4231-9db8-cbf6980f5e54", "X-Username": "ekreke34555"}
+2024-04-29 07:35:39.354	info	user/myday.go:12	Myday function called	{"X-Request-ID": "49c94ce3-1c41-4488-a8bf-0ebaa7877c99", "X-Username": "ekreke34555"}
+2024-04-29 07:35:39.357	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:39.357	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:39.357	info	store/user.go:218	pagesize:
+2024-04-29 07:35:39.358	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:39.358	info	store/user.go:235	items
+2024-04-29 07:35:42.143	info	user/important.go:12	Important function called	{"X-Request-ID": "d666c5c6-3069-4b88-8600-406eaefcf382", "X-Username": "ekreke34555"}
+2024-04-29 07:35:42.707	info	user/myday.go:12	Myday function called	{"X-Request-ID": "e007ad7e-bed3-48af-8486-e7c04519a3e9", "X-Username": "ekreke34555"}
+2024-04-29 07:35:42.710	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:42.710	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:42.710	info	store/user.go:218	pagesize:
+2024-04-29 07:35:42.711	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:42.711	info	store/user.go:235	items
+2024-04-29 07:35:43.433	info	user/important.go:12	Important function called	{"X-Request-ID": "3678c73e-a9f1-4f37-b676-ad1cbbe9461e", "X-Username": "ekreke34555"}
+2024-04-29 07:35:58.664	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "954cd680-8940-4d13-97ea-b1e00c3e6b45", "X-Username": "ekreke34555"}
+2024-04-29 07:35:58.666	info	user/myday.go:12	Myday function called	{"X-Request-ID": "d338a9c5-cb05-4b09-b218-cf28e8410791", "X-Username": "ekreke34555"}
+2024-04-29 07:35:58.669	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:35:58.669	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:35:58.669	info	store/user.go:218	pagesize:
+2024-04-29 07:35:58.672	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:35:58.672	info	store/user.go:235	items
+2024-04-29 07:35:59.635	info	project/queryallproject.go:12	query all project function called	{"X-Request-ID": "1989c9f0-3894-46df-8a7a-61660e01078f", "X-Username": "ekreke34555"}
+2024-04-29 07:36:00.462	info	user/getcollections.go:10	Get Collections function called	{"X-Request-ID": "4547f7cf-2fcf-4180-9db4-18c02fca34cd", "X-Username": "ekreke34555"}
+2024-04-29 07:36:00.910	info	user/items.go:12	Items function called	{"X-Request-ID": "82e9d7c8-2343-4be3-8935-712e60952503", "X-Username": "ekreke34555"}
+2024-04-29 07:36:00.910	info	store/user.go:244	page msgs:	{"pagesize:": 10, "next_id:": 0}
+2024-04-29 07:36:17.026	info	project/queryallproject.go:12	query all project function called	{"X-Request-ID": "de657152-3ef6-4835-afde-a2c31d38d57a", "X-Username": "ekreke34555"}
+2024-04-29 07:36:21.128	info	user/myday.go:12	Myday function called	{"X-Request-ID": "f1d06def-d9cd-48e8-997a-47e1b98b7d8c", "X-Username": "ekreke34555"}
+2024-04-29 07:36:21.130	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "ebfeb2d1-09ac-4f78-b84f-03e0701bda26", "X-Username": "ekreke34555"}
+2024-04-29 07:36:21.133	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:36:21.134	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:36:21.133	info	store/user.go:218	pagesize:
+2024-04-29 07:36:21.137	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:36:21.137	info	store/user.go:235	items
+2024-04-29 07:36:31.836	info	project/quit.go:13	project quit function called	{"X-Request-ID": "7cf09151-38b4-48bd-9d4e-9d61a92a3725", "X-Username": "ekreke34555"}
+2024-04-29 07:36:31.861	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "8e966547-a852-42f7-b6de-b9185042b299", "X-Username": "ekreke34555"}
+2024-04-29 07:36:31.863	info	user/myday.go:12	Myday function called	{"X-Request-ID": "a1720075-85be-4912-86ea-b3b8f31d7b82", "X-Username": "ekreke34555"}
+2024-04-29 07:36:31.868	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:36:31.869	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:36:31.868	info	store/user.go:218	pagesize:
+2024-04-29 07:36:31.871	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:36:31.871	info	store/user.go:235	items
+2024-04-29 07:36:35.939	info	project/myproject.go:12	project list myproject function called	{"X-Request-ID": "acf87bad-cdf5-4af7-adb9-308362ceca20", "X-Username": "ekreke34555"}
+2024-04-29 07:36:35.942	info	user/myday.go:12	Myday function called	{"X-Request-ID": "d721b02d-2732-4cef-843e-b6e55a98febe", "X-Username": "ekreke34555"}
+2024-04-29 07:36:35.945	error	log/log.go:120	Ignored key without a value.	{"ignored": 0}
+2024-04-29 07:36:35.945	error	log/log.go:120	Ignored key-value pairs with non-string keys.	{"invalid": [{"position": 0, "key": 50, "value": "next_id:"}]}
+2024-04-29 07:36:35.945	info	store/user.go:218	pagesize:
+2024-04-29 07:36:35.949	error	log/log.go:120	Ignored key without a value.	{"ignored": [{"id":20,"item_name":"名称测试","description":"描述一f","project_id":28,"deadline":"2024-04-17T08:26:37+08:00","important":0,"done":0,"myDay":1,"created_time":"2024-01-22T22:38:13+08:00","node":1,"checkPoint":0,"collection_id":1},{"id":33,"item_name":"名称修改","description":"描述一f","project_id":1,"deadline":"2024-04-17T08:26:37+08:00","important":1,"done":1,"myDay":1,"created_time":"2024-04-05T16:40:46+08:00","node":0,"checkPoint":0,"collection_id":1}]}
+2024-04-29 07:36:35.949	info	store/user.go:235	items
