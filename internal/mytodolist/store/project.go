@@ -73,7 +73,7 @@ func (ps *projectStore) Nodes(projectid string, userid int) (items *[]model.Item
 
 // AddNode implements ProjectStore.
 func (ps *projectStore) AddNode(projectid string, nodeid string, userid int64) (affectedRows int, err error) {
-	// 一坨屎的转换int , 结构问题
+	
 	pid, _ := strconv.Atoi(projectid)
 	// actually item_id
 	nid, _ := strconv.Atoi(nodeid)
